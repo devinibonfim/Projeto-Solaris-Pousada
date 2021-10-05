@@ -15,7 +15,7 @@ class CreateFornecedorsTable extends Migration
     {
         Schema::create('fornecedors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_pessoas');
+            $table->unsignedBigInteger('id_pessoa');
             $table->string('regimeFederal');
             $table->timestamps();
             $table->foreign('id_pessoa')->references('id')->on('pessoa_juridicas');
