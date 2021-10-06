@@ -11434,6 +11434,7 @@ header.masthead .masthead-heading {
     font-style: italic;
     line-height: 2.25rem;
     margin-bottom: 2rem;
+    color: var(--bs-yellow);
   }
   header.masthead .masthead-heading {
     font-size: 4.5rem;
@@ -11441,7 +11442,8 @@ header.masthead .masthead-heading {
     line-height: 4.5rem;
     margin-bottom: 4rem;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-color: #d7ad15;
+    color: var(--bs-yellow);
   }
 }
 #portfolio .portfolio-item {

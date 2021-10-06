@@ -31,8 +31,7 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Pousadas</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
                         <!-- <li class="nav-item"><a class="nav-link" href="#team">Team</a></li> -->
-                        <li class="nav-item"><a class="nav-link" href="#contact">Suporte</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><img id="nav-item-whats" src="assets\img\whatsapp_logo.png" alt=""></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Suporte</a></li>                        
                     </ul>
                 </div>
             </div>
@@ -379,11 +378,12 @@
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-whatsapp"></i></a>
+
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                        <a class="link-dark text-decoration-none me-3" href="#!">Politica de privacidade</a>
+                        <a class="link-dark text-decoration-none" href="#!">Termos de uso</a>
                     </div>
                 </div>
             </div>
