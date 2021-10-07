@@ -50,7 +50,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Serviços</h2>
-                    <h3 class="section-subheading text-muted">Serviços principais.</h3>
+                    <h3 class="section-subheading text-muted">Nossos serviços principais.</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
@@ -77,7 +77,7 @@
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Segurança</h4>
-                        <p class="text-muted">Garantimos privacidade.</p>
+                        <p class="text-muted">Cuidamos de todos os detalhes para garantir a proteção dos pertences, das informações e dos dados de todos os hospedes.</p>
                     </div>
                 </div>
             </div>
@@ -86,8 +86,8 @@
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Pousadas</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Quartos</h2>
+                    <h3 class="section-subheading text-muted">Veja os quartos disponiveis.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -97,11 +97,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..."/>
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                                <div class="portfolio-caption-heading">Standard</div>
+                                <div class="portfolio-caption-subheading text-muted">Diária: R$ 100</div>
                             </div>
                         </div>
                     </div>
@@ -115,8 +115,8 @@
                                 <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                                <div class="portfolio-caption-heading">Premium</div>
+                                <div class="portfolio-caption-subheading text-muted">Diária: R$ 130</div>
                             </div>
                         </div>
                     </div>
@@ -130,8 +130,8 @@
                                 <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                                <div class="portfolio-caption-heading">Deluxe</div>
+                                <div class="portfolio-caption-subheading text-muted">Diária: R$ 170</div>
                             </div>
                         </div>
                     </div>
@@ -474,7 +474,40 @@
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>
+                                    Tamanho do quarto 39 m²
+Esta suíte dispõe de ar-condicionado, espaço adicional, área de estar com sofá-cama e varanda, além de cozinha com micro-ondas, fogão e pia. O banheiro privativo inclui secador de cabelo e chuveiro.
+
+No seu banheiro privativo:
+Vaso sanitário
+Banheira ou chuveiro
+Toalhas
+Papel higiênico
+Vista:
+Vista
+Comodidades dos quartos: ​
+Guarda-roupa ou armário
+Frigobar
+Ar-condicionado
+Cofre
+Instalações hipoalergênicas
+Isolamento acústico
+Micro-ondas
+Cozinha
+Sofá
+Mesa de trabalho
+Área de estar
+TV
+Telefone
+Canais via satélite
+TV de tela plana
+Canais a cabo
+Varanda
+Arara para roupas
+Sofá-cama
+Serviço de despertar/despertador
+Fumantes: ​Não é permitido fumar
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
