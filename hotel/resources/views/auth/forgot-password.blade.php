@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>LOGIN ADM</title>
+    <title>Redefinir senha</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
+
 </head>
 
 <body class="bg-gradient-primary">
@@ -35,49 +37,31 @@
                         <div class="row">
                             
                             <div class="col-lg-12">
-
+    
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">LOGIN</h1>
+                                    <h1 class="h4 text-gray-900 mb-2">Esqueceu sua senha?</h1>
+                                    <p class="mb-4">Nós entendemos, coisas acontecem. Basta inserir seu endereço de e-mail abaixo
+                                        e enviaremos um link para redefinir sua senha!</p>
                                 </div>
                                 <form class="user">
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user"
                                             id="exampleInputEmail" aria-describedby="emailHelp"
-                                            placeholder="Entre com Email">
+                                            placeholder="Enter Email Address...">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                                            <label class="custom-control-label" for="customCheck">Lembre-me</label>
-                                        </div>
-                                    </div>
-                                    <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                        Login
+                                    <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                        Resetar senha
                                     </a>
-                                    <hr>
-                                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                                        <i class="fab fa-google fa-fw"></i> Login com Google
-                                    </a>
-                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                        <i class="fab fa-facebook-f fa-fw"></i> Login com Facebook
-                                    </a>
+
                                 </form>
                                 <hr>
                                 <div class="text-center">
                                     <a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.html">Crie sua conta!</a>
+                                    <a class="small" href="login.html">Ja tem uma conta? Login!</a>
                                 </div>
-
-                            <!-- 
-                                col-lg-11 = 1/2
-                                LARGURA
-                            -->
+    
                             </div>
 
                         <!-- row -->
@@ -96,8 +80,9 @@
         </div>
 
     <!-- container -->
-    </div>
-    
+    </div>         
+                                
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -107,4 +92,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
 </body>
+
+</html>
