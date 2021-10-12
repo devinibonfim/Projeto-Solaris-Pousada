@@ -40,7 +40,7 @@
     
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-2">Esqueceu sua senha?</h1>
-                                    <p class="mb-4">Nós entendemos, coisas acontecem. Basta inserir seu endereço de e-mail abaixo
+                                    <p class="mb-4">Nós entendemos, esquecimentos acontecem. Basta inserir seu endereço de e-mail abaixo
                                         e enviaremos um link para redefinir sua senha!</p>
                                 </div>
                                 <form class="user">

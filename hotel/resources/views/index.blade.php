@@ -27,8 +27,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="">Registre-se</a></li>
-                        <li class="nav-item"><a href="#" class="">Login</a></li>
+                        <li class="nav-item"><a href="/register" class="nav-link2">REGISTRE-SE</a></li>
+                        <li class="nav-item"><a href="/login" class="nav-link2">LOGIN</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarResponsive">

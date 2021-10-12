@@ -11330,7 +11330,7 @@ p {
 }
 
 #mainNav {
-  padding-top: 1rem;
+  padding-top: 1.6rem;
   padding-bottom: 1rem;
   background-color: #212529;
 }
@@ -11356,6 +11356,14 @@ p {
   font-size: 0.95rem;
   color: #fff;
   letter-spacing: 0.0625em;
+}
+
+.nav-link2 {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.95rem;
+  color: #fff;
+  letter-spacing: 0.0625em;
+
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #ffc800;
