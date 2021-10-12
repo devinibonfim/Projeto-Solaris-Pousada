@@ -20,4 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-// Route::get('/forgot-password', [App\Http\Controllers\HomeController::class, 'forgot-password'])->name('forgot-password');
+Route::get('/forgot-password', [App\Http\Controllers\Auth::class, 'forgot-password'])->name('forgot-password');
