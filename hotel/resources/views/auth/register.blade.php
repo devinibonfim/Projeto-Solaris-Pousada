@@ -78,11 +78,11 @@
                                     </a>
                                 </form>
                                 <hr>
-                                <div class="text-center">
+                                <!-- <div class="text-center">
                                     <a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
-                                </div>
+                                </div> -->
                                 <div class="text-center">
-                                    <a class="small" href="login.html">Ja tem uma conta? Login!</a>
+                                    <a class="small" href="/login">Ja tem uma conta? Login!</a>
                                 </div>
 
                             </div>

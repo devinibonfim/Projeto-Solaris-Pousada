@@ -49,17 +49,17 @@
                                             id="exampleInputEmail" aria-describedby="emailHelp"
                                             placeholder="Enter Email Address...">
                                     </div>
-                                    <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                    <a href="/login" class="btn btn-primary btn-user btn-block">
                                         Resetar senha
                                     </a>
 
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
+                                    <a class="small" href="/forgot-password">Esqueceu sua senha?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="login.html">Ja tem uma conta? Login!</a>
+                                    <a class="small" href="/login">Ja tem uma conta? Login!</a>
                                 </div>
     
                             </div>

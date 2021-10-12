@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>LOGIN ADM</title>
+    <title>LOGIN</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -68,10 +68,10 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
+                                    <a class="small" href="/forgot-password">Esqueceu sua senha?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.html">Crie sua conta!</a>
+                                    <a class="small" href="/register">Crie sua conta!</a>
                                 </div>
 
                             <!-- 
