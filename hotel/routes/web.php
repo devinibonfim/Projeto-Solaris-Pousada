@@ -14,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-Route::get('/forgot-password', [App\Http\Controllers\Auth::class, 'forgot-password'])->name('forgot-password');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

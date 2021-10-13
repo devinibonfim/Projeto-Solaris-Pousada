@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
+class ComposerStaticInitf55b95f168a957dfde82f34a1840612a
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -533,14 +533,7 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
-        'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
-        'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
-        'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
-        'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
-        'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -550,25 +543,7 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Models\\associado' => __DIR__ . '/../..' . '/app/Models/associado.php',
-        'App\\Models\\bairro' => __DIR__ . '/../..' . '/app/Models/bairro.php',
-        'App\\Models\\cidade' => __DIR__ . '/../..' . '/app/Models/cidade.php',
-        'App\\Models\\consumo' => __DIR__ . '/../..' . '/app/Models/consumo.php',
-        'App\\Models\\conta' => __DIR__ . '/../..' . '/app/Models/conta.php',
-        'App\\Models\\endereco' => __DIR__ . '/../..' . '/app/Models/endereco.php',
-        'App\\Models\\estado' => __DIR__ . '/../..' . '/app/Models/estado.php',
-        'App\\Models\\fornecedor' => __DIR__ . '/../..' . '/app/Models/fornecedor.php',
-        'App\\Models\\funcionario' => __DIR__ . '/../..' . '/app/Models/funcionario.php',
-        'App\\Models\\hospedagem' => __DIR__ . '/../..' . '/app/Models/hospedagem.php',
-        'App\\Models\\hospede' => __DIR__ . '/../..' . '/app/Models/hospede.php',
-        'App\\Models\\login' => __DIR__ . '/../..' . '/app/Models/login.php',
-        'App\\Models\\pessoa' => __DIR__ . '/../..' . '/app/Models/pessoa.php',
-        'App\\Models\\pessoa_fisica' => __DIR__ . '/../..' . '/app/Models/pessoa_fisica.php',
-        'App\\Models\\pessoa_juridica' => __DIR__ . '/../..' . '/app/Models/pessoa_juridica.php',
-        'App\\Models\\produto' => __DIR__ . '/../..' . '/app/Models/produto.php',
-        'App\\Models\\quarto' => __DIR__ . '/../..' . '/app/Models/quarto.php',
-        'App\\Models\\reserva' => __DIR__ . '/../..' . '/app/Models/reserva.php',
-        'App\\Models\\validade' => __DIR__ . '/../..' . '/app/Models/validade.php',
+        'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1540,6 +1515,7 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
         'GuzzleHttp\\Psr7\\BufferStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/BufferStream.php',
         'GuzzleHttp\\Psr7\\CachingStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/CachingStream.php',
         'GuzzleHttp\\Psr7\\DroppingStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/DroppingStream.php',
+        'GuzzleHttp\\Psr7\\Exception\\MalformedUriException' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Exception/MalformedUriException.php',
         'GuzzleHttp\\Psr7\\FnStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/FnStream.php',
         'GuzzleHttp\\Psr7\\Header' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Header.php',
         'GuzzleHttp\\Psr7\\HttpFactory' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/HttpFactory.php',
@@ -2372,6 +2348,7 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
         'Illuminate\\Queue\\Events\\JobProcessed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessed.php',
         'Illuminate\\Queue\\Events\\JobProcessing' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessing.php',
         'Illuminate\\Queue\\Events\\JobQueued' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobQueued.php',
+        'Illuminate\\Queue\\Events\\JobRetryRequested' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobRetryRequested.php',
         'Illuminate\\Queue\\Events\\Looping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/Looping.php',
         'Illuminate\\Queue\\Events\\QueueBusy' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/QueueBusy.php',
         'Illuminate\\Queue\\Events\\WorkerStopping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/WorkerStopping.php',
@@ -5543,10 +5520,10 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc221f63ec867868b140b8c62c12d6862::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc221f63ec867868b140b8c62c12d6862::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc221f63ec867868b140b8c62c12d6862::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc221f63ec867868b140b8c62c12d6862::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf55b95f168a957dfde82f34a1840612a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf55b95f168a957dfde82f34a1840612a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitf55b95f168a957dfde82f34a1840612a::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitf55b95f168a957dfde82f34a1840612a::$classMap;
 
         }, null, ClassLoader::class);
     }
