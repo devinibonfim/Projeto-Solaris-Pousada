@@ -13,4 +13,10 @@ class Pessoa extends Model
         'telephone',//telefone
         'name',//nome
     ];
+
+    public function login(){
+
+        return $this->hasOne('App\Models\login');
+    }
+
 }

@@ -13,4 +13,9 @@ class Login extends Model
         'login',
         'password',//senha
     ];
+
+    public function pessoas(){
+
+        return $this->hasOne('App\Models\Pessoa');
+    }
 }
