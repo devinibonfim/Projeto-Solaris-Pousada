@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
+class ComposerStaticInitf55b95f168a957dfde82f34a1840612a
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -541,25 +541,6 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\associadoController' => __DIR__ . '/../..' . '/app/Http/Controllers/associadoController.php',
-        'App\\Http\\Controllers\\bairroController' => __DIR__ . '/../..' . '/app/Http/Controllers/bairroController.php',
-        'App\\Http\\Controllers\\cidadeController' => __DIR__ . '/../..' . '/app/Http/Controllers/cidadeController.php',
-        'App\\Http\\Controllers\\consumoController' => __DIR__ . '/../..' . '/app/Http/Controllers/consumoController.php',
-        'App\\Http\\Controllers\\contaController' => __DIR__ . '/../..' . '/app/Http/Controllers/contaController.php',
-        'App\\Http\\Controllers\\enderecoController' => __DIR__ . '/../..' . '/app/Http/Controllers/enderecoController.php',
-        'App\\Http\\Controllers\\estadoController' => __DIR__ . '/../..' . '/app/Http/Controllers/estadoController.php',
-        'App\\Http\\Controllers\\fornecedorController' => __DIR__ . '/../..' . '/app/Http/Controllers/fornecedorController.php',
-        'App\\Http\\Controllers\\funcionarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/funcionarioController.php',
-        'App\\Http\\Controllers\\hospedagemController' => __DIR__ . '/../..' . '/app/Http/Controllers/hospedagemController.php',
-        'App\\Http\\Controllers\\hospedeController' => __DIR__ . '/../..' . '/app/Http/Controllers/hospedeController.php',
-        'App\\Http\\Controllers\\loginController' => __DIR__ . '/../..' . '/app/Http/Controllers/loginController.php',
-        'App\\Http\\Controllers\\pessoaController' => __DIR__ . '/../..' . '/app/Http/Controllers/pessoaController.php',
-        'App\\Http\\Controllers\\pessoa_fisicaController' => __DIR__ . '/../..' . '/app/Http/Controllers/pessoa_fisicaController.php',
-        'App\\Http\\Controllers\\pessoa_juridicaController' => __DIR__ . '/../..' . '/app/Http/Controllers/pessoa_juridicaController.php',
-        'App\\Http\\Controllers\\produtoController' => __DIR__ . '/../..' . '/app/Http/Controllers/produtoController.php',
-        'App\\Http\\Controllers\\quartoController' => __DIR__ . '/../..' . '/app/Http/Controllers/quartoController.php',
-        'App\\Http\\Controllers\\reservaController' => __DIR__ . '/../..' . '/app/Http/Controllers/reservaController.php',
-        'App\\Http\\Controllers\\validadeController' => __DIR__ . '/../..' . '/app/Http/Controllers/validadeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -569,26 +550,28 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Aluno' => __DIR__ . '/../..' . '/app/Models/Aluno.php',
+        'App\\Models\\Bairro' => __DIR__ . '/../..' . '/app/Models/Bairro.php',
+        'App\\Models\\Cidade' => __DIR__ . '/../..' . '/app/Models/Cidade.php',
+        'App\\Models\\Consumo' => __DIR__ . '/../..' . '/app/Models/Consumo.php',
+        'App\\Models\\Conta' => __DIR__ . '/../..' . '/app/Models/Conta.php',
+        'App\\Models\\Endereco' => __DIR__ . '/../..' . '/app/Models/Endereco.php',
+        'App\\Models\\Estado' => __DIR__ . '/../..' . '/app/Models/Estado.php',
+        'App\\Models\\Fornecedor' => __DIR__ . '/../..' . '/app/Models/Fornecedor.php',
+        'App\\Models\\Funcionario' => __DIR__ . '/../..' . '/app/Models/Funcionario.php',
+        'App\\Models\\Hospedagem' => __DIR__ . '/../..' . '/app/Models/Hospedagem.php',
+        'App\\Models\\Hospede' => __DIR__ . '/../..' . '/app/Models/Hospede.php',
+        'App\\Models\\Login' => __DIR__ . '/../..' . '/app/Models/Login.php',
+        'App\\Models\\Pessoa' => __DIR__ . '/../..' . '/app/Models/Pessoa.php',
+        'App\\Models\\Pf' => __DIR__ . '/../..' . '/app/Models/Pf.php',
+        'App\\Models\\Pj' => __DIR__ . '/../..' . '/app/Models/Pj.php',
+        'App\\Models\\Produto' => __DIR__ . '/../..' . '/app/Models/Produto.php',
+        'App\\Models\\Quarto' => __DIR__ . '/../..' . '/app/Models/Quarto.php',
+        'App\\Models\\Reserva' => __DIR__ . '/../..' . '/app/Models/Reserva.php',
+        'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Validade' => __DIR__ . '/../..' . '/app/Models/Validade.php',
         'App\\Models\\associado' => __DIR__ . '/../..' . '/app/Models/associado.php',
-        'App\\Models\\bairro' => __DIR__ . '/../..' . '/app/Models/bairro.php',
-        'App\\Models\\cidade' => __DIR__ . '/../..' . '/app/Models/cidade.php',
-        'App\\Models\\consumo' => __DIR__ . '/../..' . '/app/Models/consumo.php',
-        'App\\Models\\conta' => __DIR__ . '/../..' . '/app/Models/conta.php',
-        'App\\Models\\endereco' => __DIR__ . '/../..' . '/app/Models/endereco.php',
-        'App\\Models\\estado' => __DIR__ . '/../..' . '/app/Models/estado.php',
-        'App\\Models\\fornecedor' => __DIR__ . '/../..' . '/app/Models/fornecedor.php',
-        'App\\Models\\funcionario' => __DIR__ . '/../..' . '/app/Models/funcionario.php',
-        'App\\Models\\hospedagem' => __DIR__ . '/../..' . '/app/Models/hospedagem.php',
-        'App\\Models\\hospede' => __DIR__ . '/../..' . '/app/Models/hospede.php',
-        'App\\Models\\login' => __DIR__ . '/../..' . '/app/Models/login.php',
-        'App\\Models\\pessoa' => __DIR__ . '/../..' . '/app/Models/pessoa.php',
-        'App\\Models\\pessoa_fisica' => __DIR__ . '/../..' . '/app/Models/pessoa_fisica.php',
-        'App\\Models\\pessoa_juridica' => __DIR__ . '/../..' . '/app/Models/pessoa_juridica.php',
-        'App\\Models\\produto' => __DIR__ . '/../..' . '/app/Models/produto.php',
-        'App\\Models\\quarto' => __DIR__ . '/../..' . '/app/Models/quarto.php',
-        'App\\Models\\reserva' => __DIR__ . '/../..' . '/app/Models/reserva.php',
         'App\\Models\\tipoQuarto' => __DIR__ . '/../..' . '/app/Models/tipoQuarto.php',
-        'App\\Models\\validade' => __DIR__ . '/../..' . '/app/Models/validade.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1560,6 +1543,7 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
         'GuzzleHttp\\Psr7\\BufferStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/BufferStream.php',
         'GuzzleHttp\\Psr7\\CachingStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/CachingStream.php',
         'GuzzleHttp\\Psr7\\DroppingStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/DroppingStream.php',
+        'GuzzleHttp\\Psr7\\Exception\\MalformedUriException' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Exception/MalformedUriException.php',
         'GuzzleHttp\\Psr7\\FnStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/FnStream.php',
         'GuzzleHttp\\Psr7\\Header' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Header.php',
         'GuzzleHttp\\Psr7\\HttpFactory' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/HttpFactory.php',
@@ -2392,6 +2376,7 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
         'Illuminate\\Queue\\Events\\JobProcessed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessed.php',
         'Illuminate\\Queue\\Events\\JobProcessing' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessing.php',
         'Illuminate\\Queue\\Events\\JobQueued' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobQueued.php',
+        'Illuminate\\Queue\\Events\\JobRetryRequested' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobRetryRequested.php',
         'Illuminate\\Queue\\Events\\Looping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/Looping.php',
         'Illuminate\\Queue\\Events\\QueueBusy' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/QueueBusy.php',
         'Illuminate\\Queue\\Events\\WorkerStopping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/WorkerStopping.php',
@@ -5563,10 +5548,10 @@ class ComposerStaticInitc221f63ec867868b140b8c62c12d6862
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc221f63ec867868b140b8c62c12d6862::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc221f63ec867868b140b8c62c12d6862::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc221f63ec867868b140b8c62c12d6862::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc221f63ec867868b140b8c62c12d6862::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf55b95f168a957dfde82f34a1840612a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf55b95f168a957dfde82f34a1840612a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitf55b95f168a957dfde82f34a1840612a::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitf55b95f168a957dfde82f34a1840612a::$classMap;
 
         }, null, ClassLoader::class);
     }
