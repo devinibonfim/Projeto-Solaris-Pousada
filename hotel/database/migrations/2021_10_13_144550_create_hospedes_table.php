@@ -1,8 +1,4 @@
-$table->id();
-            $table->unsignedBigInteger('id_pessoa');
-            $table->string('dataNascimento');
-            $table->timestamps();
-            $table->foreign('id_pessoa')->references('id')->on('pessoas');<?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
