@@ -16,7 +16,7 @@ class CreateBairrosTable extends Migration
         Schema::create('bairros', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_cidade');
-            $table->string('nome');
+            $table->string('name');
             $table->timestamps();
             $table->foreign('id_cidade')->references('id')->on('cidades');
         });

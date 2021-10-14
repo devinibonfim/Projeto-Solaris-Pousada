@@ -16,8 +16,8 @@ class CreateAssociadosTable extends Migration
         Schema::create('associados', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_hospede_associado');
-            $table->string('nomeAssociado');
-            $table->string('idadeAssociado');
+            $table->string('name'); //nome
+            $table->string('age');//idade
             $table->timestamps();
             $table->foreign('id_hospede_associado')->references('id')->on('hospedes');
         });

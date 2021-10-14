@@ -17,8 +17,8 @@ class CreatePessoasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_endereco');
             $table->unsignedBigInteger('id_login');
-            $table->string('telefone');
-            $table->string('nome');
+            $table->string('telephone');//telefone
+            $table->string('name');//Nome
             $table->timestamps();
             $table->foreign('id_login')->references('id')->on('logins');
             $table->foreign('id_endereco')->references('id')->on('enderecos');

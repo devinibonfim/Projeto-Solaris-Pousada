@@ -16,8 +16,8 @@ class CreateContasTable extends Migration
         Schema::create('contas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_consumo');
-            $table->string('saldoTotal');
-            $table->string('pago');
+            $table->string('balance');//saldo
+            $table->string('paid');//pago
             $table->timestamps();
             $table->foreign('id_consumo')->references('id')->on('consumos');
         });

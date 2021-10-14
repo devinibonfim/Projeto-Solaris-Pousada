@@ -17,8 +17,8 @@ class CreateHospedagemsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_hospede');
             $table->unsignedBigInteger('id_conta');
-            $table->string('dataEntrada');
-            $table->string('dataSaida');
+            $table->string('dateEntry');//Data de entrada
+            $table->string('departureDate');//Data de saida
             $table->timestamps();
             $table->foreign('id_hospede')->references('id')->on('hospedes');
             $table->foreign('id_conta')->references('id')->on('contas');

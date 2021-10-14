@@ -16,7 +16,7 @@ class CreatePfsTable extends Migration
         Schema::create('pfs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_hospede');
-            $table->string('cpf');
+            $table->string('cpf');//cpf
             $table->timestamps();
             $table->foreign('id_hospede')->references('id')->on('hospedes');
         });

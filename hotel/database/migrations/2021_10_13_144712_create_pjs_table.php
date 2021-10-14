@@ -16,7 +16,7 @@ class CreatePjsTable extends Migration
         Schema::create('pjs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_hospede');
-            $table->string('cnpj');
+            $table->string('cnpj');//cnpj
             $table->timestamps();
             $table->foreign('id_hospede')->references('id')->on('hospedes');
         });
