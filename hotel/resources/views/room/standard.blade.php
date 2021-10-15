@@ -2,6 +2,7 @@
 
 @section('content')
     <br>
-    DELUXE
+    STANDARD
+    
 
 @endsection

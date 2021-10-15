@@ -271,10 +271,10 @@
                                     </li>
                                 </ul>
                                 <div class="">
-                                    <button class="btn btn-primary btn-xl text-uppercase" type="button">
+                                    <a href="{{ route('standard_index')}}" class="btn btn-primary btn-xl text-uppercase" type="button" value="standart">
                                         <i class="fas fa-times me-1"></i>
                                         ALUGAR
-                                    </button>
+                                    </a>
 
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
@@ -321,10 +321,10 @@
                                     </li>
                                 </ul>
                                 <div class="">
-                                    <button class="btn btn-primary btn-xl text-uppercase" type="button">
+                                    <a href="{{ route('premium_index')}}" class="btn btn-primary btn-xl text-uppercase" type="button" value="standart">
                                         <i class="fas fa-times me-1"></i>
                                         ALUGAR
-                                    </button>
+                                    </a>
 
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
@@ -371,10 +371,10 @@
                                     </li>
                                 </ul>
                                 <div class="">
-                                    <button class="btn btn-primary btn-xl text-uppercase" type="button">
+                                    <a href="{{ route('deluxe_index')}}" class="btn btn-primary btn-xl text-uppercase" type="button" value="standart">
                                         <i class="fas fa-times me-1"></i>
                                         ALUGAR
-                                    </button>
+                                    </a>
 
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
