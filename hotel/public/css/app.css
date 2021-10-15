@@ -11307,7 +11307,7 @@ header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
-  color: #fff;
+  color: var(--bs-yellow);
   background-image: url("../assets/img/header-bg.jpg");
   /* opacity: 94%; */
   filter: contrast(80%);
@@ -11315,6 +11315,8 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -11341,6 +11343,8 @@ header.masthead .masthead-heading {
     font-style: italic;
     line-height: 2.25rem;
     margin-bottom: 2rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
     color: var(--bs-yellow);
   }
   header.masthead .masthead-heading {
@@ -11348,8 +11352,9 @@ header.masthead .masthead-heading {
     font-weight: 700;
     line-height: 4.5rem;
     margin-bottom: 4rem;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #d7ad15;
+
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
     color: var(--bs-yellow);
   }
 }
