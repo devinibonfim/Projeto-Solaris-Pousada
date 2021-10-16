@@ -6,7 +6,7 @@
     <header class="masthead">
         <div class="container">
             <div class="masthead-subheading">BEM VINDO</div>
-            <div class="masthead-heading text-uppercase">SOLARIS POUSADAS</div>
+            <div class="masthead-heading text-uppercase">SOLARIS aDAS</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Explorar</a>
         </div>
     </header>
@@ -162,13 +162,6 @@
                 <h2 class="section-heading text-uppercase">Suporte</h2>
                 <h3 class="section-subheading text-muted">Em caso de dúvidas nos mande uma mensagem!</h3>
             </div>
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- * * SB Forms Contact Form * *-->
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- This form is pre-integrated with SB Forms.-->
-            <!-- To make this form functional, sign up at-->
-            <!-- https://startbootstrap.com/solution/contact-forms-->
-            <!-- to get an API token!-->
             <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
@@ -197,10 +190,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Submit success message-->
-                <!---->
-                <!-- This is what your users will see when the form-->
-                <!-- has successfully submitted-->
                 <div class="d-none" id="submitSuccessMessage">
                     <div class="text-center text-white mb-3">
                         <div class="fw-bolder">Formulário enviado com sucesso!</div>
@@ -209,10 +198,6 @@
                         <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a> -->
                     </div>
                 </div>
-                <!-- Submit error message-->
-                <!---->
-                <!-- This is what your users will see when there is-->
-                <!-- an error submitting the form-->
                 <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erro ao enviar mensagem!</div></div>
                 <!-- Submit Button-->
                 <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar Mensagem</button></div>
