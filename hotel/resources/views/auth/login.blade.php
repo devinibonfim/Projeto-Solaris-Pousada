@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<br> <br> <br>
+
 <link rel="stylesheet" href="styles.css" !important>
 
 <div class="container">
