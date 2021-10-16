@@ -89,7 +89,7 @@
                     </div>
                 </figure>
                 <div class="media-body">
-                    <h3 class="mt-0"><a href="#">Quarto Standard</a></h3>
+                    <h3 class="mt-0"><a href="#">Quarto Deluxe</a></h3>
                     <ul class="room-specs">
                         <li><span class="ion-ios-crop"></span> <b> Tamanho do quarto: </b> 39 m <sup>2</sup></li>
                         <li><span class="ion-ios-people-outline"></span> Até 4 Hospedes.</li>

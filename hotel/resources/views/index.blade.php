@@ -257,7 +257,7 @@
                                 </ul>
                                 <div class="">
                                     <a href="{{ route('standard_index')}}" class="btn btn-primary btn-xl text-uppercase" type="button" value="standart">
-                                        <i class="fas fa-times me-1"></i>
+                                        <i class="me-1"></i>
                                         ALUGAR
                                     </a>
 
@@ -307,7 +307,7 @@
                                 </ul>
                                 <div class="">
                                     <a href="{{ route('premium_index')}}" class="btn btn-primary btn-xl text-uppercase" type="button" value="standart">
-                                        <i class="fas fa-times me-1"></i>
+                                        <i class="me-1"></i>
                                         ALUGAR
                                     </a>
 
@@ -357,7 +357,7 @@
                                 </ul>
                                 <div class="">
                                     <a href="{{ route('deluxe_index')}}" class="btn btn-primary btn-xl text-uppercase" type="button" value="standart">
-                                        <i class="fas fa-times me-1"></i>
+                                        <i class="me-1"></i>
                                         ALUGAR
                                     </a>
 
