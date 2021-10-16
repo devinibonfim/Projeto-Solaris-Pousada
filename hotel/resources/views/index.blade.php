@@ -6,7 +6,7 @@
     <header class="masthead">
         <div class="container">
             <div class="masthead-subheading">BEM VINDO</div>
-            <div class="masthead-heading text-uppercase">SOLARIS aDAS</div>
+            <div class="masthead-heading text-uppercase">SOLARIS POUSADAS</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Explorar</a>
         </div>
     </header>
