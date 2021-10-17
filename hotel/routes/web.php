@@ -27,3 +27,10 @@ Route::get('/standard', [App\Http\Controllers\StandardController::class, 'index'
 Route::get('/premium', [App\Http\Controllers\PremiumController::class, 'index'])->name('premium_index');
 Route::get('/deluxe', [App\Http\Controllers\DeluxeController::class, 'index'])->name('deluxe_index');
 
+
+Route::get('/ajuda', [App\Http\Controllers\AjudaController::class, 'index'])->name('ajuda');
+Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->name('perfil');
+Route::get('/reserva', [App\Http\Controllers\ReservaController::class, 'index'])->name('reserva');
+
+
+

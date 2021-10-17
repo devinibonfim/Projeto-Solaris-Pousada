@@ -3775,7 +3775,10 @@ textarea.form-control-lg {
 }
 .dropdown-item:hover, .dropdown-item:focus {
   color: #1e2125;
-  background-color: #e9ecef;
+  font-weight:bold !important;
+  font-size:17px;
+  background-color:#fd7e14 !important;
+  /* text-decoration: none; */
 }
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
