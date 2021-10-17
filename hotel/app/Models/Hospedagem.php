@@ -10,7 +10,7 @@ class Hospedagem extends Model
     use HasFactory;
 
     protected $fillable = [
-        'dateEntry',//Data de entrada
-        'departureDate',//Data de saida
+        'dateEntryAccommodation',//Data de entrada
+        'departureDateAccommodation',//Data de saida
     ];
 }

@@ -10,9 +10,7 @@ class Validade extends Model
     use HasFactory;
 
     protected $fillable = [
-
-        'validity',//validade
-        'batch',//lote
-
+        'dateValidity',//data
+        'batchValidity',//lote
     ];
 }

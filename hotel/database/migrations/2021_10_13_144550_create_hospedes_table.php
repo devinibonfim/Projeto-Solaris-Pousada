@@ -16,9 +16,9 @@ class CreateHospedesTable extends Migration
         Schema::create('hospedes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_pessoa');
-            $table->string('birthDate');//Data de nascimento
+            $table->string('birthDateGuest');//Data de nascimento
             $table->timestamps();
-            $table->foreign('id_pessoa')->references('id')->on('pessoas');
+            $table->foreign('id_pessoa')->references('id')->on('pessoas')->onDelete('cascade');
         });
     }
 

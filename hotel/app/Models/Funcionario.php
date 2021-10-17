@@ -10,8 +10,8 @@ class Funcionario extends Model
     use HasFactory;
 
     protected $fillable = [
-        'contract',//contrato
-        'workCard',//carteira de trabalho
-        'wage',//salario
+        'contractEmployee',//contrato
+        'workCardEmployee',//carteira de trabalho
+        'wageEmployee',//salario
     ];
 }

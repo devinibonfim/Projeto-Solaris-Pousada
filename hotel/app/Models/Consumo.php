@@ -10,8 +10,8 @@ class Consumo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'description',
-        'quantity',
-        'value',
+        'descriptionConsumption',
+        'quantityConsumption',
+        'valueConsumption',
     ];
 }

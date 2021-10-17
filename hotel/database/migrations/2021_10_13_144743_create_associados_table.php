@@ -16,10 +16,10 @@ class CreateAssociadosTable extends Migration
         Schema::create('associados', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_hospede_associado');
-            $table->string('name'); //nome
-            $table->string('age');//idade
+            $table->string('nameAssociate'); //nome
+            $table->string('ageAssociate');//idade
             $table->timestamps();
-            $table->foreign('id_hospede_associado')->references('id')->on('hospedes');
+            $table->foreign('id_hospede_associado')->references('id')->on('hospedes')->onDelete('cascade');
         });
     }
 

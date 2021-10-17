@@ -15,8 +15,8 @@ class CreateValidadesTable extends Migration
     {
         Schema::create('validades', function (Blueprint $table) {
             $table->id();
-            $table->string('validity');//validade
-            $table->string('batch');//lote
+            $table->string('dateValidity');//date
+            $table->string('batchValidity');//lote
             $table->timestamps();
         });
     }

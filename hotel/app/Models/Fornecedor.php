@@ -10,7 +10,5 @@ class Fornecedor extends Model
     use HasFactory;
 
     protected $fillable =[
-        'federalRegime',//regime federal
-
     ];
 }

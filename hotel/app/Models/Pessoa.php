@@ -10,13 +10,7 @@ class Pessoa extends Model
     use HasFactory;
 
     protected $fillable = [
-        'telephone',//telefone
-        'name',//nome
+        'namePeople',//nome
+        'telephonePeople',//telefone
     ];
-
-    public function login(){
-
-        return $this->hasOne('App\Models\login');
-    }
-
 }

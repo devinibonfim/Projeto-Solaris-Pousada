@@ -18,7 +18,7 @@ class CreatePfsTable extends Migration
             $table->unsignedBigInteger('id_hospede');
             $table->string('cpf');//cpf
             $table->timestamps();
-            $table->foreign('id_hospede')->references('id')->on('hospedes');
+            $table->foreign('id_hospede')->references('id')->on('hospedes')->onDelete('cascade');
         });
     }
 

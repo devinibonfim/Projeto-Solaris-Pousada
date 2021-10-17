@@ -16,10 +16,10 @@ class CreateContasTable extends Migration
         Schema::create('contas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_consumo');
-            $table->string('balance');//saldo
-            $table->string('paid');//pago
+            $table->string('balanceAccount');//saldo
+            $table->string('paidAccount');//pago
             $table->timestamps();
-            $table->foreign('id_consumo')->references('id')->on('consumos');
+            $table->foreign('id_consumo')->references('id')->on('consumos')->onDelete('cascade');
         });
     }
 

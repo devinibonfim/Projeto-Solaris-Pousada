@@ -10,7 +10,6 @@ class Estado extends Model
     use HasFactory;
 
     protected $fillable =[
-        'name',
-        
+        'nameState',
     ];
 }

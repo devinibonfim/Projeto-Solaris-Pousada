@@ -16,11 +16,11 @@ class CreateFuncionariosTable extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_pessoa');
-            $table->string('contract');//contrato
-            $table->string('workCard');//carteira de trabalho
-            $table->string('wage');//salario
+            $table->string('contractEmployee');//contrato
+            $table->string('workCardEmployee');//carteira de trabalho
+            $table->string('wageEmployee');//salario
             $table->timestamps();
-            $table->foreign('id_pessoa')->references('id')->on('pessoas');
+            $table->foreign('id_pessoa')->references('id')->on('pessoas')->onDelete('cascade');
         });
     }
 

@@ -10,7 +10,7 @@ class Associado extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 
-        'age',
+        'nameAssociate', 
+        'ageAssociate',
     ];
 }

@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bairro extends Model
+class TipoQuarto extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'nameDistrict',
+    protected $fillable=[
+        'nameRoomType',
+        'descriptionRoomType',
+        'valueRoomType',
     ];
+    
 }

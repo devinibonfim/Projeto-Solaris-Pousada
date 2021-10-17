@@ -16,12 +16,12 @@ class CreateReservasTable extends Migration
         Schema::create('reservas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_hospede');
-            $table->string('entryDate');//Data de entrada
-            $table->string('departureDate');//Data de saida
-            $table->string('number');//Numero do quarto
-            $table->string('value');//Valor
+            $table->string('entryDateReserve');//Data de entrada
+            $table->string('departureDateReserve');//Data de saida
+            $table->string('numberReserve');//Numero do quarto
+            $table->string('valueReserve');//Valor
             $table->timestamps();
-            $table->foreign('id_hospede')->references('id')->on('hospedes');
+            $table->foreign('id_hospede')->references('id')->on('hospedes')->onDelete('cascade');
         });
     }
 

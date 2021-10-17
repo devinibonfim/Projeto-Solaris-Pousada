@@ -10,7 +10,7 @@ class Endereco extends Model
     use HasFactory;
 
     protected $fillable = [
-        'code',//cep
-        'complement',//complemento
+        'codeAddress',//cep
+        'complementAddress',//complemento
     ];
 }

@@ -17,11 +17,11 @@ class CreateProdutosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_fornecedor');
             $table->unsignedBigInteger('id_validade');
-            $table->string('description');//Descrição
-            $table->integer('quantity');//Quantidade
+            $table->string('descriptionProduct');//Descrição
+            $table->integer('quantityProduct');//Quantidade
             $table->timestamps();
-            $table->foreign('id_fornecedor')->references('id')->on('fornecedors');
-            $table->foreign('id_validade')->references('id')->on('validades');
+            $table->foreign('id_fornecedor')->references('id')->on('fornecedors')->onDelete('cascade');
+            $table->foreign('id_validade')->references('id')->on('validades')->onDelete('cascade');;
         });
     }
 

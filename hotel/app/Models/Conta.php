@@ -10,8 +10,8 @@ class Conta extends Model
     use HasFactory;
 
     protected $fillable = [
-        'balance',//saldo
-        'paid',//pago
+        'balanceAccount',//saldo
+        'paidAccount',//pago
 
     ];
 }

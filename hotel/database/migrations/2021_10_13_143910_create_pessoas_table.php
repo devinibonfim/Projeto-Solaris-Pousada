@@ -17,11 +17,11 @@ class CreatePessoasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_endereco');
             $table->unsignedBigInteger('id_login');
-            $table->string('telephone');//telefone
-            $table->string('name');//Nome
+            $table->string('namePeople');//Nome
+            $table->string('telephonePeople');//telefone
             $table->timestamps();
-            $table->foreign('id_login')->references('id')->on('logins');
-            $table->foreign('id_endereco')->references('id')->on('enderecos');
+            $table->foreign('id_login')->references('id')->on('logins')->onDelete('cascade');
+            $table->foreign('id_endereco')->references('id')->on('enderecos')->onDelete('cascade');
         });
     }
 

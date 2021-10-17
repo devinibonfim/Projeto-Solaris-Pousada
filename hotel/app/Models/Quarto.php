@@ -10,7 +10,7 @@ class Quarto extends Model
     use HasFactory;
 
     protected $fillable = [
-        'description',
-        'number',
+        'descriptionRoom',
+        'numberRoom',
     ];
 }

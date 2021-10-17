@@ -15,9 +15,9 @@ class CreateConsumosTable extends Migration
     {
         Schema::create('consumos', function (Blueprint $table) {
             $table->id();
-            $table->string('description');//descrição
-            $table->string('quantity');//quantidade
-            $table->string('value'); //valor
+            $table->string('descriptionConsumption');//descrição
+            $table->string('quantityConsumption');//quantidade
+            $table->string('valueConsumption'); //valor
             $table->timestamps();
         });
     }

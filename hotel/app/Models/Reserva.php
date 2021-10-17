@@ -10,10 +10,10 @@ class Reserva extends Model
     use HasFactory;
 
     protected $fillable = [
-        'entryDate',//Data de entrada
-        'departureDate',//Data de saida
-        'number',//Numero
-        'value',//Valor
+        'entryDateReserve',//Data de entrada
+        'departureDateReserve',//Data de saida
+        'numberReserve',//Numero
+        'valueReserve',//Valor
            
     ];
 }

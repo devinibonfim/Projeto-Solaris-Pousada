@@ -17,11 +17,11 @@ class CreateQuartosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_reserva');
             $table->unsignedBigInteger('id_hospedagem');
-            $table->string('description');//descrição
-            $table->string('number');//numero do quarto
+            $table->string('descriptionRoom');//descrição
+            $table->string('numberRoom');//numero do quarto
             $table->timestamps();
-            $table->foreign('id_reserva')->references('id')->on('reservas');
-            $table->foreign('id_hospedagem')->references('id')->on('hospedagems');
+            $table->foreign('id_reserva')->references('id')->on('reservas')->onDelete('cascade');
+            $table->foreign('id_hospedagem')->references('id')->on('hospedagems')->onDelete('cascade');
         });
     }
 
