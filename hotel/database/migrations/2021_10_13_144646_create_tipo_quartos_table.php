@@ -15,9 +15,9 @@ class CreateTipoQuartosTable extends Migration
     {
         Schema::create('tipo_quartos', function (Blueprint $table) {
             $table->id();
-            $table->string('nameRoomType',50)->unique();
+            $table->string('nameRoomType')->unique();
             $table->string('descriptionRoomType');
-            $table->int('descriptionRoomType');
+            $table->integer('valueRoomType');
             $table->timestamps();
         });
     }

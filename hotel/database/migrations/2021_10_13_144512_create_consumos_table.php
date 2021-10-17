@@ -17,7 +17,7 @@ class CreateConsumosTable extends Migration
             $table->id();
             $table->string('descriptionConsumption');//descrição
             $table->string('quantityConsumption');//quantidade
-            $table->string('valueConsumption'); //valor
+            $table->integer('total');
             $table->timestamps();
         });
     }

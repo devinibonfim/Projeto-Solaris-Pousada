@@ -20,7 +20,6 @@ class CreatePessoasTable extends Migration
             $table->string('namePeople');//Nome
             $table->string('telephonePeople');//telefone
             $table->timestamps();
-            $table->foreign('id_login')->references('id')->on('logins')->onDelete('cascade');
             $table->foreign('id_endereco')->references('id')->on('enderecos')->onDelete('cascade');
         });
     }

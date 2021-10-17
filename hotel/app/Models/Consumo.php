@@ -12,6 +12,5 @@ class Consumo extends Model
     protected $fillable = [
         'descriptionConsumption',
         'quantityConsumption',
-        'valueConsumption',
     ];
 }
