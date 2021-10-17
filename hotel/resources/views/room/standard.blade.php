@@ -69,7 +69,7 @@
                     <div class="col-md-6 form-group">
                         <br>
                         <!-- <input type="submit" value="Reserve aqui" class="btn btn-primary"> -->
-                        <p><a href="#" class="btn btn-xl btn-primary btn-sm">Reserve agora</a></p> 
+                        <p><a href="#" class="btn btn-xl btn-primary btn-sm">Reserve agora</a><span></span></p>
                     </div>
                 </div>
             </form>

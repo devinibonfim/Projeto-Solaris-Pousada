@@ -231,6 +231,9 @@ sup {
   top: -0.5em;
 }
 
+.reserva-link{
+  color:#0a98b4;
+}
 a {
   color: #ffc800;
   text-decoration: underline;
