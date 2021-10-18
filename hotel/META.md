@@ -4,3 +4,5 @@
 ## Bonus
 
 # Calular os valores da diaria automaticamente na hora de alugar o quarto.
+# Colocar mais fotos nos quartos para os hospedes.
+# Visão do ADMIN. 

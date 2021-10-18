@@ -2,6 +2,55 @@
 
 @section('content')
 
+<div class="container inline">
+    <div class="text-center">
+        <p><h2>Edite seus Detalhes pessoais aqui</h2></p>
+        <p>Atualize e/ou adicione suas informações.</p>
+    </div>
+    <br>
+    <div class="text-center">
+        <hr>
+        <p> <span class="px-left"> Nome: </span> {{ Auth::user()->name }} <a class="reserva-link text-decoration-none px-right" href="#">Editar</a></p> 
+        <hr>
+        <p> <span class="px-left"> Endereço de E-mail: </span> {{ Auth::user()->email }} <a class="reserva-link text-decoration-none px-right" href="#">Editar</a></p> 
+        <hr>
+        <p> <span class="px-left"> Número de telefone: </span> +55 (61) 98888-9999 <a class="reserva-link text-decoration-none px-right" href="#">Editar</a></p> 
+        <hr>
+        <p> <span class="px-left"> Data de nascimento: </span> <input type="date" name="date" id=""><a class="reserva-link text-decoration-none px-right" href="#">Editar</a></p> 
+        <hr>
+        <p><span class="px-left"> Nacionalidade: </span> Brasileiro <a class="reserva-link text-decoration-none px-right" href="#">Editar</a></p> 
+        <hr>
+        <p><span class="px-left"> Gênero: </span> 
+        <label for="Gênero"><strong>Gênero</strong></label>
+            <select id="Gênero" required>
+              <option selected disabled value="">Selecione</option>
+              <option>Eu sou homem</option>
+              <option>Eu sou mulher</option>
+              <option>Eu sou não-binário</option>
+              <option>Prefiro não dizer</option>
+            </select>
+        <a class="reserva-link text-decoration-none px-right" href="#">Editar</a></p> 
+        <hr>
+        <p> <span class="px-left"> Endereço: </span> New York, Miami beach, california, casa 66 <a class="reserva-link text-decoration-none px-right" href="#">Editar</a></p> 
+        <hr>
+    </div>
+    <br>
+    <div class="text-center">
+        <p><h2>Segurança</h2></p>
+        <p class="">Ajuste suas configurações de segurança e configure a autenticação de dois fatores.</p>
+        <br> 
+    </div>
+    <div class="text-center">
+        <hr>
+        <p> <span class="px-left"> Senha: </span><i> Resete sua senha </i> <a class="reserva-link text-decoration-none px-right" href="#">Resetar</a></p> 
+        <hr>
+        <p> <span class="px-left"> Autentificação de 2F: </span><i> Ative aqui a Autentificação </i> <a class="reserva-link text-decoration-none px-right" href="#">Configurar</a></p> 
+        <hr>
+        <p> <span class="px-left"> Delete sua conta: </span><i> Click aqui para deletar sua conta permanentemente </i> <a class="reserva-link text-decoration-none px-right" href="#">Deletar</a></p> 
+        <hr>
+    </div>
+  
+</div>
 <!-- Footer-->
 <footer class="footer py-4">
         <div class="container">
