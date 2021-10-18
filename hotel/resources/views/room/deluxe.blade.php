@@ -49,7 +49,12 @@
                             <option value="2">2 Hospedes</option>
                             <option value="3">3 Hospedes</option>
                             <option value="4">4 Hospedes</option>
-                            <option value="5">5+ Hospedes</option>
+                            <option value="5">5 Hospedes</option>
+                            <option value="6">6 Hospedes</option>
+                            <option value="7">7 Hospedes</option>
+                            <option value="8">8 Hospedes</option>
+                            <option value="9">9 Hospedes</option>
+                            <option value="10">10 Hospedes</option> 
                         </select>
                     </div>
                 </div>

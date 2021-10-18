@@ -44,11 +44,16 @@
                     <div class="col-md-6 form-group">
                         <label for="room">Hospedes</label>
                         <select name="" id="room" class="form-control">
-                            <option value="">1 Hospede</option>
-                            <option value="">2 Hospedes</option>
-                            <option value="">3 Hospedes</option>
-                            <option value="">4 Hospedes</option>
-                            <option value="">5+ Hospedes</option>
+                            <option value="1">1 Hospede</option>
+                            <option value="2">2 Hospedes</option>
+                            <option value="3">3 Hospedes</option>
+                            <option value="4">4 Hospedes</option>
+                            <option value="5">5 Hospedes</option>
+                            <option value="6">6 Hospedes</option>
+                            <option value="7">7 Hospedes</option>
+                            <option value="8">8 Hospedes</option>
+                            <option value="9">9 Hospedes</option>
+                            <option value="10">10 Hospedes</option> 
                         </select>
                     </div>
                 </div>
