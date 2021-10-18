@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/standard', [App\Http\Controllers\StandardController::class, 'index'])->name('standard_index');
 Route::get('/premium', [App\Http\Controllers\PremiumController::class, 'index'])->name('premium_index');
 Route::get('/deluxe', [App\Http\Controllers\DeluxeController::class, 'index'])->name('deluxe_index');
+Route::post('/valueCalc', [App\Http\Controllers\DeluxeController::class, 'valueCalc'])->name('deluxe_valueCalc');
 
 
 Route::get('/ajuda', [App\Http\Controllers\AjudaController::class, 'index'])->name('ajuda');

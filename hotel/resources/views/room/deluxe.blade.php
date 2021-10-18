@@ -13,42 +13,43 @@
         <div class="row">
           <div class="col-md-6">
             <h2 class="mb-5">Faça sua reserva!</h2>
-            <form action="#" method="post">
+            <form action="/valueCalc" method="post">
+            {{csrf_field()}}
                 <div class="row">
                     <div class="col-sm-6 form-group">
                         <label for="">Data de Chegada</label>
                         <div style="position: relative;">
                             <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                            <input id="date" type="date" class="form-control" />
+                            <input name="beginDate" id="date" type="date" class="form-control" />
                         </div>
                     </div>
                     <div class="col-sm-6 form-group"> 
                         <label for="">Data de saída</label>
                         <div style="position: relative;">
                             <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                            <input id="date" type="date" class="form-control" />
+                            <input name="endDate" id="date" type="date" class="form-control" />
                         </div>
                     </div>   
                 </div>
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <label for="room">Quarto</label>
-                        <select name="" id="room" class="form-control">
-                            <option value="">1 Quarto</option>
-                            <option value="">2 Quartos</option>
-                            <option value="">3 Quartos</option>
-                            <option value="">4 Quartos</option>
-                            <option value="">5 Quartos</option>
+                        <select name="room" id="" class="form-control">
+                            <option value="1">1 Quarto</option>
+                            <option value="2">2 Quartos</option>
+                            <option value="3">3 Quartos</option>
+                            <option value="4">4 Quartos</option>
+                            <option value="5">5 Quartos</option>
                         </select>
                     </div>
                     <div class="col-md-6 form-group">
-                        <label for="room">Hospedes</label>
-                        <select name="" id="room" class="form-control">
-                            <option value="">1 Hospede</option>
-                            <option value="">2 Hospedes</option>
-                            <option value="">3 Hospedes</option>
-                            <option value="">4 Hospedes</option>
-                            <option value="">5+ Hospedes</option>
+                        <label for="peoples">Hospedes</label>
+                        <select name="peoples" id="" class="form-control">
+                            <option value="1">1 Hospede</option>
+                            <option value="2">2 Hospedes</option>
+                            <option value="3">3 Hospedes</option>
+                            <option value="4">4 Hospedes</option>
+                            <option value="5">5+ Hospedes</option>
                         </select>
                     </div>
                 </div>
@@ -69,10 +70,15 @@
                         <br>
                         <!-- <input type="submit" value="Reserve aqui" class="btn btn-primary"> -->
                         <p><a href="#" class="btn btn-xl btn-primary btn-sm">Reserve agora</a></p>
-                      
+                        <p><button type="submit" class="btn btn-xl btn-primary btn-sm">Calcule agora</button></p>
                     </div>
                 </div>
             </form>
+            @if(session('message'))
+                <div>
+                    <h1>{{ session('message') }}</h1>
+                </div>
+            @endif
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-5">
