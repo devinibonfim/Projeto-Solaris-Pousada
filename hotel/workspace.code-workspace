@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "app"
+		},
+		{
+			"path": "database"
+		},
+		{
+			"path": "resources"
+		},
+		{
+			"path": "routes"
+		},
+		{
+			"path": "."
+		}
+	]
+}

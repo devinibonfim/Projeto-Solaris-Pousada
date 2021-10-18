@@ -11,7 +11,7 @@ class DeluxeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('room.deluxe');
     }
@@ -80,5 +80,22 @@ class DeluxeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function valueCalc(Request $request){
+        /**/
+        $beginDate = strtotime($request->input('beginDate'));
+        $endDate = strtotime($request->input('endDate'));
+        $diff = round(($endDate - $beginDate)/86400); //diferenca entre datas
+        
+        $quartos = $request->input('room');
+        $pessoas = $request->input('peoples');
+
+        $value = 170; // preco do quarto
+        
+        $resul = $diff * ($quartos * $value);
+
+        return redirect('/deluxe')->with('message','Total: '.$resul);
+        /**/
     }
 }
