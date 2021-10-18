@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEstadosTable extends Migration
+class CreatePjsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,17 @@ class CreateEstadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function (Blueprint $table) {
+        Schema::create('pjs', function (Blueprint $table) {
             $table->id();
-            $table->string('nameState')->unique();//nome
+            $table->unsignedBigInteger('pessoa_id');
+            $table->string('cnpj');
+            $table->string('nomePublico');
             $table->timestamps();
+
+            $table->foreign('pessoa_id')
+                  ->references('id')
+                  ->on('Pessoas')
+                  ->onDelete('cascade');
         });
     }
 
@@ -27,6 +34,6 @@ class CreateEstadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('pjs');
     }
 }

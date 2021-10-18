@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Endereco extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'codeAddress',//cep
-        'complementAddress',//complemento
+    protected $fillable=[
+        'cep','complementoEndereco','numeroCasa',
     ];
 }

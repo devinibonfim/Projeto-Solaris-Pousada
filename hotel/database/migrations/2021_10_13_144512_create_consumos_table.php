@@ -15,9 +15,15 @@ class CreateConsumosTable extends Migration
     {
         Schema::create('consumos', function (Blueprint $table) {
             $table->id();
+<<<<<<< Updated upstream:hotel/database/migrations/2021_10_13_144512_create_consumos_table.php
             $table->string('descriptionConsumption');//descrição
             $table->string('quantityConsumption');//quantidade
             $table->integer('total');
+=======
+            $table->string('nomeConsumo');
+            $table->string('quantidadeConsumo');
+            $table->string('valorConsumo');
+>>>>>>> Stashed changes:hotel/database/migrations/2021_10_18_183136_create_consumos_table.php
             $table->timestamps();
         });
     }

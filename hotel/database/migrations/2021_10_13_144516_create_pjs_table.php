@@ -15,10 +15,19 @@ class CreatePjsTable extends Migration
     {
         Schema::create('pjs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_hospede');
-            $table->string('cnpj');//cnpj
+            $table->unsignedBigInteger('pessoa_id');
+            $table->string('cnpj');
+            $table->string('nomePublico');
             $table->timestamps();
+<<<<<<< Updated upstream:hotel/database/migrations/2021_10_13_144516_create_pjs_table.php
             $table->foreign('id_hospede')->references('id')->on('hospedes')->onDelete('cascade');
+=======
+
+            $table->foreign('pessoa_id')
+                  ->references('id')
+                  ->on('Pessoas')
+                  ->onDelete('cascade');
+>>>>>>> Stashed changes:hotel/database/migrations/2021_10_18_182923_create_pjs_table.php
         });
     }
 

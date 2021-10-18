@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Pessoa extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'namePeople',//nome
-        'telephonePeople',//telefone
+    protected $fillable=[
+        'nomePessoa',
+        'enderecoPessoa',
+        'dataNascimentoPessoa',
+        'telefonePessoa',
+        'nacionalidadePessoa',
     ];
 }

@@ -15,10 +15,18 @@ class CreatePfsTable extends Migration
     {
         Schema::create('pfs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_hospede');
-            $table->string('cpf');//cpf
+            $table->unsignedBigInteger('pessoa_id');
+            $table->string('cpf')->unique();
             $table->timestamps();
+<<<<<<< Updated upstream:hotel/database/migrations/2021_10_13_144517_create_pfs_table.php
             $table->foreign('id_hospede')->references('id')->on('hospedes')->onDelete('cascade');
+=======
+
+            $table->foreign('pessoa_id')
+                  ->references('id')
+                  ->on('Pessoas')
+                  ->onDelete('cascade');
+>>>>>>> Stashed changes:hotel/database/migrations/2021_10_18_182933_create_pfs_table.php
         });
     }
 

@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Associado extends Model
+class Pais extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'nameAssociate', 
-        'ageAssociate',
+    protected $fillable=[
+        'nomePais',
     ];
 }

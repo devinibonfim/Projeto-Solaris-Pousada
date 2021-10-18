@@ -15,9 +15,18 @@ class CreateFornecedorsTable extends Migration
     {
         Schema::create('fornecedors', function (Blueprint $table) {
             $table->id();
+<<<<<<< Updated upstream:hotel/database/migrations/2021_10_13_144518_create_fornecedors_table.php
             $table->unsignedBigInteger('id_pessoa');
+=======
+            $table->unsignedBigInteger('pj_id');
+            $table->string('descricaoFornecedor');
+>>>>>>> Stashed changes:hotel/database/migrations/2021_10_18_182945_create_fornecedors_table.php
             $table->timestamps();
-            $table->foreign('id_pessoa')->references('id')->on('pjs');
+
+            $table->foreign('pj_id')
+                  ->references('id')
+                  ->on('Pjs')
+                  ->onDelete('cascade');
         });
     }
 

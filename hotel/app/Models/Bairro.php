@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bairro extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'nameDistrict',
+    protected $fillable=[
+        'nomeBairro',
     ];
 }

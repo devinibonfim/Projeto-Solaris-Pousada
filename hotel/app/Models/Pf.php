@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pf extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
+    protected $fillable=[
         'cpf',
     ];
 }

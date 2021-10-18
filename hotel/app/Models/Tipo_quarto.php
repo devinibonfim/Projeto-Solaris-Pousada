@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Validade extends Model
+class Tipo_quarto extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'dateValidity',//data
-        'batchValidity',//lote
+    protected $fillable=[
+        'nomeTipoQuarto','descricaoTipoQuarto',
     ];
 }

@@ -15,12 +15,22 @@ class CreateFuncionariosTable extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_pessoa');
-            $table->string('contractEmployee');//contrato
-            $table->string('workCardEmployee');//carteira de trabalho
-            $table->string('wageEmployee');//salario
+            $table->unsignedBigInteger('pd_id');
+            $table->unsignedBigInteger('cargo_id');
+            $table->integer('ra')->autoIncrement();
+            $table->string('rg');
+            $table->string('pisPasep');
             $table->timestamps();
-            $table->foreign('id_pessoa')->references('id')->on('pessoas')->onDelete('cascade');
+
+            $table->foreign('pd_id')
+                  ->references('id')
+                  ->on('Pds')
+                  ->onDelete('cascade');
+            
+            $table->foreign('cargo_id')
+                  ->references('id')
+                  ->on('Cargos')
+                  ->onDelete('cascade');
         });
     }
 

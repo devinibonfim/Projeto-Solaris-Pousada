@@ -8,8 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Hospede extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'birthDateGuest',//Data de nascimento
-    ];
 }

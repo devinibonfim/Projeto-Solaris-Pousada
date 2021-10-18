@@ -8,12 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Reserva extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'entryDateReserve',//Data de entrada
-        'departureDateReserve',//Data de saida
-        'numberReserve',//Numero
-        'valueReserve',//Valor
-           
+    protected $fillable=[
+        'numeroQuartoReservado','Valor','dataEntrada','dataSaida',
     ];
 }

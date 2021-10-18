@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProdutosTable extends Migration
+class CreateEnderecosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateProdutosTable extends Migration
      */
     public function up()
     {
-        Schema::create('produtos', function (Blueprint $table) {
+        Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('fornecedor_id');
-            $table->string('nomeProduto');
-            $table->string('descricaoProduto');
-            $table->date('validade');
+            $table->unsignedBigInteger('bairro_id');
+            $table->string('cep');
+            $table->string('complementoEndereco');
+            $table->string('numeroCasa');
             $table->timestamps();
 
-            $table->foreign('fornecedor_id')
+            $table->foreign('bairro_id')
                   ->references('id')
-                  ->on('Fornecedors')
+                  ->on('Bairros')
                   ->onDelete('cascade');
-
         });
     }
 
@@ -36,6 +35,6 @@ class CreateProdutosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produtos');
+        Schema::dropIfExists('enderecos');
     }
 }

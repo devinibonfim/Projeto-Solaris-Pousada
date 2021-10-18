@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAssociadosTable extends Migration
+class CreateFornecedorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateAssociadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('associados', function (Blueprint $table) {
+        Schema::create('fornecedors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_hospede_associado');
-            $table->string('nameAssociate'); //nome
-            $table->string('ageAssociate');//idade
+            $table->unsignedBigInteger('pj_id');
+            $table->string('descricaoFornecedor');
             $table->timestamps();
-            $table->foreign('id_hospede_associado')->references('id')->on('hospedes')->onDelete('cascade');
+
+            $table->foreign('pj_id')
+                  ->references('id')
+                  ->on('Pjs')
+                  ->onDelete('cascade');
         });
     }
 
@@ -30,6 +33,6 @@ class CreateAssociadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('associados');
+        Schema::dropIfExists('fornecedors');
     }
 }

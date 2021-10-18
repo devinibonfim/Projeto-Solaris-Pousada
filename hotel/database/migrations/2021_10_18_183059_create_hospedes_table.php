@@ -15,12 +15,6 @@ class CreateHospedesTable extends Migration
     {
         Schema::create('hospedes', function (Blueprint $table) {
             $table->id();
-<<<<<<< Updated upstream:hotel/database/migrations/2021_10_13_144515_create_hospedes_table.php
-            $table->unsignedBigInteger('id_pessoa');
-            $table->string('birthDateGuest');//Data de nascimento
-            $table->timestamps();
-            $table->foreign('id_pessoa')->references('id')->on('pessoas')->onDelete('cascade');
-=======
             $table->unsignedBigInteger('pf_id');
             $table->unsignedBigInteger('reserva_id');
             $table->timestamps();
@@ -34,7 +28,6 @@ class CreateHospedesTable extends Migration
                   ->references('id')
                   ->on('Reservas')
                   ->onDelete('cascade');
->>>>>>> Stashed changes:hotel/database/migrations/2021_10_18_183059_create_hospedes_table.php
         });
     }
 

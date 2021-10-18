@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Fornecedor extends Model
 {
     use HasFactory;
-
-    protected $fillable =[
+    protected $fillable=[
+        'cnpj','nomePublico',
     ];
 }

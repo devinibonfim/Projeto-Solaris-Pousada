@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pj extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'cnpj',
+    protected $fillable=[
+        'cnpj','nomePublico',
     ];
 }

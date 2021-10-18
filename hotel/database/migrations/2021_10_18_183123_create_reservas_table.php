@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBairrosTable extends Migration
+class CreateReservasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateBairrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('bairros', function (Blueprint $table) {
+        Schema::create('reservas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_cidade');
-            $table->string('nameDistrict')->unique();
+            $table->unsignedBigInteger('quarto_id');
+            $table->unsignedBigInteger('consumo_id');
+            $table->string('numeroQuartoReservado');
+            $table->string('Valor');
+            $table->date('dataEntrada');
+            $table->date('dataSaida');
             $table->timestamps();
-            $table->foreign('id_cidade')->references('id')->on('cidades')->onDelete('cascade');
         });
     }
 
@@ -29,6 +32,6 @@ class CreateBairrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bairros');
+        Schema::dropIfExists('reservas');
     }
 }

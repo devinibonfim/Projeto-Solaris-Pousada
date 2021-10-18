@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Consumo extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'descriptionConsumption',
-        'quantityConsumption',
+    protected $fillable=[
+        'nomeConsumo','quantidadeConsumo','valorConsumo',
     ];
 }
