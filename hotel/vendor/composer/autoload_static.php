@@ -24,9 +24,9 @@ class ComposerStaticInitf55b95f168a957dfde82f34a1840612a
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -533,7 +533,6 @@ class ComposerStaticInitf55b95f168a957dfde82f34a1840612a
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Http\\Controllers\\AjudaController' => __DIR__ . '/../..' . '/app/Http/Controllers/AjudaController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -543,23 +542,13 @@ class ComposerStaticInitf55b95f168a957dfde82f34a1840612a
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DeluxeController' => __DIR__ . '/../..' . '/app/Http/Controllers/DeluxeController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-<<<<<<< Updated upstream
         'App\\Http\\Controllers\\PousadasController' => __DIR__ . '/../..' . '/app/Http/Controllers/PousadasController.php',
         'App\\Http\\Controllers\\PremiumController' => __DIR__ . '/../..' . '/app/Http/Controllers/PremiumController.php',
-=======
-        'App\\Http\\Controllers\\PerfilController' => __DIR__ . '/../..' . '/app/Http/Controllers/PerfilController.php',
-        'App\\Http\\Controllers\\PousadasController' => __DIR__ . '/../..' . '/app/Http/Controllers/PousadasController.php',
-        'App\\Http\\Controllers\\PremiumController' => __DIR__ . '/../..' . '/app/Http/Controllers/PremiumController.php',
-        'App\\Http\\Controllers\\ReservaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReservaController.php',
->>>>>>> Stashed changes
         'App\\Http\\Controllers\\ServicosController' => __DIR__ . '/../..' . '/app/Http/Controllers/ServicosController.php',
         'App\\Http\\Controllers\\SobreController' => __DIR__ . '/../..' . '/app/Http/Controllers/SobreController.php',
         'App\\Http\\Controllers\\StandardController' => __DIR__ . '/../..' . '/app/Http/Controllers/StandardController.php',
         'App\\Http\\Controllers\\SuporteController' => __DIR__ . '/../..' . '/app/Http/Controllers/SuporteController.php',
-<<<<<<< Updated upstream
         'App\\Http\\Controllers\\tipoQuartoController' => __DIR__ . '/../..' . '/app/Http/Controllers/tipoQuartoController.php',
-=======
->>>>>>> Stashed changes
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -585,14 +574,8 @@ class ComposerStaticInitf55b95f168a957dfde82f34a1840612a
         'App\\Models\\Produto' => __DIR__ . '/../..' . '/app/Models/Produto.php',
         'App\\Models\\Quarto' => __DIR__ . '/../..' . '/app/Models/Quarto.php',
         'App\\Models\\Reserva' => __DIR__ . '/../..' . '/app/Models/Reserva.php',
-<<<<<<< Updated upstream
-        'App\\Models\\TipoQuarto' => __DIR__ . '/../..' . '/app/Models/TipoQuarto.php',
-        'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
-        'App\\Models\\Validade' => __DIR__ . '/../..' . '/app/Models/Validade.php',
-=======
         'App\\Models\\Tipo_quarto' => __DIR__ . '/../..' . '/app/Models/Tipo_quarto.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
->>>>>>> Stashed changes
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

@@ -8,7 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
-    'App\\Http\\Controllers\\AjudaController' => $baseDir . '/app/Http/Controllers/AjudaController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -18,23 +17,13 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\DeluxeController' => $baseDir . '/app/Http/Controllers/DeluxeController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
-<<<<<<< Updated upstream
     'App\\Http\\Controllers\\PousadasController' => $baseDir . '/app/Http/Controllers/PousadasController.php',
     'App\\Http\\Controllers\\PremiumController' => $baseDir . '/app/Http/Controllers/PremiumController.php',
-=======
-    'App\\Http\\Controllers\\PerfilController' => $baseDir . '/app/Http/Controllers/PerfilController.php',
-    'App\\Http\\Controllers\\PousadasController' => $baseDir . '/app/Http/Controllers/PousadasController.php',
-    'App\\Http\\Controllers\\PremiumController' => $baseDir . '/app/Http/Controllers/PremiumController.php',
-    'App\\Http\\Controllers\\ReservaController' => $baseDir . '/app/Http/Controllers/ReservaController.php',
->>>>>>> Stashed changes
     'App\\Http\\Controllers\\ServicosController' => $baseDir . '/app/Http/Controllers/ServicosController.php',
     'App\\Http\\Controllers\\SobreController' => $baseDir . '/app/Http/Controllers/SobreController.php',
     'App\\Http\\Controllers\\StandardController' => $baseDir . '/app/Http/Controllers/StandardController.php',
     'App\\Http\\Controllers\\SuporteController' => $baseDir . '/app/Http/Controllers/SuporteController.php',
-<<<<<<< Updated upstream
     'App\\Http\\Controllers\\tipoQuartoController' => $baseDir . '/app/Http/Controllers/tipoQuartoController.php',
-=======
->>>>>>> Stashed changes
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
@@ -60,14 +49,8 @@ return array(
     'App\\Models\\Produto' => $baseDir . '/app/Models/Produto.php',
     'App\\Models\\Quarto' => $baseDir . '/app/Models/Quarto.php',
     'App\\Models\\Reserva' => $baseDir . '/app/Models/Reserva.php',
-<<<<<<< Updated upstream
-    'App\\Models\\TipoQuarto' => $baseDir . '/app/Models/TipoQuarto.php',
-    'App\\Models\\User' => $baseDir . '/app/Models/User.php',
-    'App\\Models\\Validade' => $baseDir . '/app/Models/Validade.php',
-=======
     'App\\Models\\Tipo_quarto' => $baseDir . '/app/Models/Tipo_quarto.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
->>>>>>> Stashed changes
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
