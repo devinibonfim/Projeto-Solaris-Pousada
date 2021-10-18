@@ -95,7 +95,7 @@ class DeluxeController extends Controller
         
         $resul = $diff * ($quartos * $value);
 
-        return redirect('/deluxe')->with('message','Total: '.$resul);
+        return redirect("/deluxe")->with('message','Total: '.$resul);
         /**/
     }
 }

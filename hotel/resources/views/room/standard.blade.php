@@ -14,54 +14,38 @@
         <div class="row">
           <div class="col-md-6">
             <h2 class="mb-5">Faça sua reserva!</h2>
-            <form action="#" method="post">
+            <form oninput="total.value = (nights.valueAsNumber * 170) + ((guests.valueAsNumber - 1) * 25)">
+            {{csrf_field()}}
                 <div class="row">
                     <div class="col-sm-6 form-group">
                         <label for="">Data de Chegada</label>
                         <div style="position: relative;">
                             <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                            <input id="date" type="date" class="form-control" />
+                            <input name="beginDate" id="date" type="date" class="form-control" />
                         </div>
                     </div>
-                    <div class="col-sm-6 form-group"> 
-                        <label for="">Data de saída</label>
-                        <div style="position: relative;">
-                            <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                            <input id="date" type="date" class="form-control" />
-                        </div>
-                    </div>   
+                    <br><br><br>
                 </div>
-                <div class="row">
+                    <label>Número de noites (quartos custam R$ 170,00 por noite): </label>
+                    <input  type="number" id="nights" name="nights" value="1" min="1" max="30" required>
+                    <br>
+                    <label>Números de hospedes (cada hospede adiciona R$25.00 por noite): </label>
+                    <input type="number" id="guests" name="guests" value="1" min="1" max="10" required>
+                    <label>Total Estimado:</label>
+                    R$ <output id="total" name="total">170</output>.00
+                    <br><br>
                     <div class="col-md-6 form-group">
-                        <label for="room">Quarto</label>
+                        <label for="room">Tipo de cama</label>
                         <select name="" id="room" class="form-control">
-                            <option value="1">1 Hospede</option>
-                            <option value="2">2 Hospedes</option>
-                            <option value="3">3 Hospedes</option>
-                            <option value="4">4 Hospedes</option>
-                            <option value="5">5 Hospedes</option>
-                            <option value="6">6 Hospedes</option>
-                            <option value="7">7 Hospedes</option>
-                            <option value="8">8 Hospedes</option>
-                            <option value="9">9 Hospedes</option>
-                            <option value="10">10 Hospedes</option> 
+                            <option>1 Cama de casal</option>    
+                            <option>2 Camas de solteiro.</option>
                         </select>
+                        <br>
                     </div>
-                    <div class="col-md-6 form-group">
-                        <label for="room">Hospedes</label>
-                        <select name="" id="room" class="form-control">
-                            <option value="">1 Hospede</option>
-                            <option value="">2 Hospedes</option>
-                            <option value="">3 Hospedes</option>
-                            <option value="">4 Hospedes</option>
-                            <option value="">5+ Hospedes</option>
-                        </select>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-md-12 form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control ">
+                        <input type="email" id="email" class="form-control " required>
                     </div>
                 </div>
                 <div class="row">
@@ -74,7 +58,8 @@
                     <div class="col-md-6 form-group">
                         <br>
                         <!-- <input type="submit" value="Reserve aqui" class="btn btn-primary"> -->
-                        <p><a href="#" class="btn btn-xl btn-primary btn-sm">Reserve agora</a><span></span></p>
+                        <!-- <p><a href="#" class="btn btn-xl btn-primary btn-sm">Reserve agora</a></p> -->
+                        <a href="/reserva"><button class="btn btn-xl btn-primary btn-sm">Reserve agora</button></a>
                     </div>
                 </div>
             </form>
