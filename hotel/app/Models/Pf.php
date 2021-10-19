@@ -11,4 +11,16 @@ class Pf extends Model
     protected $fillable=[
         'cpf',
     ];
+
+    public function pessoa(){
+        return $this->BelongsTo(Pessoa::class);
+    }
+
+    public function funcionario(){
+        return $this->belongsTo(Funcionario::class);
+    }
+
+    public function hospede(){
+        return $this->hasOne(Hospede::class);
+    }
 }

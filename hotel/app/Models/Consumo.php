@@ -11,4 +11,8 @@ class Consumo extends Model
     protected $fillable=[
         'nomeConsumo','quantidadeConsumo','valorConsumo',
     ];
+
+    public function reserva(){
+        return $this->hasOne(Reserva::class);
+    }
 }

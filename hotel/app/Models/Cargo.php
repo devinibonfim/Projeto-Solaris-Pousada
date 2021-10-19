@@ -11,4 +11,8 @@ class Cargo extends Model
     protected $fillable=[
         'nomeCargo','salario',
     ];
+
+    public function funcionario(){
+        return $this->hasOne(Funcionario::class);
+    }
 }

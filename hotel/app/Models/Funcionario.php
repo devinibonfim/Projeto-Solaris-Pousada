@@ -11,4 +11,12 @@ class Funcionario extends Model
     protected $fillable=[
         'ra','rg','pisPasep',
     ];
+
+    public function cargo(){
+        return $this->BelongsTo(Cargo::class);
+    }
+
+    public function pf(){
+        return $this->hasOne(Pf::class);
+    }
 }

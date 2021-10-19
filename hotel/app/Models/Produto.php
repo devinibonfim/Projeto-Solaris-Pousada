@@ -11,4 +11,8 @@ class Produto extends Model
     protected $fillable=[
         'nomeProduto','descricaoProduto','validade',
     ];
+
+    public function fornecedor(){
+        return $this->BelongsTo(Fornecedor::class);
+    }
 }

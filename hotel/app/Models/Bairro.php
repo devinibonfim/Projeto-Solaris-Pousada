@@ -11,4 +11,12 @@ class Bairro extends Model
     protected $fillable=[
         'nomeBairro',
     ];
+
+    public function cidade(){
+        return $this->BelongsTo(Cidade::class);
+    }
+
+    public function endereco(){
+        return $this->hasOne(Pessoa::class);
+    }
 }

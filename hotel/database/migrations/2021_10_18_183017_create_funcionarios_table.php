@@ -15,16 +15,16 @@ class CreateFuncionariosTable extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pd_id');
+            $table->unsignedBigInteger('pj_id');
             $table->unsignedBigInteger('cargo_id');
-            $table->integer('ra')->autoIncrement();
+            $table->integer('ra');
             $table->string('rg');
             $table->string('pisPasep');
             $table->timestamps();
 
-            $table->foreign('pd_id')
+            $table->foreign('pj_id')
                   ->references('id')
-                  ->on('Pds')
+                  ->on('Pjs')
                   ->onDelete('cascade');
             
             $table->foreign('cargo_id')

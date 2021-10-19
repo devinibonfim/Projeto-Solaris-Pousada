@@ -11,4 +11,12 @@ class Endereco extends Model
     protected $fillable=[
         'cep','complementoEndereco','numeroCasa',
     ];
+
+    public function bairro(){
+        return $this->BelongsTo(Bairro::class);
+    }
+
+    public function pessoa(){
+        return $this->hasOne(Pessoa::class);
+    }
 }

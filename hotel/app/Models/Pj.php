@@ -11,4 +11,13 @@ class Pj extends Model
     protected $fillable=[
         'cnpj','nomePublico',
     ];
+
+    public function pessoa(){
+        return $this->BelongsTo(Pessoa::class);
+    }
+
+    public function fornecedor(){
+        return $this->hasOne(Fornecedor::class);
+    }
+
 }

@@ -15,4 +15,20 @@ class Pessoa extends Model
         'telefonePessoa',
         'nacionalidadePessoa',
     ];
+
+    public function endereco(){
+        return $this->BelongsTo(Encdereco::class);
+    }
+
+    public function user(){
+        return $this->hasOne(User::class);
+    }
+
+    public function pj(){
+        return $this->hasOne(Pj::class);
+    }
+
+    public function pf(){
+        return $this->hasOne(Pf::class);
+    }
 }

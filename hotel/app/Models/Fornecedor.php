@@ -11,4 +11,12 @@ class Fornecedor extends Model
     protected $fillable=[
         'cnpj','nomePublico',
     ];
+
+    public function pj(){
+        return $this->BelongsTo(Pj::class);
+    }
+
+    public function produto(){
+        return $this->hasMany(Produto::class);
+    }
 }

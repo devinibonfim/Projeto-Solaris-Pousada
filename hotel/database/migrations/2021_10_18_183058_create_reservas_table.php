@@ -22,6 +22,16 @@ class CreateReservasTable extends Migration
             $table->date('dataEntrada');
             $table->date('dataSaida');
             $table->timestamps();
+
+            $table->foreign('quarto_id')
+                  ->references('id')
+                  ->on('Quartos')
+                  ->onDelete('cascade');
+
+            $table->foreign('consumo_id')
+                  ->references('id')
+                  ->on('Consumos')
+                  ->onDelete('cascade');
         });
     }
 

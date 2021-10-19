@@ -11,4 +11,17 @@ class Reserva extends Model
     protected $fillable=[
         'numeroQuartoReservado','Valor','dataEntrada','dataSaida',
     ];
+
+    public function hospede(){
+        return $this->belongsTo(Hospede::class);
+    }
+
+    public function reserva(){
+        return $this->belongsTo(Reserva::class);
+    }
+
+    public function quarto(){
+        return $this->belongsTo(Quarto::class);
+    }
+
 }

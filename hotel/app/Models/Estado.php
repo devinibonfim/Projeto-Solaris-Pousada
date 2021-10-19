@@ -11,4 +11,12 @@ class Estado extends Model
     protected $fillable=[
         'nomeEstado',
     ];
+    public function estado(){
+        return $this->BelongsTo(Estado::class);
+    }
+
+    public function cidade(){
+        return $this->hasMany(Cidade::class);
+    }
+
 }

@@ -11,4 +11,8 @@ class Tipo_quarto extends Model
     protected $fillable=[
         'nomeTipoQuarto','descricaoTipoQuarto',
     ];
+
+    public function endereco(){
+        return $this->hasOne(Pessoa::class);
+    }
 }
