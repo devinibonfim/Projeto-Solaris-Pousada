@@ -91,7 +91,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#quartos">Quartos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Quartos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Suporte</a></li>                        
                     </ul>
