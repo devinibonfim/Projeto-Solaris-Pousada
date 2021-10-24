@@ -2,8 +2,39 @@
 
 @section('content')
 
-<header class="background-room-deluxe">
-</header>
+<link rel="stylesheet" href="/Slides-CSS/dist/gallery.prefixed.css">
+<link rel="stylesheet" href="/Slides-CSS/dist/gallery.theme.css">
+
+<body>
+    
+  <div class="gallery autoplay items-3">
+    <div id="item-1" class="control-operator"></div>
+    <div id="item-2" class="control-operator"></div>
+    <div id="item-3" class="control-operator"></div>
+
+    <!-- Colocar sempre imagens com 2000x600 pra ficar certinho -->
+
+    <figure class="item ">
+      <img src="/assets/img/rooms/D1.png" alt="">
+    </figure>
+
+    <figure class="item">
+    <img src="/assets/img/rooms/D2.png" alt="">
+    </figure>
+
+    <figure class="item">
+    <img src="/assets/img/rooms/D3.png" alt="">
+    </figure>
+
+    <div class="controls">
+      <a href="#item-1" class="control-button">•</a>
+      <a href="#item-2" class="control-button">•</a>
+      <a href="#item-3" class="control-button">•</a>
+    </div>
+  </div>
+</body>
+
+
 <section class="site-section">
     <div class="container">
         <div class="row">
