@@ -79,6 +79,9 @@
                                             {{ __('Esqueceu a sua senha?') }}
                                         </a>
                                     @endif
+                                    <a class="btn btn-link2" href="{{ route('register') }}">
+                                        {{ __('Crie sua conta!') }}
+                                    </a>
                                 </div>
                             </div>
                         </form>
