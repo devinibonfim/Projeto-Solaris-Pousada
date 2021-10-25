@@ -1,16 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<br> <br> <br> <br>
+<br> <br> <br>
 
 <style>
  .brackground{
-    background-image: url("https://cdn.discordapp.com/attachments/693131838004134009/898997266352840744/background.jpg") !important;
-    background-size: contain !important;
-    background-position: right, bottom, fixed!important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-attachment: fixed !important;
+  background-image: url("https://cdn.discordapp.com/attachments/693131838004134009/898997266352840744/background.jpg") !important;
+  background-position: center !important;
+  background: no-repeat ;
+  background-color: #fff;
+  background-position: top, center !important;
+  background-size: 100% !important;
+  background-size: cover !important;
 }
 </style>
 
@@ -79,9 +80,6 @@
                                             {{ __('Esqueceu a sua senha?') }}
                                         </a>
                                     @endif
-                                    <a class="btn btn-link2" href="{{ route('register') }}">
-                                        {{ __('Crie sua conta!') }}
-                                    </a>
                                 </div>
                             </div>
                         </form>

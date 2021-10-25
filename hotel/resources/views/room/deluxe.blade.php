@@ -2,76 +2,60 @@
 
 @section('content')
 
-<link rel="stylesheet" href="/Slides-CSS/dist/gallery.prefixed.css">
-<link rel="stylesheet" href="/Slides-CSS/dist/gallery.theme.css">
+<head>
+    <link rel="stylesheet" href="style-form.css">
+</head>
 
-<body>
-    
-  <div class="gallery autoplay items-3">
-    <div id="item-1" class="control-operator"></div>
-    <div id="item-2" class="control-operator"></div>
-    <div id="item-3" class="control-operator"></div>
-
-    <!-- Colocar sempre imagens com 2000x600 pra ficar certinho -->
-
-    <figure class="item ">
-      <img src="/assets/img/rooms/D1.png" alt="">
-    </figure>
-
-    <figure class="item">
-    <img src="/assets/img/rooms/D2.png" alt="">
-    </figure>
-
-    <figure class="item">
-    <img src="/assets/img/rooms/D3.png" alt="">
-    </figure>
-
-    <div class="controls">
-      <a href="#item-1" class="control-button">•</a>
-      <a href="#item-2" class="control-button">•</a>
-      <a href="#item-3" class="control-button">•</a>
-    </div>
-  </div>
-</body>
-
-
+<header class="background-room-deluxe">
+</header>
 <section class="site-section">
     <div class="container">
         <div class="row">
           <div class="col-md-6">
             <h2 class="mb-5">Faça sua reserva!</h2>
-            <form oninput="total.value = (nights.valueAsNumber * 170) + ((guests.valueAsNumber - 1) * 25)">
-            {{csrf_field()}}
+            <form action="#" method="post">
                 <div class="row">
                     <div class="col-sm-6 form-group">
                         <label for="">Data de Chegada</label>
                         <div style="position: relative;">
                             <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                            <input name="beginDate" id="date" type="date" class="form-control" />
+                            <input id="date" type="date" class="form-control" />
                         </div>
                     </div>
-                    <br><br><br>
+                    <div class="col-sm-6 form-group"> 
+                        <label for="">Data de saída</label>
+                        <div style="position: relative;">
+                            <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
+                            <input id="date" type="date" class="form-control" />
+                        </div>
+                    </div>   
                 </div>
-                    <label>Número de noites (quartos custam R$ 170,00 por noite): </label>
-                    <input  type="number" id="nights" name="nights" value="1" min="1" max="30" required>
-                    <br>
-                    <label>Números de hospedes (cada hospede adiciona R$25.00 por noite): </label>
-                    <input type="number" id="guests" name="guests" value="1" min="1" max="10" required>
-                    <label>Total Estimado:</label>
-                    R$ <output id="total" name="total">170</output>.00
-                    <br><br>
+                <div class="row">
                     <div class="col-md-6 form-group">
-                        <label for="room">Tipo de cama</label>
+                        <label for="room">Quarto</label>
                         <select name="" id="room" class="form-control">
-                            <option>1 Cama de casal</option>    
-                            <option>2 Camas de solteiro.</option>
+                            <option value="">1 Quarto</option>
+                            <option value="">2 Quartos</option>
+                            <option value="">3 Quartos</option>
+                            <option value="">4 Quartos</option>
+                            <option value="">5 Quartos</option>
                         </select>
-                        <br>
                     </div>
+                    <div class="col-md-6 form-group">
+                        <label for="room">Hospedes</label>
+                        <select name="" id="room" class="form-control">
+                            <option value="">1 Hospede</option>
+                            <option value="">2 Hospedes</option>
+                            <option value="">3 Hospedes</option>
+                            <option value="">4 Hospedes</option>
+                            <option value="">5+ Hospedes</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-12 form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control " required>
+                        <input type="email" id="email" class="form-control ">
                     </div>
                 </div>
                 <div class="row">
@@ -84,16 +68,11 @@
                     <div class="col-md-6 form-group">
                         <br>
                         <!-- <input type="submit" value="Reserve aqui" class="btn btn-primary"> -->
-                        <!-- <p><a href="#" class="btn btn-xl btn-primary btn-sm">Reserve agora</a></p> -->
-                        <a href="/reserva"><button class="btn btn-xl btn-primary btn-sm">Reserve agora</button></a>
+                        <p><a href="#" class="btn btn-xl btn-primary btn-sm">Reserve agora</a></p>
+                      
                     </div>
                 </div>
             </form>
-            @if(session('message'))
-                <div>
-                    <h1>{{ session('message') }}</h1>
-                </div>
-            @endif
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-5">
@@ -119,6 +98,7 @@
                         <li><span class="ion-ios-people-outline"></span> Comodidades dos quartos: Guarda-roupa, Frigobar, Ar-condicionado, Cofre, Instalações hipoalergênicas, Isolamento acústico, Micro-ondas, Cozinha, Sofá, Mesa de trabalho, Área de estar, TV, Telefone, Canais via satélite, TV de tela plasma, Canais a cabo, Varanda, Arara para roupas e Sofá-cama.</li>
                     </ul>
                     <p> <b>Fumantes: ​Não é permitido fumar.</b> </p>
+                    <!-- <p><a href="#" class="btn btn-primary btn-sm">Reserve agora por R$170</a></p> -->
                 </div>
             </div>
         </div>
