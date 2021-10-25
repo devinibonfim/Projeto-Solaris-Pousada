@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<br> <br> <br>
+<br> <br> <br> <br>
 
 <style>
  .brackground{
@@ -84,6 +84,9 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Registre-se') }}
                                     </button>
+                                    <a class="btn btn-link2" href="{{ route('login') }}">
+                                        {{ __('Já possui uma conta?') }}
+                                    </a>
                                 </div>
                             </div>
                         </form>

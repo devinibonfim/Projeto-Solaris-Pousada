@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DeluxeController extends Controller
+class PerfilController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        return view('room.deluxe');
+        return view('dropdown_menu.perfil');
+        // $pessoas = Pessoa::all();
     }
 
     /**
@@ -80,22 +81,5 @@ class DeluxeController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function valueCalc(Request $request){
-        /**/
-        $beginDate = strtotime($request->input('beginDate'));
-        $endDate = strtotime($request->input('endDate'));
-        $diff = round(($endDate - $beginDate)/86400); //diferenca entre datas
-        
-        $quartos = $request->input('room');
-        $pessoas = $request->input('peoples');
-
-        $value = 170; // preco do quarto
-        
-        $resul = $diff * ($quartos * $value);
-
-        return redirect("/deluxe")->with('message','Total: '.$resul);
-        /**/
     }
 }
