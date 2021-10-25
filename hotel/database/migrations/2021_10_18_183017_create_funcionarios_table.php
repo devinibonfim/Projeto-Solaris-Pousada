@@ -17,6 +17,7 @@ class CreateFuncionariosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('pessoa_id');
             $table->unsignedBigInteger('cargo_id');
+            $table->unsignedBigInteger('perfil_id');
             $table->integer('ra');
             $table->string('rg');
             $table->string('pis_pasep');
@@ -30,6 +31,11 @@ class CreateFuncionariosTable extends Migration
             $table->foreign('cargo_id')
                   ->references('id')
                   ->on('Cargos')
+                  ->onDelete('cascade');
+
+            $table->foreign('perfil_id')
+                  ->references('id')
+                  ->on('Perfils')
                   ->onDelete('cascade');
         });
     }

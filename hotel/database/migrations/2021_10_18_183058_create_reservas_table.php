@@ -17,6 +17,7 @@ class CreateReservasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('quarto_id');
             $table->unsignedBigInteger('consumo_id');
+            $table->unsignedBigInteger('hospede_id');
             $table->string('numero_quarto_reservado');
             $table->string('valor');
             $table->date('data_entrada');
@@ -31,6 +32,12 @@ class CreateReservasTable extends Migration
             $table->foreign('consumo_id')
                   ->references('id')
                   ->on('Consumos')
+                  ->onDelete('cascade');
+
+
+            $table->foreign('hospede_id')
+                  ->references('id')
+                  ->on('Hospedes')
                   ->onDelete('cascade');
         });
     }

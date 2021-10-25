@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cargo extends Model
+class Perfil extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'nome',
-        'salario',
-    ];
+
 
     public function funcionario(){
-        return $this->hasMany(Funcionario::class);
+        return $this->hasMany(funcionario::class);
+    }
+
+    public function hospede(){
+        return $this->hasMany(Hospede::class);
     }
 }

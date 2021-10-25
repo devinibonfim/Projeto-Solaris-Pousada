@@ -16,7 +16,7 @@ class CreateHospedesTable extends Migration
         Schema::create('hospedes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pessoa_id');
-            $table->unsignedBigInteger('reserva_id');
+            $table->unsignedBigInteger('perfil_id');
             $table->timestamps();
 
             $table->foreign('pessoa_id')
@@ -24,9 +24,9 @@ class CreateHospedesTable extends Migration
                   ->on('Pessoas')
                   ->onDelete('cascade');
 
-            $table->foreign('reserva_id')
+            $table->foreign('perfil_id')
                   ->references('id')
-                  ->on('Reservas')
+                  ->on('Perfils')
                   ->onDelete('cascade');
         });
     }

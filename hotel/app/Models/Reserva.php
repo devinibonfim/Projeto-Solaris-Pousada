@@ -14,16 +14,16 @@ class Reserva extends Model
         'data_saida',
     ];
 
-    public function hospede(){
-        return $this->belongsTo(Hospede::class);
-    }
-
+    
     public function consumo(){
         return $this->belongsTo(Consumo::class);
     }
-
+    
     public function quarto(){
         return $this->belongsTo(Quarto::class);
     }
-
+    
+    public function hospede(){
+        return $this->belongsTo(Hospede::class);
+    }
 }
