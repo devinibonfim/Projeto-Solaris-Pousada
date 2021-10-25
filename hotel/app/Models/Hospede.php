@@ -9,7 +9,11 @@ class Hospede extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'birthDate',//Data de nascimento
-    ];
+    public function pessoa(){
+        return $this->BelongsTo(Pessoa::class);
+    }
+
+    public function reserva(){
+        return $this->hasOne(Reserva::class);
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePfsTable extends Migration
+class CreateEstadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreatePfsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pfs', function (Blueprint $table) {
+        Schema::create('estados', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_hospede');
-            $table->string('cpf');//cpf
+            $table->unsignedBigInteger('pais_id');
+            $table->string('nome');
             $table->timestamps();
-            $table->foreign('id_hospede')->references('id')->on('hospedes');
+
+            $table->foreign('pais_id')
+                  ->references('id')
+                  ->on('Pais')
+                  ->onDelete('cascade');
         });
     }
 
@@ -29,6 +33,6 @@ class CreatePfsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pfs');
+        Schema::dropIfExists('estados');
     }
 }

@@ -8,10 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Consumo extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'description',
-        'quantity',
-        'value',
+    protected $fillable=[
+        'nome',
+        'quantidade',
+        'valor',
     ];
+    
+    public function produto(){
+        return $this->belongsTo(Produto::class);
+    }
+    
+    public function reserva(){
+        return $this->hasOne(Reserva::class);
+    }
+
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePjsTable extends Migration
+class CreateCargosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreatePjsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pjs', function (Blueprint $table) {
+        Schema::create('cargos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_hospede');
-            $table->string('cnpj');//cnpj
+            $table->string('nome');
+            $table->string('salario');
             $table->timestamps();
-            $table->foreign('id_hospede')->references('id')->on('hospedes');
         });
     }
 
@@ -29,6 +28,6 @@ class CreatePjsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pjs');
+        Schema::dropIfExists('cargos');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContasTable extends Migration
+class CreateCidadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateContasTable extends Migration
      */
     public function up()
     {
-        Schema::create('contas', function (Blueprint $table) {
+        Schema::create('cidades', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_consumo');
-            $table->string('balance');//saldo
-            $table->string('paid');//pago
+            $table->unsignedBigInteger('estado_id');
+            $table->string('nome');
             $table->timestamps();
-            $table->foreign('id_consumo')->references('id')->on('consumos');
+
+            $table->foreign('estado_id')
+                  ->references('id')
+                  ->on('Estados')
+                  ->onDelete('cascade');
         });
     }
 
@@ -30,6 +33,6 @@ class CreateContasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contas');
+        Schema::dropIfExists('cidades');
     }
 }

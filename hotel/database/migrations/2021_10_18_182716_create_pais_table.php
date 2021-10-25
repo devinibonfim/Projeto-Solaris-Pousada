@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConsumosTable extends Migration
+class CreatePaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateConsumosTable extends Migration
      */
     public function up()
     {
-        Schema::create('consumos', function (Blueprint $table) {
+        Schema::create('pais', function (Blueprint $table) {
             $table->id();
-            $table->string('description');//descrição
-            $table->string('quantity');//quantidade
-            $table->string('value'); //valor
+            $table->string('nome');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateConsumosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consumos');
+        Schema::dropIfExists('pais');
     }
 }
