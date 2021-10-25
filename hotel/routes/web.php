@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StandardController;
+use App\Http\Controllers\PremiumController;
+use App\Http\Controllers\DeluxeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +22,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home',          [App\Http\Controllers\HomeController::class, 'index'])       ->name('home');
-Route::get('/standard',      [App\Http\Controllers\StandardController::class, 'index'])   ->name('standard_index');
-Route::get('/premium',       [App\Http\Controllers\PremiumController::class, 'index'])    ->name('premium_index');
-Route::get('/deluxe',        [App\Http\Controllers\DeluxeController::class, 'index'])     ->name('deluxe_index');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/standard', [App\Http\Controllers\StandardController::class, 'index'])->name('standard_index');
+Route::get('/premium', [App\Http\Controllers\PremiumController::class, 'index'])->name('premium_index');
+Route::get('/deluxe', [App\Http\Controllers\DeluxeController::class, 'index'])->name('deluxe_index');
 
-
-
-
-//tipoQuartos
-Route::get('/tipoQuarto',    [App\Http\Controllers\tipoQuartoController::class,'index' ]) ->name('tipoQuarto_index');

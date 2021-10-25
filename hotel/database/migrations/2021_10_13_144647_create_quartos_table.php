@@ -15,15 +15,13 @@ class CreateQuartosTable extends Migration
     {
         Schema::create('quartos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tipoQuarto_id');
-            $table->string('descricao');
-            $table->string('numero');
+            $table->unsignedBigInteger('id_reserva');
+            $table->unsignedBigInteger('id_hospedagem');
+            $table->string('description');//descrição
+            $table->string('number');//numero do quarto
             $table->timestamps();
-
-            $table->foreign('tipoQuarto_id')
-                  ->references('id')
-                  ->on('Tipo_quartos')
-                  ->onDelete('cascade');
+            $table->foreign('id_reserva')->references('id')->on('reservas');
+            $table->foreign('id_hospedagem')->references('id')->on('hospedagems');
         });
     }
 

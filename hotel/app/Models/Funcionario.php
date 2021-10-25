@@ -8,17 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Funcionario extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'ra',
-        'rg',
-        'pis_pasep',
+
+    protected $fillable = [
+        'contract',//contrato
+        'workCard',//carteira de trabalho
+        'wage',//salario
     ];
-
-    public function cargo(){
-        return $this->belongsTo(Cargo::class);
-    }
-
-    public function pessoa(){
-        return $this->hasOne(Pessoa::class);
-    }
 }

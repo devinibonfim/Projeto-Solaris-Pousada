@@ -8,28 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Pessoa extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'nome',
-        'endereco',
-        'data_nascimento',
-        'telefone',
-        'nacionalidade',
+
+    protected $fillable = [
+        'telephone',//telefone
+        'name',//nome
     ];
 
-    public function endereco(){
-        return $this->BelongsTo(Encdereco::class);
-    }
+    public function login(){
 
-    public function funcionario(){
-        return $this->belongsTo(Funcionario::class);
-    }
-
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
-
-    public function hospede(){
-        return $this->hasOne(Hospede::class);
+        return $this->hasOne('App\Models\login');
     }
 
 }

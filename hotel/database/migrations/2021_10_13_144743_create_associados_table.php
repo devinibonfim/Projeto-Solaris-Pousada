@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBairrosTable extends Migration
+class CreateAssociadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateBairrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('bairros', function (Blueprint $table) {
+        Schema::create('associados', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cidade_id');
-            $table->string('nome');
+            $table->unsignedBigInteger('id_hospede_associado');
+            $table->string('name'); //nome
+            $table->string('age');//idade
             $table->timestamps();
-
-            $table->foreign('cidade_id')
-                  ->references('id')
-                  ->on('Cidades')
-                  ->onDelete('cascade');
+            $table->foreign('id_hospede_associado')->references('id')->on('hospedes');
         });
     }
 
@@ -33,6 +30,6 @@ class CreateBairrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bairros');
+        Schema::dropIfExists('associados');
     }
 }

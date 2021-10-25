@@ -98,6 +98,7 @@
                         <li><span class="ion-ios-people-outline"></span> Comodidades dos quartos: Frigobar, Ventilador, Sofá, Mesa de trabalho, Telefone, TV, Canais via satélite, Canais a cabo e Varanda.</li>
                     </ul>
                     <p> <b>Fumantes: ​Não é permitido fumar.</b> </p>
+                    <p><a href="#" class="btn btn-primary btn-sm">RESERVE AQUI PARA ALUGAR O QUARTO POR R$70</a></p>
                 </div>
             </div>
         </div>

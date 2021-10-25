@@ -8,16 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Quarto extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'descricao',
-        'numero',
+
+    protected $fillable = [
+        'description',
+        'number',
     ];
-
-    public function tipo_quarto(){
-        return $this->belongsTo(Tipo_quarto::class);
-    }
-
-    public function reserva(){
-        return $this->hasMany(reserva::class);
-    }
 }

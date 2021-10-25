@@ -8,15 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Bairro extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'nome',
+
+    protected $fillable = [
+        'name',
     ];
-
-    public function cidade(){
-        return $this->BelongsTo(Cidade::class);
-    }
-
-    public function endereco(){
-        return $this->hasOne(Pessoa::class);
-    }
 }

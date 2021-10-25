@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoQuartosTable extends Migration
+class CreateHospedesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTipoQuartosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_quartos', function (Blueprint $table) {
+        Schema::create('hospedes', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('descricao');
+            $table->unsignedBigInteger('id_pessoa');
+            $table->string('birthDate');//Data de nascimento
             $table->timestamps();
+            $table->foreign('id_pessoa')->references('id')->on('pessoas');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateTipoQuartosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_quartos');
+        Schema::dropIfExists('hospedes');
     }
 }
