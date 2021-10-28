@@ -17,11 +17,6 @@ class Funcionario extends Model
     public function cargo(){
         return $this->belongsTo(Cargo::class);
     }
-
-    public function perfil(){
-        return $this->belongsTo(Perfil::class);
-    }
-
     public function pessoa(){
         return $this->hasOne(Pessoa::class);
     }

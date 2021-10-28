@@ -16,17 +16,11 @@ class CreateHospedesTable extends Migration
         Schema::create('hospedes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pessoa_id');
-            $table->unsignedBigInteger('perfil_id');
             $table->timestamps();
 
             $table->foreign('pessoa_id')
                   ->references('id')
                   ->on('Pessoas')
-                  ->onDelete('cascade');
-
-            $table->foreign('perfil_id')
-                  ->references('id')
-                  ->on('Perfils')
                   ->onDelete('cascade');
         });
     }

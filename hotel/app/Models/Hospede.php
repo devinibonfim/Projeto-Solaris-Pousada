@@ -13,10 +13,6 @@ class Hospede extends Model
         return $this->BelongsTo(Pessoa::class);
     }
 
-    public function perfil(){
-        return $this->belongsTo(Perfil::class);
-    }
-
     public function reserva(){
         return $this->hasMany(Reserva::class);
     }
