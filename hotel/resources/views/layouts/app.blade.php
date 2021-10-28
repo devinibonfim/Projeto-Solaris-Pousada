@@ -64,6 +64,19 @@
                         @else
                            
                             <li class="nav-item dropdown ">
+
+                                <!-- TESTE -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin') }}">Admin</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('funcionario')}}">Atendente</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('hospede') }}">Hospede</a>
+                                </li>
+                                <!-- FIM TESTE -->
+
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >
                                     {{ Auth::user()->name }}
                                 </a>

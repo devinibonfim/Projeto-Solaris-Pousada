@@ -17,8 +17,6 @@ class CreatePessoasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('endereco_id');
-            $table->string('nome');
-            $table->string('endereco');
             $table->date('data_nascimento');
             $table->string('telefone');
             $table->string('nacionalidade');

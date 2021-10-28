@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StandardController;
-use App\Http\Controllers\PremiumController;
-use App\Http\Controllers\DeluxeController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +25,14 @@ Route::get('/standard', [App\Http\Controllers\StandardController::class, 'index'
 Route::get('/premium', [App\Http\Controllers\PremiumController::class, 'index'])->name('premium_index');
 Route::get('/deluxe', [App\Http\Controllers\DeluxeController::class, 'index'])->name('deluxe_index');
 
+Route::middleware('admin')->group(function(){
+    Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
+});
+
+Route::middleware('funcionario')->group(function(){
+    Route::get('/funcionario', [HomeController::class,'funcionario'])->name('funcionario');
+});
+
+Route::middleware('hospede')->group(function(){
+    Route::get('/hospede', [HomeController::class, 'hospede'])->name('hospede');
+});
