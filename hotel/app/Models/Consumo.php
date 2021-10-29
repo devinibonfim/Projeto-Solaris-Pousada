@@ -9,9 +9,7 @@ class Consumo extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'nome',
         'quantidade',
-        'valor',
     ];
     
     public function produto(){

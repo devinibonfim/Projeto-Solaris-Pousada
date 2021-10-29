@@ -24,7 +24,7 @@ class CidadeFactory extends Factory
     {
         return [
             'estado_id' => Estado::all()->random()->id,
-            'nome' => $this->faker->unique->city,
+            'nome' => $this->faker->city,
         ];
     }
 }

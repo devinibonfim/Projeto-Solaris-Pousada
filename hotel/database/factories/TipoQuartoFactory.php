@@ -3,17 +3,16 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Hospede;
-use App\Models\Pessoa;
+use App\Models\TipoQuarto;
 
-class HospedeFactory extends Factory
+class TipoQuartoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Hospede::class;
+    protected $model = TipoQuarto::class;
 
     /**
      * Define the model's default state.
@@ -23,8 +22,10 @@ class HospedeFactory extends Factory
     public function definition()
     {
         return [
-            'pessoa_id' => Pessoa::all()->random()->id,
+            
+            'nome' => $this->faker->name,
+            'descricao' => $this->faker->text($maxNbChars = 250),
+            
         ];
     }
 }
- 

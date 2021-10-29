@@ -24,7 +24,7 @@ class BairroFactory extends Factory
     {
         return [
             'cidade_id' => Cidade::all()->random()->id,
-            'nome' => $this->faker->unique->streetName(),
+            'nome' => $this->faker->streetName(),
         ];
     }
 }

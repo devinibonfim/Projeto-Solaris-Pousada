@@ -16,7 +16,6 @@ class CreateFuncionariosTable extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pessoa_id');
-            $table->unsignedBigInteger('cargo_id');
             $table->integer('ra');
             $table->string('rg');
             $table->string('pis_pasep');
@@ -25,11 +24,6 @@ class CreateFuncionariosTable extends Migration
             $table->foreign('pessoa_id')
                   ->references('id')
                   ->on('Pessoas')
-                  ->onDelete('cascade');
-            
-            $table->foreign('cargo_id')
-                  ->references('id')
-                  ->on('Cargos')
                   ->onDelete('cascade');
         });
     }

@@ -24,7 +24,7 @@ class EstadoFactory extends Factory
     {
         return [
             'pais_id' => Pais::all()->random()->id,
-            'nome' => $this->faker->unique->state,
+            'nome' => $this->faker->state,
         ];
     }
 }

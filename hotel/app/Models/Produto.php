@@ -12,6 +12,7 @@ class Produto extends Model
         'nome',
         'descricao',
         'validade',
+        'valor',
     ];
 
     public function consumo(){

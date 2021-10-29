@@ -3,17 +3,17 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Hospede;
-use App\Models\Pessoa;
+use App\Models\Consumo;
+use App\Models\Produto;
 
-class HospedeFactory extends Factory
+class ConsumoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Hospede::class;
+    protected $model = Consumo::class;
 
     /**
      * Define the model's default state.
@@ -23,8 +23,8 @@ class HospedeFactory extends Factory
     public function definition()
     {
         return [
-            'pessoa_id' => Pessoa::all()->random()->id,
+            'produto_id' => Produto::all()->random()->id,
+            'quantidade' => $this->faker->numberBetween($min = 0 , $max = 30),
         ];
     }
 }
- 

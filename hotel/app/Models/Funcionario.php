@@ -14,9 +14,6 @@ class Funcionario extends Model
         'pis_pasep',
     ];
 
-    public function cargo(){
-        return $this->belongsTo(Cargo::class);
-    }
     public function pessoa(){
         return $this->hasOne(Pessoa::class);
     }

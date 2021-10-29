@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Quarto;
+use App\Models\TipoQuarto;
 use Illuminate\Database\Seeder;
-use App\Models\User;
 
-class UserSeeder extends Seeder
+class QuartosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(25)->create();
+        TipoQuarto::factory()->count(3)->create();
+        Quarto::factory()->count(10)->create();
     }
 }

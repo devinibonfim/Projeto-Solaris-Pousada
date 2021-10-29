@@ -16,9 +16,7 @@ class CreateConsumosTable extends Migration
         Schema::create('consumos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('produto_id');
-            $table->string('nome');
             $table->string('quantidade');
-            $table->string('valor');
             $table->timestamps();
 
             $table->foreign('produto_id')
