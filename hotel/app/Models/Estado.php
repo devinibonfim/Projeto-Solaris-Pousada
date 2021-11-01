@@ -13,7 +13,7 @@ class Estado extends Model
     ];
     
     public function estado(){
-        return $this->BelongsTo(Estado::class);
+        return $this->belongsTo(Estado::class);
     }
 
     public function cidade(){

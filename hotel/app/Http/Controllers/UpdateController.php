@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Bairro, Cidade, Consumo, Endereco, Estado, Funcionario, Hospede, Pais, Pessoa, Produto, Quarto, Reserva, TipoQuarto};
+use App\Models\{Bairro, Cidade, Consumo, Endereco, Estado, Funcionario, Hospede, Pais, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
 
 class UpdateController extends Controller
@@ -88,5 +88,13 @@ class UpdateController extends Controller
         $reserva = Reserva::findOrFail($id);
         $reserva ->update($request->all());
         return redirect('/');
+    }
+
+    //
+
+    public function updateAdmin (Request $request, $id){
+        $adm = User::findOrFail($id);
+        $adm ->update($request->all());
+        return redirect('adm');
     }
 }

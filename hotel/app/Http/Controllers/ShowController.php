@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Bairro, Cidade, Consumo, Endereco, Pais , Estado, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto};
+use App\Models\{Bairro, Cidade, Consumo, Endereco, Pais , Estado, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
 
 class ShowController extends Controller
@@ -90,5 +90,13 @@ class ShowController extends Controller
     {
         $reserva=Reserva::findOrFail($id);
         return view('reserva_show',['reserva'=>$reserva]);
+    }
+
+    //
+
+    public function showAdmin ($id)
+    {
+        $adm =User::findOrFail($id);
+        return view('reserva_show',['reserva'=>$adm]);
     }
 }

@@ -15,19 +15,20 @@ class Pessoa extends Model
     ];
 
     public function endereco(){
-        return $this->BelongsTo(Encdereco::class);
+        return $this->belongsTo(Encdereco::class);
     }
-
-    public function funcionario(){
-        return $this->belongsTo(Funcionario::class);
-    }
-
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function funcionario(){
+        return $this->hasOne(Funcionario::class);
+    }
+    
 
     public function hospede(){
         return $this->hasOne(Hospede::class);
     }
 
 }
+ 

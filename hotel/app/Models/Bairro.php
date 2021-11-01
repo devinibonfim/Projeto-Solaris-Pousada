@@ -13,7 +13,7 @@ class Bairro extends Model
     ];
 
     public function cidade(){
-        return $this->BelongsTo(Cidade::class);
+        return $this->belongsTo(Cidade::class);
     }
 
     public function endereco(){

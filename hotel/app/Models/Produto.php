@@ -16,6 +16,6 @@ class Produto extends Model
     ];
 
     public function consumo(){
-        return $this->BelongsTo(Consumo::class);
+        return $this->belongsTo(Consumo::class);
     }
 }

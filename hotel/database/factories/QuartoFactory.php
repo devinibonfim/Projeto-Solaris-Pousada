@@ -23,7 +23,7 @@ class QuartoFactory extends Factory
     public function definition()
     {
         return [
-            'tipoQuarto_id' => TipoQuarto::all()->random()->id,
+            'tipoQuarto_id' => TipoQuarto::all()->random()->unique()->id,
             'numero' => $this->faker->numberBetween($min= 100 , $max = 299),
             'descricao' => $this->faker->text($maxNbChars = 250),
         ];

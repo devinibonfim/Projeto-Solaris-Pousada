@@ -15,7 +15,7 @@ class Endereco extends Model
     ];
 
     public function bairro(){
-        return $this->BelongsTo(Bairro::class);
+        return $this->belongsTo(Bairro::class);
     }
 
     public function pessoa(){

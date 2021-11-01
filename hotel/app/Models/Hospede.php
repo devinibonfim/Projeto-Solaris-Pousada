@@ -10,7 +10,7 @@ class Hospede extends Model
     use HasFactory;
 
     public function pessoa(){
-        return $this->BelongsTo(Pessoa::class);
+        return $this->belongsTo(Pessoa::class);
     }
 
     public function reserva(){

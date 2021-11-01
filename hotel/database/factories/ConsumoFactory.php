@@ -23,7 +23,7 @@ class ConsumoFactory extends Factory
     public function definition()
     {
         return [
-            'produto_id' => Produto::all()->random()->id,
+            'produto_id' => Produto::all()->random()->unique()->id,
             'quantidade' => $this->faker->numberBetween($min = 0 , $max = 30),
         ];
     }

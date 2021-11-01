@@ -75,4 +75,9 @@ class AddController extends Controller
     {
         return view('reserva_add');
     }
+
+    public function createAdm()
+    {
+        return view('reserva_add');
+    }
 }

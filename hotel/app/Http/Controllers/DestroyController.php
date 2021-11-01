@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Bairro, Cidade, Consumo, Endereco, Pais, Estado, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto};
+use App\Models\{Bairro, Cidade, Consumo, Endereco, Pais, Estado, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
 
 class DestroyController extends Controller
@@ -88,5 +88,13 @@ class DestroyController extends Controller
     {
         Reserva::destroy($id);
         return redirect()->route('reserva');
+    }
+
+    //
+
+    public function destroyAdmin ($id)
+    {
+        User::destroy($id);
+        return redirect()->route('adm');
     }
 }

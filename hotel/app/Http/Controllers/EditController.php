@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Bairro, Pais, Estado,Cidade, Consumo, Endereco, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto};
+use App\Models\{Bairro, Pais, Estado,Cidade, Consumo, Endereco, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
 
 class EditController extends Controller
@@ -88,5 +88,13 @@ class EditController extends Controller
     {
         $reserva=Reserva::findOrFail($id);
         return view('reserva_edit',['reserva'=>$reserva]);
+    }
+
+    //
+
+    public function editAdmin ($id)
+    {
+        $user=User::findOrFail($id);
+        return view('admin.edit',['user'=>$user]);
     }
 }
