@@ -24,7 +24,7 @@ class PessoaFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::all()->random()->id,
+            'user_id' => User::factory(),
             'endereco_id' => '1',
             'data_nascimento' => $this->faker->date($format= 'Y-m-d',$max = 'now'),
             'telefone' => $this->faker->phoneNumber,
