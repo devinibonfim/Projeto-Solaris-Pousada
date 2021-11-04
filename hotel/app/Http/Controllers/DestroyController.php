@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Bairro, Cidade, Consumo, Endereco, Pais, Estado, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
+use App\Models\{Bairro, Cidade, Consumo, Endereco, Pais, Estado, Funcionario, Hospede, ListaConsumo, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DestroyController extends Controller
 {
@@ -48,8 +49,16 @@ class DestroyController extends Controller
 
     public function destroyFuncionario ($id)
     {
-        Funcionario::destroy($id);
-        return redirect()->route('funcionario');
+        $Quary=DB::table('funcionarios')
+                ->select('funcionarios.id')
+                ->join('pessoas','funcionarios.pessoa_id', '=', 'pessoas.id')
+                ->where('pessoas.id', '=', $id)
+                ->get();
+        // acessa as array  trasformando em string
+        $FuncID = $Quary[0]->id;
+
+        Funcionario::destroy($FuncID);
+        return redirect()->route('FuncView');
     }
 
     public function destroyHospede ($id)
@@ -96,5 +105,11 @@ class DestroyController extends Controller
     {
         User::destroy($id);
         return redirect()->route('adm');
+    }
+
+    public function destroyListaConsumo ($id)
+    {
+        ListaConsumo::destroy($id);
+        return redirect()->route('listaConsumo');
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Consumo;
+use App\Models\Produto;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             EnderecoSeeder::class,
             PessoaSeeder::class,
+            Produto::factory()->count(98)->create(),
+            Consumo::factory()->count(5)->create(),
             // ConsumoSeeder::class,
             // QuartosSeeder::class,
             // ReservaSeeder::class,

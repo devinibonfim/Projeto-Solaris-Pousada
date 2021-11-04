@@ -24,7 +24,7 @@ class FuncionarioFactory extends Factory
     public function definition()
     {
         return [
-            'pessoa_id' => Pessoa::all()->random()->id,
+            'pessoa_id' => Pessoa::factory()->create(),
 
             'ra' => $this->faker->numberBetween($min = 0, $max = 99),
 

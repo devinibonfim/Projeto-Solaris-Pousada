@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\{Bairro, Pais, Estado,Cidade, Consumo, Endereco, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EditController extends Controller
 {
@@ -48,8 +49,13 @@ class EditController extends Controller
 
     public function editFuncionario ($id)
     {
-        $funcionario=Funcionario::findOrFail($id);
-        return view('funcionario_edit',['funcionario'=>$funcionario]);
+        $funcionario=DB::table('funcionarios')
+            ->select('funcionarios.id AS FuncID','funcionarios.*','pessoas.*','users.*')
+            ->join('pessoas','pessoas.id','=','funcionarios.pessoa_id')
+            ->join('users','users.id', '=', 'pessoas.user_id')
+            ->where('users.id','=', $id)
+            ->get();     
+        return view('admin.edit',['funcionario'=>$funcionario[0]]);
     }
 
     public function editHospede ($id)
@@ -94,7 +100,18 @@ class EditController extends Controller
 
     public function editAdmin ($id)
     {
-        $user=User::findOrFail($id);
-        return view('admin.edit',['user'=>$user]);
+        $funcionario=DB::table('funcionarios')
+                ->select('funcionarios.id AS FuncID','funcionarios.*','pessoas.*','users.*')
+                ->join('pessoas','pessoas.id','=','funcionarios.pessoa_id')
+                ->join('users','users.id', '=', 'pessoas.user_id')
+                ->where('users.id','=', $id)
+                ->get();     
+        return view('admin.edit',['funcionario'=>$funcionario[0]]);
+    }
+
+    public function editListaConsumo ($id)
+    {
+        $reserva=Reserva::findOrFail($id);
+        return view('listaConsumo_edit',['listaConsumo'=>$reserva]);
     }
 }

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Bairro, Cidade, Consumo, Endereco, Estado, Funcionario, Hospede, Pais, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
+use App\Models\{Bairro, Cidade, Consumo, Endereco, Estado, Funcionario, Hospede, ListaConsumo, Pais, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UpdateController extends Controller
 {
@@ -47,9 +48,35 @@ class UpdateController extends Controller
     }
 
     public function updateFuncionario (Request $request, $id){
-        $funcionario = Funcionario::findOrFail($id);
-        $funcionario ->update($request->all());
-        return redirect('/');
+        //Atulizar usuario
+        $user = User::findOrFail($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->save();
+
+        //atualiza pessoa
+        $pessoa = Pessoa::findOrFail($id);
+        $pessoa->nacionalidade = $request->input('nacionalidade');
+        $pessoa->telefone = $request->input('telefone');
+        $pessoa->data_nascimento = $request->input('data_nascimento');
+        $pessoa->save();
+        
+        //pega o id de funcionario independente da ordem dele na lista user
+        $Quary=DB::table('funcionarios')
+                ->select('funcionarios.id')
+                ->join('pessoas','funcionarios.pessoa_id', '=', 'pessoas.id')
+                ->where('pessoas.id', '=', $id)
+                ->get();
+        // acessa as array  trasformando em string
+        $FuncID = $Quary[0]->id;
+
+        //atualiza pessoa
+        $funcionario = Funcionario::findOrFail($FuncID);
+        $funcionario->ra= $request->input('ra');
+        $funcionario->rg= $request->input('rg');
+        $funcionario->pis_pasep= $request->input('pis_pasep');
+        $funcionario->save();
+        return redirect('FuncView');
     }
 
     public function updateHospede (Request $request, $id){
@@ -90,11 +117,17 @@ class UpdateController extends Controller
         return redirect('/');
     }
 
+    public function updateListaConsumo (Request $request, $id){
+        $listaConsumo = ListaConsumo::findOrFail($id);
+        $listaConsumo ->update($request->all());
+        return redirect('/');
+    }
+
     //
 
     public function updateAdmin (Request $request, $id){
         $adm = User::findOrFail($id);
         $adm ->update($request->all());
-        return redirect('adm');
+        return redirect('/');
     }
 }

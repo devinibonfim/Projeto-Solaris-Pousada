@@ -26,7 +26,7 @@ class ReservaFactory extends Factory
     {
         return [
             'quarto_id' => Quarto::all()->random()->unique()->id,
-            'consumo_id' => Consumo::all()->random()->unique()->id,
+            'consumo_id' => Consumo::factory()->create(),
             'hospede_id' => Hospede::all()->random()->unique()->id,
             'valor' => $this->faker->numberBetween($min=0,$max=100).','.$this->faker->numberBetween($min=0,$max=100),
             'data_entrada' => $this->faker->date($format = 'Y-m-d', $max = 'now'),

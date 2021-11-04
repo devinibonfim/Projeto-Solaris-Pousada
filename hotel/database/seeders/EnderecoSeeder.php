@@ -18,10 +18,10 @@ class EnderecoSeeder extends Seeder
      */
     public function run()
     {
-        Pais::factory()->count(5)->create();
-        Estado::factory()->count(10)->create();
-        Cidade::factory()->count(20)->create();
-        Bairro::factory()->count(40)->create();
-        Endereco::factory()->count(80)->create();
+        Pais::factory()->count(20)->create();
+        Estado::factory()->count(40)->create();
+        Cidade::factory()->count(80)->create();
+        Bairro::factory()->count(160)->create();
+        // Endereco::factory()->count(250)->create();
     }
 }

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Bairro, Cidade, Consumo, Endereco, Pais , Estado, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
+use App\Models\{Bairro, Cidade, Consumo, Endereco, Pais , Estado, Funcionario, Hospede, ListaConsumo, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ShowController extends Controller
 {
@@ -47,9 +48,15 @@ class ShowController extends Controller
     }
 
     public function showFuncionario ($id)
-    {
-        $funcionario=Funcionario::findOrFail($id);
-        return view('funcionario_show',['funcionario'=>$funcionario]);
+    {   
+        $funcionario=DB::table('funcionarios')
+        ->select('funcionarios.id AS FuncID','funcionarios.*','pessoas.*','users.*')
+        ->join('pessoas','pessoas.id','=','funcionarios.pessoa_id')
+        ->join('users','users.id', '=', 'pessoas.user_id')
+        ->where('users.id','=', $id)
+        ->get();
+
+        return view('admin.show',['funcionario'=>$funcionario[0]]);
     }
 
     public function showHospede ($id)
@@ -98,5 +105,11 @@ class ShowController extends Controller
     {
         $adm =User::findOrFail($id);
         return view('reserva_show',['reserva'=>$adm]);
+    }
+
+    public function listaConsumo ($id)
+    {
+        $listaConsumo = ListaConsumo::findOrFail($id);
+        return view('listaConsumo_show',['listaConsumo'=>$listaConsumo]);
     }
 }

@@ -23,7 +23,7 @@ class HospedeFactory extends Factory
     public function definition()
     {
         return [
-            'pessoa_id' => Pessoa::all()->random()->id,
+            'pessoa_id' => Pessoa::factory()->create(),
         ];
     }
 }

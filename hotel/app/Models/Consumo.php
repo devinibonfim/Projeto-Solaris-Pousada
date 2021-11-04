@@ -12,8 +12,8 @@ class Consumo extends Model
         'quantidade',
     ];
     
-    public function produto(){
-        return $this->belongsTo(Produto::class);
+    public function listaconsumo(){
+        return $this->belongsTo(ListaConsumo::class);
     }
     
     public function reserva(){

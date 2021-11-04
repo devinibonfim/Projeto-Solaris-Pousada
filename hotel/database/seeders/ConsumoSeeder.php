@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Consumo;
+use App\Models\ListaConsumo;
 use App\Models\Produto;
 use Illuminate\Database\Seeder;
 
@@ -16,6 +17,6 @@ class ConsumoSeeder extends Seeder
     public function run()
     {
         Produto::factory()->count(30)->create();
-        Consumo::factory()->count(40)->create();
+        ListaConsumo::factory()->count(15)->create();
     }
 }

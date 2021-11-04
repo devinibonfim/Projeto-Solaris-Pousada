@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Consumo;
+use App\Models\ListaConsumo;
 use App\Models\Produto;
 
 class ConsumoFactory extends Factory
@@ -23,7 +24,7 @@ class ConsumoFactory extends Factory
     public function definition()
     {
         return [
-            'produto_id' => Produto::all()->random()->unique()->id,
+            'listaConsumo_id' => ListaConsumo::factory()->create(),
             'quantidade' => $this->faker->numberBetween($min = 0 , $max = 30),
         ];
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\{Bairro, Cidade, Consumo, Endereco, Estado, Funcionario, Hospede, Pais, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ViewController extends Controller
 {
@@ -48,8 +49,12 @@ class ViewController extends Controller
 
     public function viewFuncionario()
     {
-        $funcionario=Funcionario::all();
-        return view('funcionario_view',['funcionario'=>$funcionario]);
+        $funcionario=DB::table('funcionarios')
+                    ->select('funcionarios.id AS FuncID','funcionarios.*','pessoas.*','users.*')
+                    ->join('pessoas','pessoas.id','=','funcionarios.pessoa_id')
+                    ->join('users','users.id', '=', 'pessoas.user_id')
+                    ->get();
+        return view('admin.viewfuncionario',['funcionario'=>$funcionario]);
     }
 
     public function viewHospede()
@@ -90,11 +95,20 @@ class ViewController extends Controller
         return view('reserva_view',['reserva'=>$reserva]);
     }
 
+    public function viewListaConsumo()
+    {
+        $reserva=Reserva::all();
+        return view('listaConsumo_view',['listaConsumo'=>$reserva]);
+    }
+
     //Separado
 
     public function viewAdmin()
     {
-        $users=User::all();
-        return view('admin.admin',['users'=>$users]);
+        $users=DB::table('funcionarios')
+                    ->join('pessoas','pessoas.id','=','funcionarios.pessoa_id')
+                    ->join('users','users.id', '=', 'pessoas.user_id')
+                    ->get();
+        return view('admin.viewfuncionario',['users'=>$users]);
     }
 }

@@ -41,7 +41,7 @@ class AddController extends Controller
 
     public function createFuncionario()
     {
-        return view('funcionario_add');
+        return view('admin.Add');
     }
 
     public function createHospede()
@@ -79,5 +79,10 @@ class AddController extends Controller
     public function createAdm()
     {
         return view('reserva_add');
+    }
+
+    public function createListaConsumo()
+    {
+        return view('listaConsumo_add');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Endereco;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Pessoa;
 use App\Models\User;
@@ -24,8 +25,8 @@ class PessoaFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory(),
-            'endereco_id' => '1',
+            'user_id' => User::factory()->create(),
+            'endereco_id' => Endereco::factory()->create(),
             'data_nascimento' => $this->faker->date($format= 'Y-m-d',$max = 'now'),
             'telefone' => $this->faker->phoneNumber,
             'nacionalidade' => $this->faker->state,

@@ -67,7 +67,7 @@
 
                                 <!-- TESTE -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin') }}">Admin</a>
+                                    <a class="nav-link" href="{{ route('FuncView') }}">Admin</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('funcionario')}}">Atendente</a>

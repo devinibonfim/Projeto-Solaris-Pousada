@@ -15,7 +15,7 @@ class Produto extends Model
         'valor',
     ];
 
-    public function consumo(){
-        return $this->belongsTo(Consumo::class);
+    public function listaConsumo(){
+        return $this->hasMany(ListaConsumo::class);
     }
 }
