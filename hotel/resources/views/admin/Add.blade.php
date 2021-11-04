@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <form method="POST" action="{{ url('FuncUpdate') }}">
+            <form method="POST" action="{{ url('FuncStore') }}">
                 
                 @csrf
                 <div class="form-group row">
@@ -24,9 +24,38 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right">Senha</label>
+                    <!-- Senha com vizualização -->
+                    <div class="col-md-6">
+                        <input id="password" name="password" type="password" class="form-control" autofocus>
+                        <span class="input-group-btn" id="eyeSlash">
+                            <button class="btn btn-default reveal" onclick="passwordVisible()" type="button"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+                        </span>
+                        <span class="input-group-btn" id="eyeShow" style="display: none;">
+                            <button class="btn btn-default reveal" onclick="passwordVisible()" type="button"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        </span>
+                    </div>
+                </div>
+
+                <script>
+                    function passwordVisible() {
+                        var x = document.getElementById("password");
+                        if (x.type === "password") {
+                            x.type = "text";
+                            $('#eyeShow').show();
+                            $('#eyeSlash').hide();
+                        } else {
+                            x.type = "password";
+                            $('#eyeShow').hide();
+                            $('#eyeSlash').show();
+                        }
+                    }
+                </script>
+                <!-- Senha com vizualização Fim -->
+                <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Data de Nascimento</label>
                     <div class="col-md-6">
-                        <input id="data_nascimento" name="data_nascimento" type="text" class="form-control" autofocus>
+                        <input id="data_nascimento" name="data_nascimento" type="date" class="form-control" autofocus>
                     </div>
                 </div>
 

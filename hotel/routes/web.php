@@ -31,7 +31,7 @@ Route::get('/FuncEdit/{id}',   [App\Http\Controllers\EditController::class,    '
 Route::get('/FuncShow/{id}',   [App\Http\Controllers\ShowController::class,    'showFuncionario']   )->name('FuncShow'); //
 Route::get('/FuncDestroy/{id}',[App\Http\Controllers\DestroyController::class, 'destroyFuncionario'])->name('FuncDestroy'); //
 Route::get('/FuncAdd',         [App\Http\Controllers\AddController::class,     'createFuncionario'] )->name('FuncAdd');
-Route::post('/FuncStore',      [App\Http\Controllers\StoreController::class,   'storeFuncionario']  )->name('adm_store');
+Route::post('/FuncStore',      [App\Http\Controllers\StoreController::class,   'storeFuncionario']  )->name('FuncStore');
 Route::post('/FuncUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateFuncionario'] )->name('FuncUpdate'); //
 
 Route::middleware('admin')->group(function(){
