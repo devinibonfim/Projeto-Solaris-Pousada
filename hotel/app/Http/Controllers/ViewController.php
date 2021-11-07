@@ -111,4 +111,39 @@ class ViewController extends Controller
                     ->get();
         return view('admin.viewfuncionario',['users'=>$users]);
     }
+
+    //dropdonw
+
+    public function viewAjuda()
+    {
+        return view('dropdown_menu.ajuda');
+    }
+
+    public function viewPerfil()
+    {
+        return view('dropdown_menu.perfil');
+        // $pessoas = Pessoa::all();
+    }
+
+    public function viewReserva2()
+    {
+        return view('dropdown_menu.reserva');
+    }
+
+    //Quartos
+
+    public function viewDeluxe(Request $request)
+    {
+        return view('room.deluxe');
+    }
+
+    public function viewStandard()
+    {
+        return view('room.standard');
+    }
+
+    public function viewPremium()
+    {
+        return view('room.premium');
+    }
 }

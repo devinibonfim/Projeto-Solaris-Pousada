@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -231,6 +231,9 @@ sup {
   top: -0.5em;
 }
 
+.reserva-link{
+  color:#0a98b4;
+}
 a {
   color: #ffc800;
   text-decoration: underline;
@@ -3775,7 +3778,10 @@ textarea.form-control-lg {
 }
 .dropdown-item:hover, .dropdown-item:focus {
   color: #1e2125;
-  background-color: #e9ecef;
+  font-weight:bold !important;
+  font-size:17px;
+  background-color:#fd7e14 !important;
+  /* text-decoration: none; */
 }
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
@@ -7478,6 +7484,18 @@ textarea.form-control-lg {
 .px-5 {
   padding-right: 3rem !important;
   padding-left: 3rem !important;
+}
+
+.px-6 {
+  padding-right: 14rem !important;
+  padding-left: 14rem !important;
+}
+
+.px-right{
+  margin-left: 100% !important;
+}
+.px-left{
+  margin-right: 100% !important;
 }
 
 .py-0 {
@@ -11317,7 +11335,7 @@ NOSSO
   padding-top: 20rem;
   padding-bottom: 5rem;
   text-align: center;
-  background-image: url("../assets/img/portfolio/3.jpg");
+  /* background-image: url("../assets/img/portfolio/3.jpg"); */
   /* opacity: 94%; */
   background-repeat: no-repeat;
   background-attachment: scroll;

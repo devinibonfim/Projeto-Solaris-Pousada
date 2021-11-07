@@ -64,24 +64,20 @@
                         @else
                            
                             <li class="nav-item dropdown ">
-
-                                <!-- TESTE -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('FuncView') }}">Admin</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('funcionario')}}">Atendente</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('hospede') }}">Hospede</a>
-                                </li>
-                                <!-- FIM TESTE -->
-
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-white text-capitalize" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >
                                     {{ Auth::user()->name }}
                                 </a>
                                 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a>
+                                    <a class="dropdown-item" href="{{ route('reserva2') }}">Reservas</a>
+                                    <a class="dropdown-item" href="{{ route('ajuda') }}">Ajuda</a>
+                                    <!-- TESTE -->
+                                    <a class="nav-link" href="{{ route('FuncView') }}">Admin</a>
+                                    <a class="nav-link" href="{{ route('funcionario')}}">Atendente</a>
+                                    <a class="nav-link" href="{{ route('hospede') }}">Hospede</a>
+                                    <!-- FIM TESTE -->
+                                    <hr>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -100,7 +96,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Pousadas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Quartos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Suporte</a></li>                        
                     </ul>
@@ -114,3 +110,7 @@
     </div>
 </body>
 </html>
+
+
+
+
