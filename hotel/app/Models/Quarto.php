@@ -9,8 +9,9 @@ class Quarto extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'descricao',
+        'andar',
         'numero',
+        'anotacoes',
     ];
 
     public function tipo_quarto(){

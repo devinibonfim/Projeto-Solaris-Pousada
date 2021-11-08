@@ -35,6 +35,12 @@ class ViewController extends Controller
     //^ terminado
     // FIM PESSOA
 
+    public function viewReserva()
+    {
+        $reserva=Reserva::all();
+        return view('admin.reservaCrud.view',['reserva'=>$reserva]);
+    }
+    
     public function viewProduto()
     {
         $produto=Produto::all();
@@ -47,11 +53,6 @@ class ViewController extends Controller
         return view('admin.tipoQuartoCrud.view',['tipoQuarto'=>$tipoQuarto]);
     }
 
-    public function viewReserva()
-    {
-        $reserva=Reserva::all();
-        return view('reserva_view',['reserva'=>$reserva]);
-    }
     //dropdonw
 
     public function viewAjuda()

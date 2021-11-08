@@ -16,8 +16,10 @@ class CreateQuartosTable extends Migration
         Schema::create('quartos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tipoQuarto_id');
-            $table->string('descricao');
+            $table->string('andar');
             $table->string('numero');
+            $table->string('anotacoes');
+            $table->string('descricao');
             $table->timestamps();
 
             $table->foreign('tipoQuarto_id')

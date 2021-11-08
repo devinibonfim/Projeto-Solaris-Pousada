@@ -10,6 +10,9 @@ class TipoQuarto extends Model
     use HasFactory;
     protected $fillable=[
         'nome',
+        'valor',
+        'tamanho',
+        'limite_pessoa',
         'descricao',
     ];
 

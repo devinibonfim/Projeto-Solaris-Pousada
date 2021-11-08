@@ -58,6 +58,14 @@ Route::get('/ProdAdd',         [App\Http\Controllers\AddController::class,     '
 Route::post('/ProdStore',      [App\Http\Controllers\StoreController::class,   'storeProduto']  )->name('ProdStore'); //
 Route::post('/ProdUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateProduto'] )->name('HospUpdate'); //
 
+//reserva Crud
+Route::get('/ReserView',        [App\Http\Controllers\ViewController::class,    'viewReserva']   )->name('ReserView'); //
+Route::get('/ReserEdit/{id}',   [App\Http\Controllers\EditController::class,    'editReserva']   )->name('ReserEdit'); 
+Route::get('/ReserShow/{id}',   [App\Http\Controllers\ShowController::class,    'showReserva']   )->name('ReserShow');
+Route::get('/ReserDestroy/{id}',[App\Http\Controllers\DestroyController::class, 'destroyReserva'])->name('ReserDestroy');
+Route::get('/ReserAdd',         [App\Http\Controllers\AddController::class,     'createReserva'] )->name('ReserAdd');
+Route::post('/ReserStore',      [App\Http\Controllers\StoreController::class,   'storeReserva']  )->name('ReserStore');
+Route::post('/ReserUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateReserva'] )->name('ReserUpdate');
 
 Route::middleware('admin')->group(function(){
     Route::get('/admin', [HomeController::class, 'admin'])->name('admin');

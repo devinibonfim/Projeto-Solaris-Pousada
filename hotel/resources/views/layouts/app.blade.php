@@ -140,6 +140,7 @@
                                     <a class="dropdown-item" href="{{ route('reserva2') }}">Reservas</a>
                                     <a class="dropdown-item" href="{{ route('ajuda') }}">Ajuda</a>
                                     <!-- TESTE -->
+                                    <a class="nav-link" href="{{ route('ReserView') }}">Reserva</a>
                                     <a class="nav-link" href="{{ route('FuncView') }}">Funcionarios</a>
                                     <a class="nav-link" href="{{ route('HospView') }}">Hospede</a>
                                     <a class="nav-link" href="{{ route('ProdView') }}">Produtos</a>

@@ -16,6 +16,9 @@ class CreateTipoQuartosTable extends Migration
         Schema::create('tipo_quartos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->integer('valor');
+            $table->string('tamanho');
+            $table->integer('limite_pessoa');
             $table->string('descricao');
             $table->timestamps();
         });

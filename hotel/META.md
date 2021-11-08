@@ -76,7 +76,7 @@
         <tr>
             <td>
                 <input class="form-check-input" type="checkbox">
-                tipoquarto *
+                tipoquarto º
             </td>
         </tr>
         <tr>
@@ -95,7 +95,8 @@
 </table>
 
 ## Legenda
-### * - Discutir com grupo e professor
+### * - Discutir com professor
+### º - Discutir com grupo
 <br>
 
 <br><br><br>
@@ -141,3 +142,5 @@
     </tbody>
 </table>
 <br>
+
+# Alterar tipo quarto e quarto

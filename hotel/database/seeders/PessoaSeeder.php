@@ -4,8 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Funcionario;
 use App\Models\Hospede;
-use App\Models\Pessoa;
-use App\Models\User;
+use Database\Factories\AdminFactory;
 use Illuminate\Database\Seeder;
 
 class PessoaSeeder extends Seeder
