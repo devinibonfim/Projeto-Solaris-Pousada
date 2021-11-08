@@ -21,9 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home',     [App\Http\Controllers\HomeController::class,     'index'])->name('home');
-Route::get('/standard', [App\Http\Controllers\StandardController::class, 'index'])->name('standard_index');
-Route::get('/premium',  [App\Http\Controllers\PremiumController::class,  'index'])->name('premium_index');
-Route::get('/deluxe',   [App\Http\Controllers\DeluxeController::class,   'index'])->name('deluxe_index');
+Route::get('/standard', [App\Http\Controllers\ViewController::class,     'viewStandard'])->name('standard_index');
+Route::get('/premium',  [App\Http\Controllers\ViewController::class,     'viewPremium'])->name('premium_index');
+Route::get('/deluxe',   [App\Http\Controllers\ViewController::class,     'viewDeluxe'])->name('deluxe_index');
 
 
 Route::get('/ajuda',   [App\Http\Controllers\ViewController::class, 'viewAjuda'])->name('ajuda');

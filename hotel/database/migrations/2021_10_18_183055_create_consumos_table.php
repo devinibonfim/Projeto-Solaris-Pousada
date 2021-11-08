@@ -15,14 +15,8 @@ class CreateConsumosTable extends Migration
     {
         Schema::create('consumos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('listaConsumo_id');
             $table->string('quantidade');
             $table->timestamps();
-
-            $table->foreign('listaConsumo_id')
-            ->references('id')
-            ->on('lista_consumos')
-            ->onDelete('cascade');
 
         });
     }

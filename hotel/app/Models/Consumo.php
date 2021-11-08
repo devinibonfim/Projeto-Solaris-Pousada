@@ -13,7 +13,7 @@ class Consumo extends Model
     ];
     
     public function listaconsumo(){
-        return $this->belongsTo(ListaConsumo::class);
+        return $this->hasMany(ListaConsumo::class);
     }
     
     public function reserva(){

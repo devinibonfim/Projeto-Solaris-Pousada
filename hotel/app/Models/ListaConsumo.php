@@ -14,6 +14,6 @@ class ListaConsumo extends Model
     }
 
     public function consumo(){
-        return $this->hasOne(consumo::class);
+        return $this->belongsTo(consumo::class);
     }
 }

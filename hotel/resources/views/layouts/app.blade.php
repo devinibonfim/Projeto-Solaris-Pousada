@@ -139,13 +139,16 @@
                                     <a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a>
                                     <a class="dropdown-item" href="{{ route('reserva2') }}">Reservas</a>
                                     <a class="dropdown-item" href="{{ route('ajuda') }}">Ajuda</a>
+
+                                    @if(Auth::user()->admin)
                                     <!-- TESTE -->
-                                    <a class="nav-link" href="{{ route('ReserView') }}">Reserva</a>
-                                    <a class="nav-link" href="{{ route('FuncView') }}">Funcionarios</a>
-                                    <a class="nav-link" href="{{ route('HospView') }}">Hospede</a>
-                                    <a class="nav-link" href="{{ route('ProdView') }}">Produtos</a>
-                                    <a class="nav-link" href="{{ route('TQuartoView') }}">Tipo Quartos</a>
+                                        <a class="nav-link" href="{{ route('ReserView') }}">Reserva</a>
+                                        <a class="nav-link" href="{{ route('FuncView') }}">Funcionarios</a>
+                                        <a class="nav-link" href="{{ route('HospView') }}">Hospede</a>
+                                        <a class="nav-link" href="{{ route('ProdView') }}">Produtos</a>
+                                        <a class="nav-link" href="{{ route('TQuartoView') }}">Tipo Quartos</a>
                                     <!-- FIM TESTE -->
+                                    @endif
                                     <hr>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

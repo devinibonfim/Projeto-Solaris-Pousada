@@ -26,8 +26,8 @@
 
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Tamanho</label>
-                    <div class="col-md-6">
-                        <input id="tamanho" name="tamanho" type="money" class="form-control" autofocus>
+                    <div class="col-md-3">
+                        <input id="tamanho" name="tamanho" type="text" class="form-control" autofocus>
                     </div>
                 </div>
 
@@ -50,7 +50,6 @@
                         <button type="submit" class="btn btn-primary">Salva</button>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>

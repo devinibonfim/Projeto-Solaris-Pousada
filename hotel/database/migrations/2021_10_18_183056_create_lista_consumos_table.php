@@ -16,8 +16,13 @@ class CreateListaConsumosTable extends Migration
         Schema::create('lista_consumos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('produto_id');
+            $table->unsignedBigInteger('consumo_id');
             $table->timestamps();
 
+            $table->foreign('consumo_id')
+                    ->references('id')
+                    ->on('Consumos')
+                    ->onDelete('cascade');
             
             $table->foreign('produto_id')
                   ->references('id')

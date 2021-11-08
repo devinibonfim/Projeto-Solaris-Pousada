@@ -24,8 +24,9 @@ class QuartoFactory extends Factory
     {
         return [
             'tipoQuarto_id' => TipoQuarto::all()->random()->unique()->id,
-            'numero' => $this->faker->numberBetween($min= 100 , $max = 299),
-            'descricao' => $this->faker->text($maxNbChars = 250),
+            'numero' => $this->faker->numberBetween($min= 0 , $max = 9),
+            'andar' => $this->faker->numberBetween($min= 0 , $max = 20),
+            'anotacoes' => $this->faker->text($maxNBChars = 200),
         ];
     }
 }

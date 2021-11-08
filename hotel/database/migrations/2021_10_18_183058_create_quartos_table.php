@@ -19,7 +19,6 @@ class CreateQuartosTable extends Migration
             $table->string('andar');
             $table->string('numero');
             $table->string('anotacoes');
-            $table->string('descricao');
             $table->timestamps();
 
             $table->foreign('tipoQuarto_id')

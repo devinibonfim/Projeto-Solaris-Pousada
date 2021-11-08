@@ -10,20 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UpdateController extends Controller
 {
-    public function updateEndereco (Request $request, $id){
-        $endereco = Endereco::findOrFail($id);
-        $endereco ->update($request->all());
-        return redirect('/');
-    }
-
-    // INICIO PESSOA
-
-    public function updatePessoa (Request $request, $id){
-        $pessoa = Pessoa::findOrFail($id);
-        $pessoa ->update($request->all());
-        return redirect('/');
-    }
-
     public function updateFuncionario (Request $request, $id){
         /**/
         $Quary=DB::table('funcionarios')
@@ -128,8 +114,6 @@ class UpdateController extends Controller
         return redirect(route('HospView'));
     }
 
-    // FIM PESSOA
-
     public function updateProduto (Request $request, $id){
         $produto = Produto::findOrFail($id);
         $produto ->update($request->all());
@@ -142,29 +126,10 @@ class UpdateController extends Controller
         return redirect('/');
     }
 
-    public function updateQuarto (Request $request, $id){
-        $quarto = Quarto::findOrFail($id);
-        $quarto ->update($request->all());
-        return redirect('/');
-    }
-
+    //
     public function updateReserva (Request $request, $id){
         $reserva = Reserva::findOrFail($id);
         $reserva ->update($request->all());
-        return redirect('/');
-    }
-
-    public function updateListaConsumo (Request $request, $id){
-        $listaConsumo = ListaConsumo::findOrFail($id);
-        $listaConsumo ->update($request->all());
-        return redirect('/');
-    }
-
-    //
-
-    public function updateAdmin (Request $request, $id){
-        $adm = User::findOrFail($id);
-        $adm ->update($request->all());
         return redirect('/');
     }
 }

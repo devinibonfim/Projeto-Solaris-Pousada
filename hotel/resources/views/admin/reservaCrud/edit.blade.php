@@ -6,20 +6,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <form method="POST" action="{{ url('FuncUpdate') }}/{{$funcionario->id}}">
+            <form method="POST" action="{{ url('ReservUpdate') }}/{{$reserva->id}}">
                 
                 @csrf
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Nome</label>
                     <div class="col-md-6">
-                        <input id="name" name="name" type="text" class="form-control" value="{{$funcionario->name}}" autofocus>
+                        <input id="name" name="name" type="text" class="form-control" value="{{$reserva->name}}" autofocus>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Email</label>
                     <div class="col-md-6">
-                        <input id="email" name="email" type="text" class="form-control" value="{{$funcionario->email}}" autofocus>
+                        <input id="email" name="email" type="text" class="form-control" value="{{$reserva->email}}" autofocus>
                     </div>
                 </div>
 

@@ -7,32 +7,20 @@
         <div class="col-md-8">
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr> 
                         <td colspan="2">
-                            <h1>Dados Pessoais</h1>
+                            <h1>Reservas</h1>
                         </td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="col">{{$funcionario->name}}</th>
-                        <th scope="col">{{$funcionario->email}}</th>
+                        <th scope="col">{{$reserva->name}}</th>
                     </tr>
-                    <tr>
-                        <td>Pis Pasep</td>
-                        <td>{{$funcionario->pis_pasep}}</td>
-                    </tr>
-                    <tr>
-                        <td>Data De Nascimento:</td>
-                        <td>{{$funcionario->data_nascimento}}</td>
-                    </tr>
+                    
                     <tr>
                         <td>Telefone:</td>
-                        <td>{{$funcionario->telefone}}</td>
-                    </tr>
-                    <tr>
-                        <td>Nacionalidade:</td>
-                        <td>{{$funcionario->nacionalidade}}</td>
+                        <td>{{$reserva->telefone}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -42,26 +30,42 @@
                 <thead>
                     <tr>
                         <td colspan="2">
-                            <h1>Dados Cadastrais</h1>
+                            <h1>Dados Pessoais</h1>
                         </td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>RA</td>
-                        <td>{{$funcionario->ra}}</td>
+                        <td>Telefone</td>
+                        <td>{{$reserva->telefone}}</td>
                     </tr>
                     <tr>
-                        <td>RG</td>
-                        <td>{{$funcionario->rg}}</td>
-                    </tr>
-                    <tr>
-                        <td>Pis Pasep</td>
-                        <td>{{$funcionario->pis_pasep}}</td>
+                        <td>Email</td>
+                        <td>{{$reserva->email}}</td>
                     </tr>
                 </tbody>
             </table>
             <br>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td colspan="2">
+                            <h1>Dados de reserva</h1>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tipo de quarto</td>
+                        <td>{{$reserva->telefone}}</td>
+                    </tr>
+                    <tr>
+                        <td>Número</td>
+                        <td>{{$reserva->numero}}</td>
+                    </tr>
+                </tbody>
+            </table>
 
             <table class="table">
                 <thead>

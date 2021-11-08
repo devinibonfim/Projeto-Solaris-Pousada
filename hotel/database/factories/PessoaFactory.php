@@ -6,7 +6,7 @@ use App\Models\Endereco;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Pessoa;
 use App\Models\User;
-use Illuminate\Validation\Rules\Unique;
+
 
 class PessoaFactory extends Factory
 {

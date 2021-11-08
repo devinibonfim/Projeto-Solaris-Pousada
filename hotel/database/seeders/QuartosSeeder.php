@@ -15,7 +15,6 @@ class QuartosSeeder extends Seeder
      */
     public function run()
     {
-        TipoQuarto::factory()->count(3)->create();
-        Quarto::factory()->count(10)->create();
+        TipoQuarto::factory()->count(15)->create();
     }
 }

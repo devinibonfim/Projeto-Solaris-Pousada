@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Endereco, Funcionario, Hospede, Pessoa, Produto, TipoQuarto, User};
+use App\Models\{Consumo, Endereco, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -122,5 +122,33 @@ class StoreController extends Controller
         $tipoQuarto->save();
 
         return redirect(route('TQuartoView'));
+    }
+
+    public function storeReserva(Request $request){
+        /**/
+        $quarto = new Quarto;
+        $quarto->tipoQuarto_id = $request->input('tipoQuarto');
+        $quarto->numero = $request->input('numero');
+        $quarto->andar  = $request->input('andar');
+        $quarto->anotacoes = $request->input('anotacoes');
+        $quarto->save();
+
+        $consumo = new Consumo;
+        $consumo->quantidade = 0;
+        $consumo->save();
+
+        $hospedeid = auth()->user()->id;
+        $consumoid  = $consumo->id;
+        $quartoid  = $quarto->id;
+        $reserva = new Reserva;
+        $reserva->quarto_id = $quartoid;
+        $reserva->consumo_id = $consumoid;
+        $reserva->hospede_id = 1;
+        $reserva->valor = 0 ;
+        $reserva->data_entrada = $request->input('data_entrada');
+        $reserva->data_saida = $request->input('data_saida');
+        $reserva->save();
+        /**/
+        return redirect(route('ReserView'));
     }
 }

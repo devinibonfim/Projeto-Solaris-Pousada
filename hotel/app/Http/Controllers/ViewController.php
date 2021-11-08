@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\{Bairro, Cidade, Consumo, Endereco, Estado, Funcionario, Hospede, Pais, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ViewController extends Controller
@@ -32,11 +33,34 @@ class ViewController extends Controller
                     ->get();
         return view('admin.hospedeCrud.view',['hospede'=>$hospede]);
     }
-    //^ terminado
+    // Terminado
     // FIM PESSOA
 
     public function viewReserva()
     {
+        /** /
+         $Quary=DB::table('hospedes')
+        ->select('hospedes.id','hospedes.pessoa_id','pessoas.user_id','pessoas.endereco_id')
+        ->join('pessoas','hospedes.pessoa_id', '=', 'pessoas.id')
+        ->join('users','pessoas.user_id', '=', 'users.id')
+        ->join('enderecos','pessoas.endereco_id', '=', 'enderecos.id')
+        ->where('hospedes.id', '=', $id)
+        ->get();
+        // acessa as array  trasformando em string
+        $userID = $Quary[0]->user_id;
+        $pessoaID = $Quary[0]->pessoa_id;
+        $enderecoID = $Quary[0]->endereco_id;
+        /**/
+        /** /
+        $reserva=DB::table('reservas')
+                ->select('reservas.*','users.*','quartos.*','pessoas.*')
+                ->join('hospedes','reservas.id','=','hospedes.id')
+                ->join('pessoas','hospedes.pessoa_id','=','pessoas.id')
+                ->join('users','pessoas.user_id','=','users.id')
+                ->join('quartos','reservas.quarto_id','=','quartos.id')
+                ->get();
+
+        /**/
         $reserva=Reserva::all();
         return view('admin.reservaCrud.view',['reserva'=>$reserva]);
     }
@@ -73,7 +97,7 @@ class ViewController extends Controller
 
     //Quartos
 
-    public function viewDeluxe(Request $request)
+    public function viewDeluxe()
     {
         return view('room.deluxe');
     }

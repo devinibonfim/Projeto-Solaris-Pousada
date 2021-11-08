@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Hospede;
+use App\Models\Reserva;
+use App\Models\TipoQuarto;
 use Illuminate\Http\Request;
 
 class AddController extends Controller
@@ -19,6 +22,13 @@ class AddController extends Controller
     }
 
     // FIM PESSOA
+
+    public function createReserva()
+    {
+        $tipoQuarto=TipoQuarto::all();
+        //dd($hospede);
+        return view('admin.reservaCrud.add',['tipoQuarto'=> $tipoQuarto]);
+    }
 
     public function createProduto()
     {
@@ -40,8 +50,4 @@ class AddController extends Controller
         return view('quarto_add');
     }
 
-    public function createReserva()
-    {
-        return view('reserva_add');
-    }
 }
