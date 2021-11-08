@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Endereco, Funcionario, Hospede, Pessoa, Produto, User};
+use App\Models\{Endereco, Funcionario, Hospede, Pessoa, Produto, TipoQuarto, User};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -110,5 +110,17 @@ class StoreController extends Controller
         $produto->save();
 
         return redirect(route('ProdView'));
+    }
+
+    public function storeTiposQuarto(Request $request){
+        $tipoQuarto = new TipoQuarto();
+        $tipoQuarto->nome = $request->input('nome');
+        $tipoQuarto->valor = $request->input('valor');
+        $tipoQuarto->tamanho = $request->input('tamanho');
+        $tipoQuarto->limite_pessoa = $request->input('limite_pessoa');
+        $tipoQuarto->descricao = $request->input('descricao');
+        $tipoQuarto->save();
+
+        return redirect(route('TQuartoView'));
     }
 }

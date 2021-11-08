@@ -136,7 +136,7 @@ class UpdateController extends Controller
         return redirect(route('ProdView'));
     }
 
-    public function updateTipoQuarto (Request $request, $id){
+    public function updateTiposQuarto (Request $request, $id){
         $tipoQuarto = TipoQuarto::findOrFail($id);
         $tipoQuarto ->update($request->all());
         return redirect('/');

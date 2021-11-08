@@ -67,6 +67,16 @@ Route::get('/ReserAdd',         [App\Http\Controllers\AddController::class,     
 Route::post('/ReserStore',      [App\Http\Controllers\StoreController::class,   'storeReserva']  )->name('ReserStore');
 Route::post('/ReserUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateReserva'] )->name('ReserUpdate');
 
+//tipo quarto Crud
+Route::get('/TQuartoView',        [App\Http\Controllers\ViewController::class,    'viewTiposQuarto']   )->name('TQuartoView'); //
+Route::get('/TQuartoEdit/{id}',   [App\Http\Controllers\EditController::class,    'editTiposQuarto']   )->name('TQuartoEdit'); 
+Route::get('/TQuartoShow/{id}',   [App\Http\Controllers\ShowController::class,    'showTiposQuarto']   )->name('TQuartoShow');
+Route::get('/TQuartoDestroy/{id}',[App\Http\Controllers\DestroyController::class, 'destroyTiposQuarto'])->name('TQuartoDestroy');
+Route::get('/TQuartoAdd',         [App\Http\Controllers\AddController::class,     'createTiposQuarto'] )->name('TQuartoAdd');
+Route::post('/TQuartoStore',      [App\Http\Controllers\StoreController::class,   'storeTiposQuarto']  )->name('TQuartoStore'); //  
+Route::post('/TQuartoUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateTiposQuarto'] )->name('TQuartoUpdate');
+
+
 Route::middleware('admin')->group(function(){
     Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
 });

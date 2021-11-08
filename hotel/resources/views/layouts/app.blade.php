@@ -144,6 +144,7 @@
                                     <a class="nav-link" href="{{ route('FuncView') }}">Funcionarios</a>
                                     <a class="nav-link" href="{{ route('HospView') }}">Hospede</a>
                                     <a class="nav-link" href="{{ route('ProdView') }}">Produtos</a>
+                                    <a class="nav-link" href="{{ route('TQuartoView') }}">Tipo Quartos</a>
                                     <!-- FIM TESTE -->
                                     <hr>
                                     <a class="dropdown-item" href="{{ route('logout') }}"

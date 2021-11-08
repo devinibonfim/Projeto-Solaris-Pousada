@@ -35,10 +35,10 @@ class DestroyController extends Controller
         return redirect()->route('consumo');
     }
 
-    public function destroyTipoQuarto ($id)
+    public function destroyTiposQuarto ($id)
     {
         TipoQuarto::destroy($id);
-        return redirect()->route('tipoQuarto');
+        return redirect()->route('TQuartoView');
     }
 
     public function destroyQuarto ($id)

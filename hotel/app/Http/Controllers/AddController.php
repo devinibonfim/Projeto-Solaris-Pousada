@@ -30,9 +30,9 @@ class AddController extends Controller
         return view('consumo_add');
     }
 
-    public function createTipoQuarto()
+    public function createTiposQuarto()
     {
-        return view('tipoQuarto_add');
+        return view('admin.tiposQuartoCrud.add');
     }
 
     public function createQuarto()

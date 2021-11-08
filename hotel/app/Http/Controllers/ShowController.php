@@ -42,10 +42,10 @@ class ShowController extends Controller
         return view('admin.produtoCrud.show',['produto'=>$produto]);
     }
 
-    public function showTipoQuarto ($id)
+    public function showTiposQuarto ($id)
     {
         $tipoQuarto=TipoQuarto::findOrFail($id);
-        return view('tipoQuarto_show',['tipoQuarto'=>$tipoQuarto]);
+        return view('admin.tiposQuartoCrud.show',['tipoQuarto'=>$tipoQuarto]);
     }
 
     public function showReserva ($id)

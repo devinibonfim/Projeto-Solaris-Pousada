@@ -47,10 +47,10 @@ class ViewController extends Controller
         return view('admin.produtoCrud.view',['produto'=>$produto]);
     }
 
-    public function viewTipoQuarto()
+    public function viewTiposQuarto()
     {
         $tipoQuarto=TipoQuarto::all();
-        return view('admin.tipoQuartoCrud.view',['tipoQuarto'=>$tipoQuarto]);
+        return view('admin.tiposQuartoCrud.view',['tipoQuarto'=>$tipoQuarto]);
     }
 
     //dropdonw

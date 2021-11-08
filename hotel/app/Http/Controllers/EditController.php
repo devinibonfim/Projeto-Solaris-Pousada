@@ -56,10 +56,10 @@ class EditController extends Controller
         return view('consumo_edit',['consumo'=>$consumo]);
     }
 
-    public function editTipoQuarto ($id)
+    public function editTiposQuarto ($id)
     {
         $tipoQuarto=TipoQuarto::findOrFail($id);
-        return view('tipoQuarto_edit',['tipoQuarto'=>$tipoQuarto]);
+        return view('admin.tiposQuartoCrud.edit',['tipoQuarto'=>$tipoQuarto]);
     }
 
     public function editQuarto ($id)
