@@ -15,16 +15,14 @@ class CreateEnderecosTable extends Migration
     {
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('bairro_id');
             $table->string('cep');
-            $table->string('complemento');
+            $table->string('rua');
+            $table->string('bairro');
+            $table->string('cidade');
+            $table->string('estado');
             $table->string('numero_casa');
+            $table->string('complemento');
             $table->timestamps();
-
-            $table->foreign('bairro_id')
-                  ->references('id')
-                  ->on('Bairros')
-                  ->onDelete('cascade');
         });
     }
 

@@ -1,13 +1,143 @@
-# Fazer o layout do Profile e terminar de adicionar opções para o usúario (barra logout).
+### Fazer o layout do Profile 
+### Terminar de adicionar opções para o usúario (barra logout).
 
-## Criar telas CRUD para adm
+<br><hr>
 
-# 1 View Okay
+# Criar Crud Admin para teste
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                View
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                Add
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                Show
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                Edit
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                Store
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                Update
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                Destroy
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br><br>
 
-# 2 EDIT Okay
-# 3 Update Okay
+# Cruds
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                funcionario
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                hospede
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox">
+                reservas
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox">
+                tipoquarto *
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox"checked>
+                produto
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-check-input" type="checkbox">
+                consumo *
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-# 4 Destroy Okay
+## Legenda
+### * - Discutir com grupo e professor
+<br>
 
-## 31/10
-# Automatizar e replicar Cruds
+<br><br><br>
+
+# Error
+### Fazer as funções de erros de campos vazios e repeditos.
+<table class="table">
+    <tbody>
+        <tr>
+            <td>Funcionario</td>
+            <td><input class="form-check-input" type="checkbox">add</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input class="form-check-input" type="checkbox">edit</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<table class="table">
+    <tbody>
+        <tr>
+            <td>Hospede</td>
+            <td><input class="form-check-input" type="checkbox">add</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input class="form-check-input" type="checkbox">edit</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<table class="table">
+    <tbody>
+        <tr>
+            <td>Produto</td>
+            <td><input class="form-check-input" type="checkbox">add</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input class="form-check-input" type="checkbox">edit</td>
+        </tr>
+    </tbody>
+</table>
+<br>

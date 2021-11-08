@@ -9,30 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class EditController extends Controller
 {
-    public function editPais ($id)
-    {
-        $pais=Pais::findOrFail($id);
-        return view('pais_edit',['pais'=>$pais]);
-    }
-
-    public function editEstado ($id)
-    {
-        $estado=Estado::findOrFail($id);
-        return view('estado_edit',['estado'=>$estado]);
-    }
-
-    public function editCidade ($id)
-    {
-        $cidade=Cidade::findOrFail($id);
-        return view('cidade_edit',['cidade'=>$cidade]);
-    }
-
-    public function editBairro ($id)
-    {
-        $bairro=Bairro::findOrFail($id);
-        return view('bairro_edit',['bairro'=>$bairro]);
-    }
-
     public function editEndereco ($id)
     {
         $endereco=Endereco::findOrFail($id);
@@ -41,27 +17,29 @@ class EditController extends Controller
 
     // INICIO PESSOA
     
-    public function editPessoa ($id)
-    {
-        $pessoa=Pessoa::findOrFail($id);
-        return view('pessoa_edit',['pessoa'=>$pessoa]);
-    }
-
     public function editFuncionario ($id)
     {
-        $funcionario=DB::table('funcionarios')
-            ->select('funcionarios.id AS FuncID','funcionarios.*','pessoas.*','users.*')
-            ->join('pessoas','pessoas.id','=','funcionarios.pessoa_id')
-            ->join('users','users.id', '=', 'pessoas.user_id')
-            ->where('users.id','=', $id)
-            ->get();     
-        return view('admin.edit',['funcionario'=>$funcionario[0]]);
+         $funcionario=DB::table('funcionarios')
+             ->select('enderecos.*','pessoas.*','users.*','funcionarios.*')
+             ->join('pessoas','pessoas.id','=','funcionarios.pessoa_id')
+             ->join('enderecos','enderecos.id','=','pessoas.endereco_id')
+             ->join('users','users.id', '=', 'pessoas.user_id')
+             ->where('funcionarios.id','=', $id)
+             ->get();
+        
+        return view('admin.funcionarioCrud.edit',['funcionario'=>$funcionario[0]]);
     }
 
     public function editHospede ($id)
     {
-        $hospede=Hospede::findOrFail($id);
-        return view('hospede_edit',['hospede'=>$hospede]);
+        $hospede=DB::table('hospedes')
+            ->select('enderecos.*','pessoas.*','users.*','hospedes.*')
+            ->join('pessoas','pessoas.id','=','hospedes.pessoa_id')
+            ->join('enderecos','enderecos.id','=','pessoas.endereco_id')
+            ->join('users','users.id', '=', 'pessoas.user_id')
+            ->where('hospedes.id','=', $id)
+            ->get();     
+        return view('admin.hospedeCrud.edit',['hospede'=>$hospede[0]]);
     }
 
     // FIM PESSOA
@@ -69,7 +47,7 @@ class EditController extends Controller
     public function editProduto ($id)
     {
         $produto=Produto::findOrFail($id);
-        return view('produto_edit',['produto'=>$produto]);
+        return view('admin.ProdutoCrud.edit',['produto'=>$produto]);
     }
 
     public function editConsumo ($id)

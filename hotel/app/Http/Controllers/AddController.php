@@ -7,53 +7,22 @@ use Illuminate\Http\Request;
 
 class AddController extends Controller
 {
-    public function createPais()
-    {
-        return view('pais_add');
-    }
-
-    public function createEstado()
-    {
-        return view('estado_add');
-    }
-
-    public function createCidade()
-    {
-        return view('cidade_add');
-    }
-    
-    public function createBairro()
-    {
-        return view('bairro_add');
-    }
-
-    public function createEndereco()
-    {
-        return view('endereco_add');
-    }
-
     // INICIO PESSOA
-
-    public function createPessoa()
-    {
-        return view('pessoa_add');
-    }
-
     public function createFuncionario()
     {
-        return view('admin.Add');
+        return view('admin.funcionarioCrud.Add');
     }
 
     public function createHospede()
     {
-        return view('hospede_add');
+        return view('admin.hospedeCrud.add');
     }
 
     // FIM PESSOA
 
     public function createProduto()
     {
-        return view('produto_add');
+        return view('admin.produtoCrud.add');
     }
 
     public function createConsumo()
@@ -74,15 +43,5 @@ class AddController extends Controller
     public function createReserva()
     {
         return view('reserva_add');
-    }
-
-    public function createAdm()
-    {
-        return view('reserva_add');
-    }
-
-    public function createListaConsumo()
-    {
-        return view('listaConsumo_add');
     }
 }

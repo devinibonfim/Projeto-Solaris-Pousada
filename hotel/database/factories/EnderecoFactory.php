@@ -22,11 +22,15 @@ class EnderecoFactory extends Factory
      */
     public function definition()
     {
+        
         return [
-            'bairro_id' => Bairro::all()->random()->id,
             'cep' => $this->faker->postcode,
-            'complemento' => $this->faker->streetName,
+            'rua' => $this->faker->streetName,
+            'bairro'=>$this->faker->district,
+            'cidade'=>$this->faker->city,
+            'estado'=> $this->faker->state,
             'numero_casa' => $this->faker->numberBetween($min = 0, $max = 40),
+            'complemento' => $this->faker->text($maxNbChars = 50),
         ];
     }
 }

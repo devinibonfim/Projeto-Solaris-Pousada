@@ -16,12 +16,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            EnderecoSeeder::class,
             PessoaSeeder::class,
-            Produto::factory()->count(98)->create(),
-            Consumo::factory()->count(5)->create(),
             // ConsumoSeeder::class,
-            // QuartosSeeder::class,
+            QuartosSeeder::class,
             // ReservaSeeder::class,
         ]);
     }

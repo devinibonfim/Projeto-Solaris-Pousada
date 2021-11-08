@@ -10,13 +10,13 @@ class Endereco extends Model
     use HasFactory;
     protected $fillable=[
         'cep',
-        'complemento',
+        'rua',
+        'bairro',
+        'cidade',
+        'estado',
         'numero_casa',
+        'complemento',
     ];
-
-    public function bairro(){
-        return $this->belongsTo(Bairro::class);
-    }
 
     public function pessoa(){
         return $this->hasOne(Pessoa::class);

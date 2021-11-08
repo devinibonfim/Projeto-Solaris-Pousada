@@ -36,9 +36,28 @@ Route::get('/FuncView',        [App\Http\Controllers\ViewController::class,    '
 Route::get('/FuncEdit/{id}',   [App\Http\Controllers\EditController::class,    'editFuncionario']   )->name('FuncEdit'); //
 Route::get('/FuncShow/{id}',   [App\Http\Controllers\ShowController::class,    'showFuncionario']   )->name('FuncShow'); //
 Route::get('/FuncDestroy/{id}',[App\Http\Controllers\DestroyController::class, 'destroyFuncionario'])->name('FuncDestroy'); //
-Route::get('/FuncAdd',         [App\Http\Controllers\AddController::class,     'createFuncionario'] )->name('FuncAdd'); // --
-Route::post('/FuncStore',      [App\Http\Controllers\StoreController::class,   'storeFuncionario']  )->name('FuncStore'); // --
+Route::get('/FuncAdd',         [App\Http\Controllers\AddController::class,     'createFuncionario'] )->name('FuncAdd'); //
+Route::post('/FuncStore',      [App\Http\Controllers\StoreController::class,   'storeFuncionario']  )->name('FuncStore'); //
 Route::post('/FuncUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateFuncionario'] )->name('FuncUpdate'); //
+
+//hospede Crud
+Route::get('/HospView',        [App\Http\Controllers\ViewController::class,    'viewHospede']   )->name('HospView'); //
+Route::get('/HospEdit/{id}',   [App\Http\Controllers\EditController::class,    'editHospede']   )->name('HospEdit'); //
+Route::get('/HospShow/{id}',   [App\Http\Controllers\ShowController::class,    'showHospede']   )->name('HospShow'); //
+Route::get('/HospDestroy/{id}',[App\Http\Controllers\DestroyController::class, 'destroyHospede'])->name('HospDestroy'); //
+Route::get('/HospAdd',         [App\Http\Controllers\AddController::class,     'createHospede'] )->name('HospAdd'); //
+Route::post('/HospStore',      [App\Http\Controllers\StoreController::class,   'storeHospede']  )->name('HospStore'); //
+Route::post('/HospUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateHospede'] )->name('HospUpdate'); //
+
+//produto Crud
+Route::get('/ProdView',        [App\Http\Controllers\ViewController::class,    'viewProduto']   )->name('ProdView'); //
+Route::get('/ProdEdit/{id}',   [App\Http\Controllers\EditController::class,    'editProduto']   )->name('ProdEdit'); //
+Route::get('/ProdShow/{id}',   [App\Http\Controllers\ShowController::class,    'showProduto']   )->name('ProdShow'); //
+Route::get('/ProdDestroy/{id}',[App\Http\Controllers\DestroyController::class, 'destroyProduto'])->name('ProdDestroy'); //
+Route::get('/ProdAdd',         [App\Http\Controllers\AddController::class,     'createProduto'] )->name('ProdAdd'); //
+Route::post('/ProdStore',      [App\Http\Controllers\StoreController::class,   'storeProduto']  )->name('ProdStore'); //
+Route::post('/ProdUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateProduto'] )->name('HospUpdate'); //
+
 
 Route::middleware('admin')->group(function(){
     Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
