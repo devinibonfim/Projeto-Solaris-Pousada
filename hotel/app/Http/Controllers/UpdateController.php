@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Bairro, Cidade, Consumo, Endereco, Estado, Funcionario, Hospede, ListaConsumo, Pais, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
+use App\Models\{Endereco, Funcionario, Hospede, Pessoa, Produto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -108,7 +108,7 @@ class UpdateController extends Controller
         $pessoa->save();
 
         //atualiza pessoa
-        $hospede = Funcionario::findOrFail($id);
+        $hospede = Hospede::findOrFail($id);
         $hospede->save();
         //dd($userID);
         return redirect(route('HospView'));

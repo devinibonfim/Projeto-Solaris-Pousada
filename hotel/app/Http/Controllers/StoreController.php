@@ -7,7 +7,6 @@ use App\Models\{Consumo, Endereco, Funcionario, Hospede, Pessoa, Produto, Quarto
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Symfony\Component\Console\Input\Input;
 
 class StoreController extends Controller
 {
@@ -124,7 +123,9 @@ class StoreController extends Controller
         return redirect(route('TQuartoView'));
     }
 
-    public function storeReserva(Request $request){
+    public function storeReserva(Request $request, $id){
+
+        
         /**/
         $quarto = new Quarto;
         $quarto->tipoQuarto_id = $request->input('tipoQuarto');
@@ -137,12 +138,13 @@ class StoreController extends Controller
         $consumo->quantidade = 0;
         $consumo->save();
 
-        $hospedeid = auth()->user()->id;
         $consumoid  = $consumo->id;
         $quartoid  = $quarto->id;
+        $hospedeid = $request->$id;
         $reserva = new Reserva;
         $reserva->quarto_id = $quartoid;
         $reserva->consumo_id = $consumoid;
+        $reserva->hospede_id = $hospedeid;
         $reserva->hospede_id = 1;
         $reserva->valor = 0 ;
         $reserva->data_entrada = $request->input('data_entrada');

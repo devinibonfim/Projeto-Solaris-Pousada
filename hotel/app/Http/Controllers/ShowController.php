@@ -50,8 +50,18 @@ class ShowController extends Controller
 
     public function showReserva ($id)
     {
-        $reserva=Reserva::findOrFail($id);
-        return view('reserva_show',['reserva'=>$reserva]);
+        $reserva=DB::table('reservas')
+                ->select('reservas.*','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','enderecos.*','users.*')
+                ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
+                ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
+                ->join('hospedes','reservas.hospede_id', '=', 'hospedes.id')
+                ->join('pessoas','hospedes.pessoa_id', '=', 'pessoas.id')
+                ->join('enderecos','pessoas.endereco_id', '=', 'enderecos.id')
+                ->join('users','pessoas.user_id', '=', 'users.id')
+                ->where('reservas.id','=',$id)
+                ->get();
+        //dd($reserva);
+        return view('admin.reservaCrud.show',['reserva'=>$reserva[0]]);
     }
 
     //

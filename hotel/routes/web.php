@@ -59,13 +59,16 @@ Route::post('/ProdStore',      [App\Http\Controllers\StoreController::class,   '
 Route::post('/ProdUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateProduto'] )->name('HospUpdate'); //
 
 //reserva Crud
-Route::get('/ReserView',        [App\Http\Controllers\ViewController::class,    'viewReserva']   )->name('ReserView'); //
-Route::get('/ReserEdit/{id}',   [App\Http\Controllers\EditController::class,    'editReserva']   )->name('ReserEdit'); 
-Route::get('/ReserShow/{id}',   [App\Http\Controllers\ShowController::class,    'showReserva']   )->name('ReserShow');
-Route::get('/ReserDestroy/{id}',[App\Http\Controllers\DestroyController::class, 'destroyReserva'])->name('ReserDestroy');
-Route::get('/ReserAdd',         [App\Http\Controllers\AddController::class,     'createReserva'] )->name('ReserAdd');
-Route::post('/ReserStore',      [App\Http\Controllers\StoreController::class,   'storeReserva']  )->name('ReserStore');
-Route::post('/ReserUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateReserva'] )->name('ReserUpdate');
+Route::get('/ReserView',        [App\Http\Controllers\ViewController::class,    'viewReserva']    )->name('ReserView'); //
+Route::get('/ReserViewHosp',    [App\Http\Controllers\ViewController::class,'viewReservaHosp'])->name('ReserViewHosp'); //
+Route::get('/ReserEdit1/{id}',  [App\Http\Controllers\EditController::class,    'editReserva1']    )->name('ReserEdit1');
+Route::get('/ReserEdit2/{id}/{Uid}',[App\Http\Controllers\EditController::class,'editReserva2']    )->name('ReserEdit2'); 
+Route::get('/ReserShow/{id}',   [App\Http\Controllers\ShowController::class,    'showReserva']    )->name('ReserShow');
+Route::get('/ReserDestroy/{id}',[App\Http\Controllers\DestroyController::class, 'destroyReserva'] )->name('ReserDestroy');
+Route::get('/ReserAdd1',         [App\Http\Controllers\AddController::class,     'createReserva1']  )->name('ReserAdd1'); //
+Route::get('/ReserAdd2/{id}',    [App\Http\Controllers\AddController::class,     'createReserva2']  )->name('ReserAdd2'); //
+Route::post('/ReserStore/{id}',      [App\Http\Controllers\StoreController::class,   'storeReserva']   )->name('ReserStore'); //
+Route::post('/ReserUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateReserva']  )->name('ReserUpdate');
 
 //tipo quarto Crud
 Route::get('/TQuartoView',        [App\Http\Controllers\ViewController::class,    'viewTiposQuarto']   )->name('TQuartoView'); //
@@ -73,7 +76,7 @@ Route::get('/TQuartoEdit/{id}',   [App\Http\Controllers\EditController::class,  
 Route::get('/TQuartoShow/{id}',   [App\Http\Controllers\ShowController::class,    'showTiposQuarto']   )->name('TQuartoShow');
 Route::get('/TQuartoDestroy/{id}',[App\Http\Controllers\DestroyController::class, 'destroyTiposQuarto'])->name('TQuartoDestroy');
 Route::get('/TQuartoAdd',         [App\Http\Controllers\AddController::class,     'createTiposQuarto'] )->name('TQuartoAdd');
-Route::post('/TQuartoStore',      [App\Http\Controllers\StoreController::class,   'storeTiposQuarto']  )->name('TQuartoStore'); //  
+Route::post('/TQuartoStore', [App\Http\Controllers\StoreController::class,   'storeTiposQuarto']  )->name('TQuartoStore'); //  
 Route::post('/TQuartoUpdate/{id}',[App\Http\Controllers\UpdateController::class,  'updateTiposQuarto'] )->name('TQuartoUpdate');
 
 

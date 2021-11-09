@@ -38,31 +38,29 @@ class ViewController extends Controller
 
     public function viewReserva()
     {
-        /** /
-         $Quary=DB::table('hospedes')
-        ->select('hospedes.id','hospedes.pessoa_id','pessoas.user_id','pessoas.endereco_id')
+        /**/
+         $Quary=DB::table('reservas')
+        ->select('reservas.*','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','users.*')
+        ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
+        ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
+        ->join('hospedes','reservas.hospede_id', '=', 'hospedes.id')
         ->join('pessoas','hospedes.pessoa_id', '=', 'pessoas.id')
         ->join('users','pessoas.user_id', '=', 'users.id')
-        ->join('enderecos','pessoas.endereco_id', '=', 'enderecos.id')
-        ->where('hospedes.id', '=', $id)
         ->get();
-        // acessa as array  trasformando em string
-        $userID = $Quary[0]->user_id;
-        $pessoaID = $Quary[0]->pessoa_id;
-        $enderecoID = $Quary[0]->endereco_id;
         /**/
-        /** /
-        $reserva=DB::table('reservas')
-                ->select('reservas.*','users.*','quartos.*','pessoas.*')
-                ->join('hospedes','reservas.id','=','hospedes.id')
-                ->join('pessoas','hospedes.pessoa_id','=','pessoas.id')
-                ->join('users','pessoas.user_id','=','users.id')
-                ->join('quartos','reservas.quarto_id','=','quartos.id')
-                ->get();
-
-        /**/
-        $reserva=Reserva::all();
+        $reserva = $Quary;
         return view('admin.reservaCrud.view',['reserva'=>$reserva]);
+        //echo $Quary;
+    }
+
+    public function viewReservaHosp(){
+        $hospede=DB::table('hospedes')
+        ->select('hospedes.id AS HospID','hospedes.*','pessoas.*','users.*','enderecos.*')
+        ->join('pessoas','pessoas.id','=','hospedes.pessoa_id')
+        ->join('enderecos','enderecos.id','=','pessoas.endereco_id')
+        ->join('users','users.id', '=', 'pessoas.user_id')
+        ->get();
+return view('admin.reservaCrud.HospSearch',['hospede'=>$hospede]);
     }
     
     public function viewProduto()

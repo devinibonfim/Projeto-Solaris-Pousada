@@ -7,10 +7,42 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <form method="POST" action="{{ url('ReserStore') }}">
+            <form method="POST" action="{{ url('ReserStore') }}/{{$hospede->id}}">
 
                 @csrf
-
+                <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right">Hospede</label>
+                    <div class="col-md-6">
+                        <a href="{{ route('ReserViewHosp') }}" class="btn btn-secondary active"role="button">Buscar</a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">{{$hospede->name}}</th>
+                                        <th scope="col">{{$hospede->email}}</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Data De Nascimento:</td>
+                                        <td>{{$hospede->data_nascimento}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telefone:</td>
+                                        <td>{{$hospede->telefone}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nacionalidade:</td>
+                                        <td>{{$hospede->nacionalidade}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br><hr>
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Número</label>
                     <div class="col-md-6">
@@ -31,7 +63,7 @@
                     <div class="col-md-6">
                         <select id="tipoQuarto" name="tipoQuarto" class="form-control">
                             @foreach ($tipoQuarto as $tipoQuarto) 
-                                <option value="{{$tipoQuarto->id}}"><p href="{{ route('ReserAdd',$tipoQuarto->id) }}">{{$tipoQuarto->nome}}</p></option>  
+                                <option value="{{$tipoQuarto->id}}"><p href="{{ route('ReserAdd2',$tipoQuarto->id) }}">{{$tipoQuarto->nome}}</p></option>  
                             @endforeach
                         </select>
                     </div>

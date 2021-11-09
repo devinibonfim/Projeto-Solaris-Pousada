@@ -42,7 +42,6 @@ class EditController extends Controller
         return view('admin.hospedeCrud.edit',['hospede'=>$hospede[0]]);
     }
 
-    // FIM PESSOA
 
     public function editProduto ($id)
     {
@@ -62,34 +61,28 @@ class EditController extends Controller
         return view('admin.tiposQuartoCrud.edit',['tipoQuarto'=>$tipoQuarto]);
     }
 
-    public function editQuarto ($id)
-    {
-        $quarto=Quarto::findOrFail($id);
-        return view('quarto_edit',['quarto'=>$quarto]);
-    }
-
-    public function editReseva ($id)
-    {
-        $reserva=Reserva::findOrFail($id);
-        return view('reserva_edit',['reserva'=>$reserva]);
-    }
-
     //
 
-    public function editAdmin ($id)
+    public function editReserva1 ($id)
     {
-        $funcionario=DB::table('funcionarios')
-                ->select('funcionarios.id AS FuncID','funcionarios.*','pessoas.*','users.*')
-                ->join('pessoas','pessoas.id','=','funcionarios.pessoa_id')
-                ->join('users','users.id', '=', 'pessoas.user_id')
-                ->where('users.id','=', $id)
-                ->get();     
-        return view('admin.edit',['funcionario'=>$funcionario[0]]);
+        $reserva=DB::table('reservas')
+                ->select('reservas.*','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','enderecos.*','users.*')
+                ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
+                ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
+                ->join('hospedes','reservas.hospede_id', '=', 'hospedes.id')
+                ->join('pessoas','hospedes.pessoa_id', '=', 'pessoas.id')
+                ->join('enderecos','pessoas.endereco_id', '=', 'enderecos.id')
+                ->join('users','pessoas.user_id', '=', 'users.id')
+                ->where('reservas.id','=',$id)
+                ->get();
+        $tipoQuarto=TipoQuarto::all();
+        return view('admin.reservaCrud.1.edit',['reserva'=>$reserva[0]],['tipoQuarto'=>$tipoQuarto]);
     }
 
-    public function editListaConsumo ($id)
+    public function editReserva2 ($id)
     {
         $reserva=Reserva::findOrFail($id);
-        return view('listaConsumo_edit',['listaConsumo'=>$reserva]);
+        return view('admin.reservaCrud.2.edit',['reserva'=>$reserva]);
     }
+
 }

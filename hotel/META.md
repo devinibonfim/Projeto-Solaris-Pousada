@@ -70,13 +70,15 @@
         <tr>
             <td>
                 <input class="form-check-input" type="checkbox">
-                reservas
+                reservas°
+                <br>
+                (Problem com tipo de quarto no edit)
             </td>
         </tr>
         <tr>
             <td>
-                <input class="form-check-input" type="checkbox">
-                tipoquarto º
+                <input class="form-check-input" type="checkbox" checked>
+                tipoquarto
             </td>
         </tr>
         <tr>

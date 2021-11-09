@@ -78,31 +78,31 @@
                 <tbody>
                     <tr>
                         <td>Cep</td>
-                        <td>{{$funcionario->cep}}</td>
+                        <td>{{$reserva->cep}}</td>
                     </tr>
                     <tr>
                         <td>Rua</td>
-                        <td>{{$funcionario->rua}}</td>
+                        <td>{{$reserva->rua}}</td>
                     </tr>
                     <tr>
                         <td>Bairro</td>
-                        <td>{{$funcionario->bairro}}</td>
+                        <td>{{$reserva->bairro}}</td>
                     </tr>
                     <tr>
                         <td>Estado</td>
-                        <td>{{$funcionario->estado}}</td>
+                        <td>{{$reserva->estado}}</td>
                     </tr>
                     <tr>
                         <td>Cidade</td>
-                        <td>{{$funcionario->cidade}}</td>
+                        <td>{{$reserva->cidade}}</td>
                     </tr>
                     <tr>
                         <td>Numero da Casa</td>
-                        <td>{{$funcionario->numero_casa}}</td>
+                        <td>{{$reserva->numero_casa}}</td>
                     </tr>
                     <tr>
                         <td>Complemento</td>
-                        <td>{{$funcionario->complemento}}</td>
+                        <td>{{$reserva->complemento}}</td>
                     </tr>
                 </tbody>
             </table>
