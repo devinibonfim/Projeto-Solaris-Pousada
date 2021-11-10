@@ -7,6 +7,7 @@
 <div class="card shadow mb-4">
 
     <div class="card-header py-3">
+        {{dd($consumo[1]);}}
         <form method="POST" action="{{ url('consStore',$consumo[0]->CSID) }}">
             
         @csrf

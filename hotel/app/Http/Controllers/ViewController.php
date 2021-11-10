@@ -144,7 +144,7 @@ class ViewController extends Controller
         ->where('reservas.id','=',$id)
         ->get();
 
-        dd($consumo[$id]->id);
+        // dd($consumo[0]->CSID);
         return view('admin.consumoCrud.view',['consumo'=>$consumo],['produto'=>$produto]);
     }
 }
