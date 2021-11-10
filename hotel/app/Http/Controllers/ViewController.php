@@ -20,7 +20,6 @@ class ViewController extends Controller
                     ->join('users','users.id', '=', 'pessoas.user_id')
                     ->get();
         return view('admin.funcionarioCrud.view',['funcionario'=>$funcionario]);
-
     }
 
     public function viewHospede()
@@ -40,7 +39,7 @@ class ViewController extends Controller
     {
         /**/
          $Quary=DB::table('reservas')
-        ->select('reservas.*','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','users.*')
+        ->select('reservas.*','reservas.id AS RID','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','users.*')
         ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
         ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
         ->join('hospedes','reservas.hospede_id', '=', 'hospedes.id')
@@ -60,7 +59,7 @@ class ViewController extends Controller
         ->join('enderecos','enderecos.id','=','pessoas.endereco_id')
         ->join('users','users.id', '=', 'pessoas.user_id')
         ->get();
-return view('admin.reservaCrud.HospSearch',['hospede'=>$hospede]);
+        return view('admin.reservaCrud.HospSearch',['hospede'=>$hospede]);
     }
     
     public function viewProduto()
@@ -79,18 +78,39 @@ return view('admin.reservaCrud.HospSearch',['hospede'=>$hospede]);
 
     public function viewAjuda()
     {
-        return view('dropdown_menu.ajuda');
+        return view('dropDownMenu.ajuda');
     }
 
     public function viewPerfil()
     {
-        return view('dropdown_menu.perfil');
-        // $pessoas = Pessoa::all();
+        $id = Auth::user()->id;
+        $perfil=DB::table('hospedes')
+                ->select('hospedes.*','pessoas.*','users.*','enderecos.*')
+                ->join('pessoas','pessoas.id','=','hospedes.pessoa_id')
+                ->join('enderecos','enderecos.id','=','pessoas.endereco_id')
+                ->join('users','users.id', '=', 'pessoas.user_id')
+                ->where('hospedes.id','=',$id)
+                ->get();
+        return view('dropDownMenu.perfil',['perfil'=>$perfil[0]]);
+    }
+
+    
+    public function viewPerfilEdit()
+    {
+        $id = Auth::user()->id;
+        $perfil=DB::table('hospedes')
+                ->select('hospedes.*','hospedes.id AS HID','pessoas.*','users.*','users.id AS UID','enderecos.*')
+                ->join('pessoas','pessoas.id','=','hospedes.pessoa_id')
+                ->join('enderecos','enderecos.id','=','pessoas.endereco_id')
+                ->join('users','users.id', '=', 'pessoas.user_id')
+                ->where('hospedes.id','=',$id)
+                ->get();
+        return view('dropDownSuport.edit',['perfil'=>$perfil[0]]);
     }
 
     public function viewReserva2()
     {
-        return view('dropdown_menu.reserva');
+        return view('dropDownMenu.reserva');
     }
 
     //Quartos
@@ -109,4 +129,22 @@ return view('admin.reservaCrud.HospSearch',['hospede'=>$hospede]);
     {
         return view('room.premium');
     }
+
+    public function viewConsumo($id)
+    {   
+
+        $produto = Produto::all();
+
+        $consumo = DB::table('consumos')
+        ->select('consumos.*','consumos.id AS CSID','lista_consumos.*','lista_consumos.id AS LID','produtos.*','produtos.valor AS PID','reservas.*')
+        ->join('lista_consumos','consumos.id', '=', 'lista_consumos.consumo_id')
+        ->join('produtos','lista_consumos.produto_id', '=', 'produtos.id')
+        ->join('reservas','consumos.id', '=', 'reservas.consumo_id')
+        ->where('reservas.id','=',$id)
+        ->get();
+
+        //dd($consumo[0]->CSID);
+        return view('admin.consumoCrud.view',['consumo'=>$consumo],['produto'=>$produto]);
+    }
 }
+ 

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Endereco, Funcionario, Hospede, Pessoa, Produto, Reserva, TipoQuarto, User};
+use App\Models\{Consumo, Endereco, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -36,7 +37,7 @@ class UpdateController extends Controller
             $user->admin = 0;
         }else{
             $user->admin = 1;
-            $user->funcionario = 0;
+            $user->funcionario = 1;
         }
         $user->save();
 
@@ -128,8 +129,91 @@ class UpdateController extends Controller
 
     //
     public function updateReserva (Request $request, $id){
+        $Quary=DB::table('reservas')
+                ->select('reservas.*','quartos.*',)
+                ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
+                ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
+                ->join('consumos','reservas.consumo_id', '=', 'consumos.id')
+                ->where('reservas.id','=',$id)
+                ->get();
+        //dd($Quary);
+        /**/
+        $quartoid  = $Quary[0] -> quarto_id;
+        $consumoid  = $Quary[0] -> consumo_id;
+        $hospedeid = $Quary[0] -> hospede_id;
+
+        $quarto = Quarto::findOrFail($quartoid);
+        $quarto->tipoQuarto_id = $request->input('tipoQuarto');
+        $quarto->numero = $request->input('numero');
+        $quarto->andar  = $request->input('andar');
+        $quarto->anotacoes = $request->input('anotacoes');
+        $quarto->save();
+
+        $consumo = Consumo::findOrFail($consumoid);
+        $consumo->quantidade = 0;
+        $consumo->save();
+
         $reserva = Reserva::findOrFail($id);
-        $reserva ->update($request->all());
+        $reserva->quarto_id = $quartoid;
+        $reserva->consumo_id = $consumoid;
+        $reserva->hospede_id = $hospedeid;
+        $reserva->valor = 0 ;
+        $reserva->data_entrada = $request->input('data_entrada');
+        $reserva->data_saida =  $request->input('data_saida');
+        $reserva->save();
+        /**/
         return redirect('/');
     }
+
+    public function perfilUpdate (Request $request,$id){
+        $Quary=DB::table('hospedes')
+        ->select('hospedes.id','hospedes.pessoa_id','pessoas.user_id','pessoas.endereco_id')
+        ->join('pessoas','hospedes.pessoa_id', '=', 'pessoas.id')
+        ->join('users','pessoas.user_id', '=', 'users.id')
+        ->join('enderecos','pessoas.endereco_id', '=', 'enderecos.id')
+        ->where('hospedes.id', '=', $id)
+        ->get();
+        // acessa as array  trasformando em string
+        $userID = $Quary[0]->user_id;
+        $pessoaID = $Quary[0]->pessoa_id;
+        $enderecoID = $Quary[0]->endereco_id;
+        /**/
+        //Atulizar usuario
+        $user = User::findOrFail($userID);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+        $user->save();
+        /**/
+        //atualiza endereço
+        $endereco = Endereco::findOrFail($enderecoID);
+        $endereco->cep = $request->input('cep');
+        $endereco->rua = $request->input('rua');
+        $endereco->bairro = $request->input('bairro');
+        $endereco->estado = $request->input('uf');
+        $endereco->cidade = $request->input('cidade');
+        $endereco->numero_casa = $request->input('numero_casa');
+        $endereco->complemento = $request->input('complemento');
+        $endereco->save();
+
+        //atualiza pessoa
+        $pessoa = Pessoa::findOrFail($pessoaID);
+        $pessoa->nacionalidade = $request->input('nacionalidade');
+        $pessoa->telefone = $request->input('telefone');
+        $pessoa->data_nascimento = $request->input('data_nascimento');
+        $pessoa->save();
+
+        //atualiza pessoa
+        $hospede = Hospede::findOrFail($id);
+        $hospede->save();
+        //dd($userID);
+        return redirect(route('perfil'));
+    }
+
+    public function updateConsumo (Request $request, $id){
+        $consumo = Consumo::findOrFail($id);
+        $consumo ->update($request->all());
+        return redirect(route('consumoView'));
+    }
 }
+ 

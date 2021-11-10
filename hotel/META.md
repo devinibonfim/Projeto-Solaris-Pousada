@@ -146,3 +146,5 @@
 <br>
 
 # Alterar tipo quarto e quarto
+
+# Trocar valores por Float

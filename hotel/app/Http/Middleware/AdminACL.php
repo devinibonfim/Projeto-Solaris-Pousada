@@ -17,7 +17,7 @@ class AdminACL
     public function handle(Request $request, Closure $next)
     {
         if(auth()->check() && auth()->user()->admin){
-            return redirect($request);
+            return $next($request);
         }
         dd('Sem acesso de admin');
     }

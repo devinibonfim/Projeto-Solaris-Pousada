@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Consumo, Endereco, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
+use App\Models\{Consumo, Endereco, Funcionario, Hospede, ListaConsumo, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -30,7 +30,7 @@ class StoreController extends Controller
             $user->admin = 1;
         }else{
             $user->admin = 1;
-            $user->funcionario = 0;
+            $user->funcionario = 1;
         }
         $user->save();
 
@@ -145,12 +145,22 @@ class StoreController extends Controller
         $reserva->quarto_id = $quartoid;
         $reserva->consumo_id = $consumoid;
         $reserva->hospede_id = $hospedeid;
-        $reserva->hospede_id = 1;
         $reserva->valor = 0 ;
         $reserva->data_entrada = $request->input('data_entrada');
         $reserva->data_saida = $request->input('data_saida');
-        $reserva->save();
+        $reserva->save(); 
         /**/
         return redirect(route('ReserView'));
     }
+
+    public function storeConsumo(Request $request, $id){
+        $listConsumo = new ListaConsumo;
+        $listConsumo->produto_id = $request->input('produto');
+        $listConsumo->consumo_id = $id;
+        dd($listConsumo);
+        //$listConsumo->save();
+
+        //return('/');
+    }
 }
+ 

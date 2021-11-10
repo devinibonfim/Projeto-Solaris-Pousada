@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <form method="POST" action="{{ url('ReservUpdate') }}/{{$reserva->id}}">
+            <form method="POST" action="{{ url('ReserUpdate') }}/{{$reserva->RID}}">
                 @csrf
                 <label for="name" class="col-md-4 col-form-label text-md-right">Inforações de Hospede</label>
                 <div class="container">
@@ -55,6 +55,7 @@
                     <label for="name" class="col-md-4 col-form-label text-md-right">Tipo de quarto</label>
                     <div class="col-md-6">
                         <select id="tipoQuarto" name="tipoQuarto" class="form-control">
+                            <option value="{{$reserva->tipoQuarto_id}}"><p href="{{ route('ReserAdd2',$reserva->id) }}">{{$reserva->nome}}</p></option>
                             @foreach ($tipoQuarto as $tipoQuarto)
                                 <option value="{{$tipoQuarto->id}}"><p href="{{ route('ReserAdd2',$tipoQuarto->id) }}">{{$tipoQuarto->nome}}</p></option>  
                             @endforeach
@@ -79,7 +80,7 @@
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Data Saida</label>
                     <div class="col-md-6">
-                        <input id="data_saida" name="" type="date" class="form-control" value="{{$reserva->data_saida}}" autofocus>
+                        <input id="data_saida" name="data_saida" type="date" class="form-control" value="{{$reserva->data_saida}}" autofocus>
                     </div>
                 </div>
                 <div class="form-group row mb-0">

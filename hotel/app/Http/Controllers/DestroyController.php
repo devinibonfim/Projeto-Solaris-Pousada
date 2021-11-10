@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Consumo, Funcionario, Hospede, ListaConsumo, Produto, Quarto, Reserva, TipoQuarto};
+use App\Models\{Consumo, Funcionario, Hospede, ListaConsumo, Produto, Quarto, Reserva, TipoQuarto, User};
+use Illuminate\Support\Facades\Auth;
 
 class DestroyController extends Controller
 {
@@ -27,12 +28,6 @@ class DestroyController extends Controller
     {
         Produto::destroy($id);
         return redirect()->route('produto');
-    }
-
-    public function destroyConsumo ($id)
-    {
-        Consumo::destroy($id);
-        return redirect()->route('consumo');
     }
 
     public function destroyTiposQuarto ($id)
@@ -59,4 +54,18 @@ class DestroyController extends Controller
         ListaConsumo::destroy($id);
         return redirect()->route('listaConsumo');
     }
+
+    public function destroyPerfil ($id)
+    {
+        User::destroy($id);
+        Auth::logout();
+        return redirect( route('home'));
+    }
+    
+    public function destroyConsumo ($id)
+    {
+        Consumo::destroy($id);
+        return redirect()->route('consumo');
+    }
 }
+ 

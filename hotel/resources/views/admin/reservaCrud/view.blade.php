@@ -30,6 +30,7 @@
                         <th>Nome</th>
                         <th>Dados Pessoais</th>
                         <th>Informações do quarto</th>
+                        <th>Consumiveis</th>
                         <th>Visualizar</th>
                         <th>Editar</th>
                         <th>Excluir</th>
@@ -39,7 +40,7 @@
                 <tbody>
                     @foreach($reserva as $reserva)
                         <tr>
-                            <th><p href="{{ route('ReserView',$reserva->id) }}">{{$reserva->id}}</p></th>
+                            <th><p href="{{ route('ReserView',$reserva->id) }}">{{$reserva->RID}}</p></th>
                             <th><p href="{{ route('ReserView',$reserva->id) }}">{{$reserva->name}}</p></th>
                             <th><p href="{{ route('ReserView',$reserva->id) }}">{{$reserva->telefone}} <br>
                                                                                 {{$reserva->email}}</p></th>
@@ -48,9 +49,9 @@
                                                                                 Andar: {{$reserva->andar}} <br>
                                                                                 Numero do Quarto: {{$reserva->numero}}</p></th>
 
-                            <th><a href="{{ route('ReserView',$reserva->id) }}" class="btn btn-secondary active"role="button">Consumiveis</a></th>
-                            <th><a href="{{ route('ReserShow',$reserva->id) }}" class="btn btn-secondary active"role="button">Vizualizar</a></th>
-                            <th><a href="{{ route('ReserEdit1',$reserva->id) }}" class="btn btn-secondary active"role="button">Editar</a></th>
+                            <th><a href="{{ route('consView',$reserva->RID) }}" class="btn btn-secondary active"role="button">Consumiveis</a></th>
+                            <th><a href="{{ route('ReserShow',$reserva->RID) }}" class="btn btn-secondary active"role="button">Vizualizar</a></th>
+                            <th><a href="{{ route('ReserEdit1',$reserva->RID) }}" class="btn btn-secondary active"role="button">Editar</a></th>
                             <th><a href="{{ route('ReserDestroy',$reserva->id) }}" class="btn btn-secondary active"role="button">Excluir</a></th>
                         </tr>
                     @endforeach

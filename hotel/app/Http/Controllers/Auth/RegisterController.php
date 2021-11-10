@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Endereco;
+use App\Models\Hospede;
+use App\Models\Pessoa;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -64,10 +69,39 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = DB::table('users')->insertGetId([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        //dd($user);
+
+        $endereco =DB::table('enderecos')->insertGetId([
+            'cep' => $data['cep'],
+            'rua' => $data['rua'],
+            'bairro' => $data['bairro'],
+            'estado' => $data['uf'],
+            'cidade' => $data['cidade'],
+            'numero_casa' => $data['numero_casa'],
+            'complemento' => $data['complemento'],
+        ]);
+        
+
+        //dd($endereco);
+        $pessoa = DB::table('pessoas')->insertGetId([
+            'user_id' => $user,
+            'endereco_id' => $endereco,
+            'telefone' => $data['telefone'],
+            'data_nascimento' => $data['data_nascimento'],
+            'nacionalidade' => $data['nacionalidade'],
+        ]);
+        //dd($pessoa);
+
+        $pessoa = DB::table('hospedes')->insertGetId([
+            'pessoa_id' => $pessoa,
+        ]);
+
+        return User::findOrFail($user);
+        /**/
     }
 }

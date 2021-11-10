@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\{Bairro, Pais, Estado,Cidade, Consumo, Endereco, Funcionario, Hospede, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class EditController extends Controller
@@ -42,31 +43,10 @@ class EditController extends Controller
         return view('admin.hospedeCrud.edit',['hospede'=>$hospede[0]]);
     }
 
-
-    public function editProduto ($id)
-    {
-        $produto=Produto::findOrFail($id);
-        return view('admin.ProdutoCrud.edit',['produto'=>$produto]);
-    }
-
-    public function editConsumo ($id)
-    {
-        $consumo=Consumo::findOrFail($id);
-        return view('consumo_edit',['consumo'=>$consumo]);
-    }
-
-    public function editTiposQuarto ($id)
-    {
-        $tipoQuarto=TipoQuarto::findOrFail($id);
-        return view('admin.tiposQuartoCrud.edit',['tipoQuarto'=>$tipoQuarto]);
-    }
-
-    //
-
     public function editReserva1 ($id)
     {
         $reserva=DB::table('reservas')
-                ->select('reservas.*','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','enderecos.*','users.*')
+                ->select('reservas.*','reservas.id AS RID','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','enderecos.*','users.*')
                 ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
                 ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
                 ->join('hospedes','reservas.hospede_id', '=', 'hospedes.id')
@@ -79,10 +59,17 @@ class EditController extends Controller
         return view('admin.reservaCrud.1.edit',['reserva'=>$reserva[0]],['tipoQuarto'=>$tipoQuarto]);
     }
 
-    public function editReserva2 ($id)
+    public function perfilEdit()
     {
-        $reserva=Reserva::findOrFail($id);
-        return view('admin.reservaCrud.2.edit',['reserva'=>$reserva]);
+        $id = Auth::user()->id;
+        $perfil=DB::table('hospedes')
+                ->select('hospedes.*','hospedes.id AS HID','pessoas.*','users.*','enderecos.*')
+                ->join('pessoas','pessoas.id','=','hospedes.pessoa_id')
+                ->join('enderecos','enderecos.id','=','pessoas.endereco_id')
+                ->join('users','users.id', '=', 'pessoas.user_id')
+                ->where('hospedes.id','=',$id)
+                ->get();
+        return view('dropDownSuport.edit',['perfil'=>$perfil[0]]);
     }
-
 }
+ 

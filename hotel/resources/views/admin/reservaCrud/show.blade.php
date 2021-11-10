@@ -7,27 +7,6 @@
         <div class="col-md-8">
             <table class="table">
                 <thead>
-                    <tr> 
-                        <td colspan="2">
-                            <h1>Reservas</h1>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="col">{{$reserva->name}}</th>
-                    </tr>
-                    
-                    <tr>
-                        <td>Telefone:</td>
-                        <td>{{$reserva->telefone}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-
-            <table class="table">
-                <thead>
                     <tr>
                         <td colspan="2">
                             <h1>Dados Pessoais</h1>
@@ -36,12 +15,24 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">{{$reserva->name}}</th>
+                    </tr>
+                    <tr>
                         <td>Telefone</td>
                         <td>{{$reserva->telefone}}</td>
                     </tr>
                     <tr>
                         <td>Email</td>
                         <td>{{$reserva->email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Nacionalidade</td>
+                        <td>{{$reserva->nacionalidade}}</td>
+                    </tr>
+                    <tr>
+                        <td>Data de Nascimento</td>
+                        <td>{{$reserva->data_nascimento}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -51,27 +42,44 @@
                 <thead>
                     <tr>
                         <td colspan="2">
-                            <h1>Dados de reserva</h1>
+                            <h1>Dados da reserva</h1>
                         </td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Tipo de quarto</td>
-                        <td>{{$reserva->telefone}}</td>
+                        <td>{{$reserva->nome}}</td>
                     </tr>
                     <tr>
-                        <td>Número</td>
+                        <td>Andar do quarto</td>
+                        <td>{{$reserva->andar}}</td>
+                    </tr>
+                    <tr>
+                        <td>Número do quarto</td>
                         <td>{{$reserva->numero}}</td>
+                    </tr>
+                    <tr>
+                        <td>Valor do quarto</td>
+                        <td>{{$reserva->valor}}</td>
+                    </tr>
+                    <tr>
+                        <td>Data de Entrada</td>
+                        <td>{{$reserva->data_entrada}}</td>
+                    </tr>
+                    <tr>
+                        <td>Data de Saida</td>
+                        <td>{{$reserva->data_saida}}</td>
                     </tr>
                 </tbody>
             </table>
+            <br>
 
             <table class="table">
                 <thead>
                     <tr>
                         <td colspan="2">
-                            <h1>Endereço</h1>
+                            <h1>Endereço do hospede</h1>
                         </td>
                     </tr>
                 </thead>

@@ -50,11 +50,6 @@ class AddController extends Controller
         return view('admin.produtoCrud.add');
     }
 
-    public function createConsumo()
-    {
-        return view('consumo_add');
-    }
-
     public function createTiposQuarto()
     {
         return view('admin.tiposQuartoCrud.add');
@@ -64,5 +59,10 @@ class AddController extends Controller
     {
         return view('quarto_add');
     }
-
+    
+    public function createConsumo()
+    {
+        return view('admin.consumoCrud.add');
+    }
 }
+  

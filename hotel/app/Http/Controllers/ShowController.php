@@ -51,7 +51,7 @@ class ShowController extends Controller
     public function showReserva ($id)
     {
         $reserva=DB::table('reservas')
-                ->select('reservas.*','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','enderecos.*','users.*')
+                ->select('reservas.*','reservas.id AS RID','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','enderecos.*','users.*')
                 ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
                 ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
                 ->join('hospedes','reservas.hospede_id', '=', 'hospedes.id')
@@ -66,9 +66,10 @@ class ShowController extends Controller
 
     //
 
-    public function listaConsumo ($id)
+    public function showConsumo ($id)
     {
-        $listaConsumo = ListaConsumo::findOrFail($id);
-        return view('listaConsumo_show',['listaConsumo'=>$listaConsumo]);
+        $produto=Produto::findOrFail($id);
+        return view('admin.consumoCrud.show',['produto'=>$produto]);
     }
 }
+ 
