@@ -153,11 +153,18 @@ class UpdateController extends Controller
         $consumo->quantidade = 0;
         $consumo->save();
 
+        $quartoid  = $quarto->id;
+        $Quary = DB::table('tipo_quartos')
+                    ->join('quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->where('quartos.id','=', $quartoid)
+                    ->get();
+        $qValor = $Quary[0]->valor;
+
         $reserva = Reserva::findOrFail($id);
         $reserva->quarto_id = $quartoid;
         $reserva->consumo_id = $consumoid;
         $reserva->hospede_id = $hospedeid;
-        $reserva->valor = 0 ;
+        $reserva->valor = $qValor ;
         $reserva->data_entrada = $request->input('data_entrada');
         $reserva->data_saida =  $request->input('data_saida');
         $reserva->save();

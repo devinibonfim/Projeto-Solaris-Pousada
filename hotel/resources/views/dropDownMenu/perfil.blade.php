@@ -93,7 +93,7 @@
         <div class="text-center">
             <hr>
             <p class="text-center"> Delete sua conta: </p>
-            <a href="{{ route('destroyPerfil','$perfil->UID') }}" class="btn btn-secondary active bg-danger" role="button">Click aqui para deletar sua conta permanentemente</a></p>
+            <a href="{{ route('destroyPerfil') }}" class="btn btn-secondary active bg-danger" role="button">Click aqui para deletar sua conta permanentemente</a></p>
             <hr>
         </div>
     </div>

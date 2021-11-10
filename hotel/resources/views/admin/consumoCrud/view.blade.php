@@ -8,6 +8,8 @@
 
     <div class="card-header py-3">
         <form method="POST" action="{{ url('consStore',$consumo[0]->CSID) }}">
+            
+        @csrf
             <h6 class="m-0 font-weight-bold text-primary">Produtos</h6>
             <select id="produto" name="produto" class="form-control">
                 @foreach($produto as $produto)
@@ -17,6 +19,7 @@
                 @endforeach
             </select>
             <button type="submit" class="btn btn-primary active">Adicionar</button>
+
         </form>
     </div>
 
@@ -52,7 +55,7 @@
                         <th>
                             <p href="{{ route('consView',$consumo->id) }}">{{$consumo->PID}}</p>
                         </th>
-                        <th><a href="{{ route('consDestroy',$consumo->id) }}" class="btn btn-secondary active" role="button">Excluir</a></th>
+                        <th><a href="{{ route('consDestroy',$consumo->id,$consumo->LID) }}" class="btn btn-secondary active" role="button">Excluir</a></th>
                         @endforeach
                         <!-- <tr>
                         <th colspan="" class="text-center">TOTAL</th>

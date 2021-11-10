@@ -105,6 +105,7 @@ class ViewController extends Controller
                 ->join('users','users.id', '=', 'pessoas.user_id')
                 ->where('hospedes.id','=',$id)
                 ->get();
+            //dd($perfil->id);
         return view('dropDownSuport.edit',['perfil'=>$perfil[0]]);
     }
 
@@ -143,7 +144,7 @@ class ViewController extends Controller
         ->where('reservas.id','=',$id)
         ->get();
 
-        //dd($consumo[0]->CSID);
+        dd($consumo[$id]->id);
         return view('admin.consumoCrud.view',['consumo'=>$consumo],['produto'=>$produto]);
     }
 }

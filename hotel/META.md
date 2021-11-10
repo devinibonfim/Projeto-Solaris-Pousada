@@ -145,6 +145,8 @@
 </table>
 <br>
 
-# Alterar tipo quarto e quarto
+# Alterar tipo quarto e quarto (Terminado)
 
-# Trocar valores por Float
+# Trocar valores por Float (Terminado)
+
+# Fazer seeds de admin e um produto id 1 sem valor

@@ -17,9 +17,9 @@
                 </div>
                 
                 <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">Valor</label>
+                    <label for="name" class="col-md-4 col-form-label text-md-right">Valor(Real)</label>
                     <div class="col-md-6">
-                        <input id="valor" name="valor" type="text" class="form-control" value="{{$tipoQuarto->valor}}" autofocus>
+                        <input id="valor" name="valor" type="number" class="form-control" value="{{$tipoQuarto->valor}}" autofocus>
                     </div>
                 </div>
                 

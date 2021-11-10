@@ -18,7 +18,7 @@ class CreateProdutosTable extends Migration
             $table->string('nome');
             $table->string('descricao');
             $table->date('validade');
-            $table->string('valor');
+            $table->float('valor');
             $table->timestamps();
         });
     }

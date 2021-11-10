@@ -43,7 +43,7 @@
                             <th><p href="{{ route('ProdView',$produto->id) }}">{{$produto->id}}</p></th>
                             <th><p href="{{ route('ProdView',$produto->id) }}">{{$produto->nome}}</p></th>
                             <th><p href="{{ route('ProdView',$produto->id) }}">{{$produto->validade}}</p></th>
-                            <th><p href="{{ route('ProdView',$produto->id) }}">{{$produto->valor}}</p></th>
+                            <th><p href="{{ route('ProdView',$produto->id) }}">{{$produto->valor}}.00</p></th>
                             <th><p href="{{ route('ProdView',$produto->id) }}">{{$produto->descricao}}</p></th>
                             <th><a href="{{ route('ProdShow',$produto->id) }}" class="btn btn-secondary active"role="button">Vizualizar</a></th>
                             <th><a href="{{ route('ProdEdit',$produto->id) }}" class="btn btn-secondary active"role="button">Editar</a></th>

@@ -44,7 +44,7 @@
                         <tr>
                             <th><p href="{{ route('TQuartoView',$tipoQuarto->id) }}">{{$tipoQuarto->id}}</p></th>
                             <th><p href="{{ route('TQuartoView',$tipoQuarto->id) }}">{{$tipoQuarto->nome}}</p></th>
-                            <th><p href="{{ route('TQuartoView',$tipoQuarto->id) }}">{{$tipoQuarto->valor}}</p></th>
+                            <th><p href="{{ route('TQuartoView',$tipoQuarto->id) }}">{{$tipoQuarto->valor}}.00</p></th>
                             <th><p href="{{ route('TQuartoView',$tipoQuarto->id) }}">{{$tipoQuarto->tamanho}}</p></th>
                             <th><p href="{{ route('TQuartoView',$tipoQuarto->id) }}">{{$tipoQuarto->limite_pessoa}}</p></th>
                             <th><p href="{{ route('TQuartoView',$tipoQuarto->id) }}">{{$tipoQuarto->descricao}}</p></th>

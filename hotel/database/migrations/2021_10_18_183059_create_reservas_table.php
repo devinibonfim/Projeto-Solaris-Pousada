@@ -18,7 +18,7 @@ class CreateReservasTable extends Migration
             $table->unsignedBigInteger('quarto_id');
             $table->unsignedBigInteger('consumo_id');
             $table->unsignedBigInteger('hospede_id');
-            $table->string('valor');
+            $table->float('valor');
             $table->date('data_entrada');
             $table->date('data_saida');
             $table->timestamps();

@@ -27,7 +27,7 @@
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Valor</label>
                     <div class="col-md-6">
-                        <input id="valor" name="valor" type="money" class="form-control" autofocus>
+                        <input id="valor" name="valor" type="number" class="form-control" autofocus>
                     </div>
                 </div>
 

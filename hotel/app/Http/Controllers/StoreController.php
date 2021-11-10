@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\{Consumo, Endereco, Funcionario, Hospede, ListaConsumo, Pessoa, Produto, Quarto, Reserva, TipoQuarto, User};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class StoreController extends Controller
@@ -114,7 +115,8 @@ class StoreController extends Controller
     public function storeTiposQuarto(Request $request){
         $tipoQuarto = new TipoQuarto();
         $tipoQuarto->nome = $request->input('nome');
-        $tipoQuarto->valor = $request->input('valor');
+        $valor = $request->input('valor');
+        $tipoQuarto->valor = $valor;
         $tipoQuarto->tamanho = $request->input('tamanho');
         $tipoQuarto->limite_pessoa = $request->input('limite_pessoa');
         $tipoQuarto->descricao = $request->input('descricao');
@@ -134,18 +136,30 @@ class StoreController extends Controller
         $quarto->anotacoes = $request->input('anotacoes');
         $quarto->save();
 
+        
         $consumo = new Consumo;
         $consumo->quantidade = 0;
         $consumo->save();
 
-        $consumoid  = $consumo->id;
+        $listConsumo = new ListaConsumo;
+        $listConsumo->consumo_id = $consumo->id;
+        $listConsumo->produto_id = 1;
+        $listConsumo->save();
+
         $quartoid  = $quarto->id;
-        $hospedeid = $request->$id;
+        $Quary = DB::table('tipo_quartos')
+                    ->join('quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->where('quartos.id','=', $quartoid)
+                    ->get();
+        $qValor = $Quary[0]->valor;
+
+        $consumoid  = $consumo->id;
+        $hospedeid = $id;
         $reserva = new Reserva;
         $reserva->quarto_id = $quartoid;
         $reserva->consumo_id = $consumoid;
         $reserva->hospede_id = $hospedeid;
-        $reserva->valor = 0 ;
+        $reserva->valor = $qValor ;
         $reserva->data_entrada = $request->input('data_entrada');
         $reserva->data_saida = $request->input('data_saida');
         $reserva->save(); 
@@ -157,10 +171,10 @@ class StoreController extends Controller
         $listConsumo = new ListaConsumo;
         $listConsumo->produto_id = $request->input('produto');
         $listConsumo->consumo_id = $id;
-        dd($listConsumo);
-        //$listConsumo->save();
+        $listConsumo->save();
+        //dd($listConsumo);
 
-        //return('/');
+        return redirect(route('consView',$id));
     }
 }
  
