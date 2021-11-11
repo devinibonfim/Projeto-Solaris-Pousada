@@ -39,7 +39,7 @@ class ViewController extends Controller
     {
         /**/
          $Quary=DB::table('reservas')
-        ->select('reservas.*','reservas.id AS RID','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','users.*')
+        ->select('reservas.*','reservas.valor AS VAL','reservas.id AS RID','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','users.*')
         ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
         ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
         ->join('hospedes','reservas.hospede_id', '=', 'hospedes.id')
@@ -111,7 +111,28 @@ class ViewController extends Controller
 
     public function viewReserva2()
     {
-        return view('dropDownMenu.reserva');
+        $id = Auth::user()->id;
+        $Quary = DB::table('reservas')->select('reservas.*')->where('reservas.hospede_id','=', $id)->get();
+
+        if(empty($Quary[0])){
+            $OP = 0;
+        }else{
+            $OP = 1;
+        }
+        //dd($OP);
+
+        $reserva=DB::table('reservas')
+                    ->select('reservas.*','quartos.*','tipo_quartos.*','hospedes.*','pessoas.*','enderecos.*','users.*')
+                    ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
+                    ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
+                    ->join('hospedes','reservas.hospede_id', '=', 'hospedes.id')
+                    ->join('pessoas','hospedes.pessoa_id', '=', 'pessoas.id')
+                    ->join('enderecos','pessoas.endereco_id', '=', 'enderecos.id')
+                    ->join('users','pessoas.user_id', '=', 'users.id')
+                    ->where('users.id','=',$id)
+                    ->get();
+        //dd($reserva);
+        return view('dropDownMenu.reserva',['op'=>$OP],['reserva'=>$reserva]);
     }
 
     //Quartos

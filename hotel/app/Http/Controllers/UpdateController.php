@@ -20,6 +20,7 @@ class UpdateController extends Controller
         ->join('enderecos','pessoas.endereco_id', '=', 'enderecos.id')
         ->where('funcionarios.id', '=', $id)
         ->get();
+
         // acessa as array  trasformando em string
         $userID = $Quary[0]->user_id;
         $pessoaID = $Quary[0]->pessoa_id;
@@ -40,9 +41,8 @@ class UpdateController extends Controller
             $user->funcionario = 1;
         }
         $user->save();
-
         //atualiza endereço
-        $endereco = Endereco::findOrFail($pessoaID);
+        $endereco = Endereco::findOrFail($enderecoID);
         $endereco->cep = $request->input('cep');
         $endereco->rua = $request->input('rua');
         $endereco->bairro = $request->input('bairro');
@@ -51,22 +51,22 @@ class UpdateController extends Controller
         $endereco->numero_casa = $request->input('numero_casa');
         $endereco->complemento = $request->input('complemento');
         $endereco->save();
-
+        
         //atualiza pessoa
-        $pessoa = Pessoa::findOrFail($id);
+        $pessoa = Pessoa::findOrFail($pessoaID);
         $pessoa->nacionalidade = $request->input('nacionalidade');
         $pessoa->telefone = $request->input('telefone');
         $pessoa->data_nascimento = $request->input('data_nascimento');
         $pessoa->save();
-
+        /**/
         //atualiza pessoa
-        $funcionario = Funcionario::findOrFail($enderecoID);
+        $funcionario = Funcionario::findOrFail($id);
         $funcionario->ra= $request->input('ra');
         $funcionario->rg= $request->input('rg');
         $funcionario->pis_pasep= $request->input('pis_pasep');
         $funcionario->save();
         /**/
-        return redirect('FuncView');
+        return redirect(route('FuncView'));
     }
 
     public function updateHospede (Request $request, $id){
@@ -124,7 +124,7 @@ class UpdateController extends Controller
     public function updateTiposQuarto (Request $request, $id){
         $tipoQuarto = TipoQuarto::findOrFail($id);
         $tipoQuarto ->update($request->all());
-        return redirect('/');
+        return redirect(route('TQuartoView'));
     }
 
     //
@@ -169,7 +169,7 @@ class UpdateController extends Controller
         $reserva->data_saida =  $request->input('data_saida');
         $reserva->save();
         /**/
-        return redirect('/');
+        return redirect(route('ReserView'));
     }
 
     public function perfilUpdate (Request $request,$id){

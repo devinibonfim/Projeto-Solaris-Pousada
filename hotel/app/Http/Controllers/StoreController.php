@@ -172,9 +172,13 @@ class StoreController extends Controller
         $listConsumo->produto_id = $request->input('produto');
         $listConsumo->consumo_id = $id;
         $listConsumo->save();
-        //dd($listConsumo);
+        
+        $Quary = DB::table('produtos')->where('produtos.id','=',$request->input('produto'))->get();
+        $val= $Quary[0]->valor;
+        $reserva= Reserva::findOrFail($id);
+        $reserva->valor += $val;
+        $reserva->save();
 
         return redirect(route('consView',$id));
     }
 }
- 

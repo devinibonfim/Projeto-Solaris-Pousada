@@ -47,7 +47,7 @@
                             <th><p href="{{ route('ProdView',$produto->id) }}">{{$produto->descricao}}</p></th>
                             <th><a href="{{ route('ProdShow',$produto->id) }}" class="btn btn-secondary active"role="button">Vizualizar</a></th>
                             <th><a href="{{ route('ProdEdit',$produto->id) }}" class="btn btn-secondary active"role="button">Editar</a></th>
-                            <th><a href="{{ route('FuncDestroy',$produto->id) }}" class="btn btn-secondary active"role="button">Excluir</a></th>
+                            <th><a href="{{ route('ProdDestroy',$produto->id) }}" class="btn btn-secondary active"role="button">Excluir</a></th>
                         </tr>
                     @endforeach
                 </tbody>

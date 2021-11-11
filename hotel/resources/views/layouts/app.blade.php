@@ -141,16 +141,6 @@
                                 <a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a>
                                 <a class="dropdown-item" href="{{ route('reserva2') }}">Reservas</a>
                                 <a class="dropdown-item" href="{{ route('ajuda') }}">Ajuda</a>
-                                
-                                @if(Auth::user()->funcionario)
-                                <a class="nav-link" href="{{ route('ReserView') }}">Reserva</a>
-                                <a class="nav-link" href="{{ route('HospView') }}">Hospede</a>
-                                    @if(Auth::user()->admin)
-                                    <a class="nav-link" href="{{ route('FuncView') }}">Funcionarios</a>
-                                    <a class="nav-link" href="{{ route('ProdView') }}">Produtos</a>
-                                    <a class="nav-link" href="{{ route('TQuartoView') }}">Tipo Quartos</a>
-                                    @endif
-                                @endif
 
                                 <hr>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -163,6 +153,22 @@
                                 </form>
                             </div>
                         </li>
+                        @if(Auth::user()->funcionario)
+                        <li class="nav-item dropdown ">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-white text-capitalize" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Administrativo
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"" href=" {{ route('ReserView') }}">Reserva</a>
+                                <a class="dropdown-item"" href=" {{ route('HospView') }}">Hospede</a>
+                                @if(Auth::user()->admin)
+                                <a class="dropdown-item"" href=" {{ route('FuncView') }}">Funcionarios</a>
+                                <a class="dropdown-item"" href=" {{ route('ProdView') }}">Produtos</a>
+                                <a class="dropdown-item"" href=" {{ route('TQuartoView') }}">Tipo Quartos</a>
+                                @endif
+                            </div>
+                        </li>
+                        @endif
 
                         @endguest
                     </ul>

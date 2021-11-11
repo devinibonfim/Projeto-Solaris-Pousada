@@ -10,14 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class EditController extends Controller
 {
-    public function editEndereco ($id)
-    {
-        $endereco=Endereco::findOrFail($id);
-        return view('endereco_edit',['endereco'=>$endereco]);
-    }
-
-    // INICIO PESSOA
-    
     public function editFuncionario ($id)
     {
          $funcionario=DB::table('funcionarios')
@@ -70,6 +62,18 @@ class EditController extends Controller
                 ->where('hospedes.id','=',$id)
                 ->get();
         return view('dropDownSuport.edit',['perfil'=>$perfil[0]]);
+    }
+
+    public function editTiposQuarto ($id)
+    {
+        $tipoQuarto=TipoQuarto::findOrFail($id);
+        return view('admin.tiposQuartoCrud.edit',['tipoQuarto'=>$tipoQuarto]);
+    }
+
+    public function editProduto ($id)
+    {
+        $produto=Produto::findOrFail($id);
+        return view('admin.ProdutoCrud.edit',['produto'=>$produto]);
     }
 }
  

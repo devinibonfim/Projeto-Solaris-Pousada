@@ -50,7 +50,7 @@
                             <th><p href="{{ route('ReserView',$reserva->id) }}">Quarto: {{$reserva->nome}} <br>
                                                                                 Andar: {{$reserva->andar}} <br>
                                                                                 Numero do Quarto: {{$reserva->numero}}</p></th>
-                            <th><p href="{{ route('ReserView',$reserva->id) }}">{{$reserva->valor}}.00</p></th>
+                            <th><p href="{{ route('ReserView',$reserva->id) }}">{{$reserva->VAL}}.00</p></th>
 
                             <th><a href="{{ route('consView',$reserva->RID) }}" class="btn btn-secondary active"role="button">Consumiveis</a></th>
                             <th><a href="{{ route('ReserShow',$reserva->RID) }}" class="btn btn-secondary active"role="button">Vizualizar</a></th>

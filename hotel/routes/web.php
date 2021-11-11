@@ -77,8 +77,8 @@ Route::middleware('admin')->group(function () {
     
     // consumo Crud
     Route::post('/consView/{id}',        [App\Http\Controllers\ViewController::class,    'viewConsumo'])->name('consView'); //
-    Route::get('/consDestroy/{id}', [App\Http\Controllers\DestroyController::class, 'destroyListaConsumo'])->name('consDestroy'); //
-    Route::post('/consStore/{id}',      [App\Http\Controllers\StoreController::class,   'storeConsumo'])->name('consStore'); //
+    Route::get('/consDestroy/{id}/Reserva/{LID}', [App\Http\Controllers\DestroyController::class, 'destroyListaConsumo'])->name('consDestroy'); //
+    Route::post('/consStore/{id}',[App\Http\Controllers\StoreController::class,   'storeConsumo'])->name('consStore'); //
     Route::post('/consUpdate/{id}', [App\Http\Controllers\UpdateController::class,  'updateConsumo'])->name('consUpdate'); //
 });
 
@@ -107,7 +107,7 @@ Route::middleware('funcionario')->group(function () {
 
     // consumo Crud
     Route::get('/consView/{id}',        [App\Http\Controllers\ViewController::class,    'viewConsumo'])->name('consView'); //
-    Route::get('/consDestroy/{id}', [App\Http\Controllers\DestroyController::class, 'destroyListaConsumo'])->name('consDestroy'); //
+    Route::get('/consDestroy/{id}/Reserva/{LID}', [App\Http\Controllers\DestroyController::class, 'destroyListaConsumo'])->name('consDestroy'); //
     Route::post('/consStore/{id}',      [App\Http\Controllers\StoreController::class,   'storeConsumo'])->name('consStore'); //
     Route::post('/consUpdate/{id}', [App\Http\Controllers\UpdateController::class,  'updateConsumo'])->name('consUpdate'); //
 });

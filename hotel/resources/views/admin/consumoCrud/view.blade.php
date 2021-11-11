@@ -7,7 +7,6 @@
 <div class="card shadow mb-4">
 
     <div class="card-header py-3">
-        {{dd($consumo[1]);}}
         <form method="POST" action="{{ url('consStore',$consumo[0]->CSID) }}">
             
         @csrf
@@ -56,7 +55,7 @@
                         <th>
                             <p href="{{ route('consView',$consumo->id) }}">{{$consumo->PID}}</p>
                         </th>
-                        <th><a href="{{ route('consDestroy',$consumo->id,$consumo->LID) }}" class="btn btn-secondary active" role="button">Excluir</a></th>
+                        <th><a href="{{ route('consDestroy',['id' => $consumo->id, 'LID' => $consumo->LID]) }}" class="btn btn-secondary active" role="button">Excluir</a></th>
                         @endforeach
                         <!-- <tr>
                         <th colspan="" class="text-center">TOTAL</th>
