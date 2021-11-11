@@ -19,7 +19,7 @@ class CreateTipoQuartosTable extends Migration
             $table->float('valor');
             $table->string('tamanho');
             $table->integer('limite_pessoa');
-            $table->string('descricao');
+            $table->string('descricao', 6000);
             $table->timestamps();
         });
     }

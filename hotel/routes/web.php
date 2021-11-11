@@ -118,8 +118,11 @@ Route::middleware('hospede')->group(function () {
     Route::get('/hospede', [HomeController::class, 'hospede'])->name('hospede');
 
     Route::get('/Reserva',    [App\Http\Controllers\ViewController::class, 'viewReserva2'])->name('reserva2');
+    //Route::post('/ReservaHospStore/{id}', [App\Http\Controllers\UpdateController::class,  'reservaHospStore'])->name('ReservaHospStore');
+
     Route::get('/Perfil',     [App\Http\Controllers\ViewController::class, 'viewPerfil'])->name('perfil');
     Route::get('/ajuda',      [App\Http\Controllers\ViewController::class, 'viewAjuda'])->name('ajuda');
+
 
     Route::get('/Perfil/edit',[App\Http\Controllers\EditController::class, 'perfilEdit'])->name('perfilEdit');
     Route::post('/PerfilUpdate/{id}', [App\Http\Controllers\UpdateController::class,  'perfilUpdate'])->name('perfilUpdate');

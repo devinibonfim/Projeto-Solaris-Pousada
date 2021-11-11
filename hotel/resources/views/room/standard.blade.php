@@ -39,13 +39,21 @@
         <div class="row">
             <div class="col-md-6">
                 <h2 class="mb-5">Faça sua reserva!</h2>
-                <form method="POST" action="{{ url('ReserStore') }}">
+                <form method="POST" action="{{ url('ReservaHospStore','1') }}">
                     {{csrf_field()}}
                     <div class="row">
                         <div class="col-md-12 form-group">
                             <label for="name" class="col-md-12 col-form-label text-md-right">Número</label>
                             <div class="col-md-10">
                                 <input id="numero" name="numero" type="text" class="form-control" autofocus>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="name" class="col-md-12 col-form-label text-md-right">Andar</label>
+                            <div class="col-md-10">
+                                <input id="andar" name="andar" type="text" class="form-control" autofocus>
                             </div>
                         </div>
                     </div>
@@ -76,7 +84,7 @@
                     <div class="row">
                         <div class="col-md-12 form-group">
                             <br>
-                            <a href="/reserva"><button class="btn btn-x1 btn-primary btn-sm">Reserve agora</button></a>
+                            <button class="btn btn-x1 btn-primary btn-sm">Reserve agora</button>
                         </div>
                     </div>
                 </form>
@@ -105,7 +113,6 @@
                             <li><span class="ion-ios-people-outline"></span> Comodidades dos quartos: Frigobar, Ventilador, Sofá, Mesa de trabalho, Telefone, TV, Canais via satélite, Canais a cabo e Varanda.</li>
                         </ul>
                         <p> <b>Fumantes: ​Não é permitido fumar.</b> </p>
-                        <p><a href="#" class="btn btn-primary btn-sm">RESERVE AQUI PARA ALUGAR O QUARTO POR R$70</a></p>
                     </div>
                 </div>
             </div>

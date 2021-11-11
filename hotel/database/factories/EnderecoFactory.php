@@ -26,7 +26,7 @@ class EnderecoFactory extends Factory
         return [
             'cep' => $this->faker->postcode,
             'rua' => $this->faker->streetName,
-            'bairro'=>$this->faker->district,
+            'bairro'=>$this->faker->streetName,
             'cidade'=>$this->faker->city,
             'estado'=> $this->faker->state,
             'numero_casa' => $this->faker->numberBetween($min = 0, $max = 40),

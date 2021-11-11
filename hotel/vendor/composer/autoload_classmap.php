@@ -163,7 +163,7 @@ return array(
     'Database\\Factories\\ReservaFactory' => $baseDir . '/database/factories/ReservaFactory.php',
     'Database\\Factories\\TipoQuartoFactory' => $baseDir . '/database/factories/TipoQuartoFactory.php',
     'Database\\Factories\\UserFactory' => $baseDir . '/database/factories/UserFactory.php',
-    'Database\\Seeders\\ConsumoSeeder' => $baseDir . '/database/seeders/ConsumoSeeder.php',
+    'Database\\Seeders\\AdminSeeder' => $baseDir . '/database/seeders/AdminSeeder.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
     'Database\\Seeders\\PessoaSeeder' => $baseDir . '/database/seeders/PessoaSeeder.php',
     'Database\\Seeders\\QuartosSeeder' => $baseDir . '/database/seeders/QuartosSeeder.php',

@@ -181,4 +181,45 @@ class StoreController extends Controller
 
         return redirect(route('consView',$id));
     }
+
+    public function reservaHospStore(Request $request, $id){
+
+        /** /
+        $quarto = new Quarto;
+        $quarto->tipoQuarto_id = $id;
+        $quarto->numero = $request->input('numero');
+        $quarto->andar  = $request->input('andar');
+        $quarto->anotacoes = $request->input('anotacoes');
+        dd($quarto);
+        $quarto->save();
+
+        $consumo = new Consumo;
+        $consumo->quantidade = 0;
+        $consumo->save();
+
+        $listConsumo = new ListaConsumo;
+        $listConsumo->consumo_id = $consumo->id;
+        $listConsumo->produto_id = 1;
+        $listConsumo->save();
+
+        $quartoid  = $quarto->id;
+        $Quary = DB::table('tipo_quartos')
+                    ->join('quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->where('quartos.id','=', $quartoid)
+                    ->get();
+        $qValor = $Quary[0]->valor;
+
+        $consumoid  = $consumo->id;
+        $hospedeid = $id;
+        $reserva = new Reserva;
+        $reserva->quarto_id = $quartoid;
+        $reserva->consumo_id = $consumoid;
+        $reserva->hospede_id = $hospedeid;
+        $reserva->valor = $qValor ;
+        $reserva->data_entrada = $request->input('data_entrada');
+        $reserva->data_saida = $request->input('data_saida');
+        $reserva->save(); 
+        /**/
+        return redirect(route('home'));
+    }
 }

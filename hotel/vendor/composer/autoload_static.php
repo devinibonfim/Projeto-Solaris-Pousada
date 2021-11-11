@@ -688,7 +688,7 @@ class ComposerStaticInitf55b95f168a957dfde82f34a1840612a
         'Database\\Factories\\ReservaFactory' => __DIR__ . '/../..' . '/database/factories/ReservaFactory.php',
         'Database\\Factories\\TipoQuartoFactory' => __DIR__ . '/../..' . '/database/factories/TipoQuartoFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
-        'Database\\Seeders\\ConsumoSeeder' => __DIR__ . '/../..' . '/database/seeders/ConsumoSeeder.php',
+        'Database\\Seeders\\AdminSeeder' => __DIR__ . '/../..' . '/database/seeders/AdminSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\PessoaSeeder' => __DIR__ . '/../..' . '/database/seeders/PessoaSeeder.php',
         'Database\\Seeders\\QuartosSeeder' => __DIR__ . '/../..' . '/database/seeders/QuartosSeeder.php',
