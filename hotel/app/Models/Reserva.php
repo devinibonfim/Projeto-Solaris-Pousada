@@ -10,6 +10,7 @@ class Reserva extends Model
     use HasFactory;
     protected $fillable=[
         'valor',
+        'anotacoes',
         'data_entrada',
         'data_saida',
     ];

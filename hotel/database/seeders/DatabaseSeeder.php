@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             ProdSeeder::class,
             PessoaSeeder::class,
             AdminSeeder::class,
+            TipoQuartoSeeder::class,
             QuartosSeeder::class,
             // ReservaSeeder::class,
         ]);

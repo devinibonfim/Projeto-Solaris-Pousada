@@ -29,6 +29,7 @@ class ReservaFactory extends Factory
             'consumo_id' => Consumo::factory()->create(),
             'hospede_id' => Hospede::all()->random()->unique()->id,
             'valor' => $this->faker->numberBetween($min=0,$max=100).','.$this->faker->numberBetween($min=0,$max=100),
+            'anotacoes' => $this->faker->text($maxNBChars = 200),
             'data_entrada' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'data_saida' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
         ];

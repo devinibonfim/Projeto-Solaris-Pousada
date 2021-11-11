@@ -133,7 +133,6 @@ class StoreController extends Controller
         $quarto->tipoQuarto_id = $request->input('tipoQuarto');
         $quarto->numero = $request->input('numero');
         $quarto->andar  = $request->input('andar');
-        $quarto->anotacoes = $request->input('anotacoes');
         $quarto->save();
 
         
@@ -160,6 +159,7 @@ class StoreController extends Controller
         $reserva->consumo_id = $consumoid;
         $reserva->hospede_id = $hospedeid;
         $reserva->valor = $qValor ;
+        $reserva->anotacoes = $request->input('anotacoes');
         $reserva->data_entrada = $request->input('data_entrada');
         $reserva->data_saida = $request->input('data_saida');
         $reserva->save(); 

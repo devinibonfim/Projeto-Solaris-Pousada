@@ -150,3 +150,5 @@
 # Trocar valores por Float (Terminado)
 
 # Fazer seeds de admin e um produto id 1 sem valor
+
+# Mudança de anotação pra outra tabela, ver methodos

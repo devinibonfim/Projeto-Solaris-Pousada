@@ -20,13 +20,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/admin',     [App\Http\Controllers\ViewController::class,'admin'])->name('admin');
+Route::get('/funcionario', [App\Http\Controllers\ViewController::class, 'funcionario'])->name('funcionario');
+Route::get('/hospede', [App\Http\Controllers\ViewController::class, 'hospede'])->name('hospede');
+
+
 Route::get('/home',     [App\Http\Controllers\HomeController::class,     'index'])->name('home');
 Route::get('/standard', [App\Http\Controllers\ViewController::class,     'viewStandard'])->name('standard_index');
 Route::get('/premium',  [App\Http\Controllers\ViewController::class,     'viewPremium'])->name('premium_index');
 Route::get('/deluxe',   [App\Http\Controllers\ViewController::class,     'viewDeluxe'])->name('deluxe_index');
 
 Route::middleware('admin')->group(function () {
-    Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
     //funcionario Crud
     Route::get('/FuncView',        [App\Http\Controllers\ViewController::class,    'viewFuncionario'])->name('FuncView'); //
     Route::get('/FuncEdit/{id}',   [App\Http\Controllers\EditController::class,    'editFuncionario'])->name('FuncEdit'); //
@@ -56,13 +60,16 @@ Route::middleware('admin')->group(function () {
 
     //reserva Crud
     Route::get('/ReserView',        [App\Http\Controllers\ViewController::class,    'viewReserva'])->name('ReserView'); //
-    Route::get('/ReserViewHosp',    [App\Http\Controllers\ViewController::class, 'viewReservaHosp'])->name('ReserViewHosp'); //
-    Route::get('/ReserEdit1/{id}',  [App\Http\Controllers\EditController::class,    'editReserva1'])->name('ReserEdit1');
-    Route::get('/ReserEdit2/{id}/{Uid}', [App\Http\Controllers\EditController::class, 'editReserva2'])->name('ReserEdit2');
     Route::get('/ReserShow/{id}',   [App\Http\Controllers\ShowController::class,    'showReserva'])->name('ReserShow');
     Route::get('/ReserDestroy/{id}', [App\Http\Controllers\DestroyController::class, 'destroyReserva'])->name('ReserDestroy');
+   
+    Route::get('/ReserEdit1/{id}',  [App\Http\Controllers\EditController::class,    'editReserva1'])->name('ReserEdit1');
+    Route::get('/ReserEdit2/{id}/{Uid}', [App\Http\Controllers\EditController::class, 'editReserva2'])->name('ReserEdit2');
     Route::get('/ReserAdd1',         [App\Http\Controllers\AddController::class,     'createReserva1'])->name('ReserAdd1'); //
     Route::get('/ReserAdd2/{id}',    [App\Http\Controllers\AddController::class,     'createReserva2'])->name('ReserAdd2'); //
+    Route::get('/ReserViewHosp',    [App\Http\Controllers\ViewController::class, 'viewReservaHosp'])->name('ReserViewHosp');
+    //
+   
     Route::post('/ReserStore/{id}',      [App\Http\Controllers\StoreController::class,   'storeReserva'])->name('ReserStore'); //
     Route::post('/ReserUpdate/{id}', [App\Http\Controllers\UpdateController::class,  'updateReserva'])->name('ReserUpdate');
 
@@ -83,7 +90,6 @@ Route::middleware('admin')->group(function () {
 });
 
 Route::middleware('funcionario')->group(function () {
-    Route::get('/funcionario', [HomeController::class, 'funcionario'])->name('funcionario');
     //reserva Crud
     Route::get('/ReserView',        [App\Http\Controllers\ViewController::class,    'viewReserva'])->name('ReserView'); //
     Route::get('/ReserViewHosp',    [App\Http\Controllers\ViewController::class, 'viewReservaHosp'])->name('ReserViewHosp'); //
@@ -115,8 +121,6 @@ Route::middleware('funcionario')->group(function () {
 
 
 Route::middleware('hospede')->group(function () {
-    Route::get('/hospede', [HomeController::class, 'hospede'])->name('hospede');
-
     Route::get('/Reserva',    [App\Http\Controllers\ViewController::class, 'viewReserva2'])->name('reserva2');
     //Route::post('/ReservaHospStore/{id}', [App\Http\Controllers\UpdateController::class,  'reservaHospStore'])->name('ReservaHospStore');
 

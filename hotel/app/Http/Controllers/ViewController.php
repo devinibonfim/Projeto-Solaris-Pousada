@@ -54,11 +54,11 @@ class ViewController extends Controller
 
     public function viewReservaHosp(){
         $hospede=DB::table('hospedes')
-        ->select('hospedes.id AS HospID','hospedes.*','pessoas.*','users.*','enderecos.*')
-        ->join('pessoas','pessoas.id','=','hospedes.pessoa_id')
-        ->join('enderecos','enderecos.id','=','pessoas.endereco_id')
-        ->join('users','users.id', '=', 'pessoas.user_id')
-        ->get();
+                    ->select('hospedes.id AS HospID','hospedes.*','pessoas.*','users.*','enderecos.*')
+                    ->join('pessoas','pessoas.id','=','hospedes.pessoa_id')
+                    ->join('enderecos','enderecos.id','=','pessoas.endereco_id')
+                    ->join('users','users.id', '=', 'pessoas.user_id')
+                    ->get();
         return view('admin.reservaCrud.HospSearch',['hospede'=>$hospede]);
     }
     
@@ -168,5 +168,19 @@ class ViewController extends Controller
         // dd($consumo[0]->CSID);
         return view('admin.consumoCrud.view',['consumo'=>$consumo],['produto'=>$produto]);
     }
+
+    public function admin()
+    {
+        return view('acesso.admin');
+    }
+
+    public function funcionario()
+    {
+        return view('acesso.funcionario');
+    }
+
+    public function hospede()
+    {
+        return view('acesso.hospede');
+    }
 }
- 

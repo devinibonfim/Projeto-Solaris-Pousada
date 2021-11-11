@@ -19,6 +19,7 @@ class AdminACL
         if(auth()->check() && auth()->user()->admin){
             return $next($request);
         }
-        dd('Sem acesso de admin');
+        return redirect('admin');
     }
 }
+ 

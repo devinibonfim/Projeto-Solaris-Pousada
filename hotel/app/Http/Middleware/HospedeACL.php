@@ -19,6 +19,7 @@ class HospedeACL
         if(auth()->check() && auth()->user()->hospede){
             return $next($request);
         }
-        dd('Sem acesso de hospede');
+        return redirect('hospede');
     }
 }
+ 

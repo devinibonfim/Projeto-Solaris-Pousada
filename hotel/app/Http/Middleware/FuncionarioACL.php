@@ -19,6 +19,7 @@ class FuncionarioACL
         if(auth()->check() && auth()->user()->funcionario){
             return $next($request);
         }
-        dd('Sem acesso de funcionario');
+        return redirect('funcionario');
     }
 }
+ 

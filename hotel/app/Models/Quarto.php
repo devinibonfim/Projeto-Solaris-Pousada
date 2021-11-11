@@ -11,7 +11,6 @@ class Quarto extends Model
     protected $fillable=[
         'andar',
         'numero',
-        'anotacoes',
     ];
 
     public function tipo_quarto(){
