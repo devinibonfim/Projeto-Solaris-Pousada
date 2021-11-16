@@ -16,28 +16,13 @@
                         <a href="{{ route('ReserViewHosp') }}" class="btn btn-secondary active"role="button">Buscar</a>
                     </div>
                 </div>
-                <br><hr>
-                <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">Número</label>
-                    <div class="col-md-6">
-                        <input id="numero" name="numero" type="text" class="form-control" autofocus>
-                    </div>
-                </div>
-
-                
-                <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">Andar</label>
-                    <div class="col-md-6">
-                        <input id="andar" name="andar" type="text" class="form-control" autofocus>
-                    </div>
-                </div>
-                
+                <br><hr>               
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Tipo de quarto</label>
                     <div class="col-md-6">
-                        <select id="tipoQuarto" name="tipoQuarto" class="form-control">
-                            @foreach ($tipoQuarto as $tipoQuarto) 
-                                <option value="{{$tipoQuarto->id}}"><p href="{{ route('ReserAdd2',$tipoQuarto->id) }}">{{$tipoQuarto->nome}}</p></option>  
+                        <select id="quarto" name="quarto" class="form-control">
+                            @foreach ($quarto as $quarto) 
+                                <option value="{{$quarto->id}}"><p href="{{ route('ReserAdd2',$quarto->id) }}">{{$quarto->nome}} - Andar: {{$quarto->andar}} - Numero: {{$quarto->numero}}</p></option>  
                             @endforeach
                         </select>
                     </div>
@@ -63,13 +48,6 @@
                         <input id="data_saida" name="data_saida" type="date" class="form-control" autofocus>
                     </div>
                 </div>
-
-                <div class="form-group row mb-0">
-                    <div class="col-md-6 offset-md-4">
-                        <button type="submit" class="btn btn-primary">Salva</button>
-                    </div>
-                </div>
-
             </form>
         </div>
     </div>

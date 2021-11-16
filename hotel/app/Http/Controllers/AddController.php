@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Hospede;
+use App\Models\Quarto;
 use App\Models\Reserva;
 use App\Models\TipoQuarto;
 use App\Models\User;
@@ -28,8 +29,11 @@ class AddController extends Controller
     public function createReserva1()
     {
 
-        $tipoQuarto=TipoQuarto::all();
-        return view('admin.reservaCrud.1.add',['tipoQuarto'=> $tipoQuarto]);
+        $quarto = DB::table('quartos')
+                    ->select('quartos.*','Tipo_quartos.*')
+                    ->join('tipo_quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->get();
+        return view('admin.reservaCrud.1.add',['quarto'=> $quarto]);
     }
 
     public function createReserva2($id)
@@ -41,8 +45,12 @@ class AddController extends Controller
             ->join('users','users.id', '=', 'pessoas.user_id')
             ->where('hospedes.id','=', $id)
             ->get();
-        $tipoQuarto=TipoQuarto::all();
-        return view('admin.reservaCrud.2.add',['tipoQuarto'=> $tipoQuarto],['hospede'=>$hospede[0]]);
+
+        $quarto = DB::table('quartos')
+                    ->select('Tipo_quartos.*','quartos.*','quartos.id AS QID')
+                    ->join('tipo_quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->get();
+        return view('admin.reservaCrud.2.add',['quarto'=> $quarto],['hospede'=>$hospede[0]]);
     }
 
     public function createProduto()

@@ -55,7 +55,7 @@
                             <th><a href="{{ route('consView',$reserva->RID) }}" class="btn btn-secondary active"role="button">Consumiveis</a></th>
                             <th><a href="{{ route('ReserShow',$reserva->RID) }}" class="btn btn-secondary active"role="button">Vizualizar</a></th>
                             <th><a href="{{ route('ReserEdit1',$reserva->RID) }}" class="btn btn-secondary active"role="button">Editar</a></th>
-                            <th><a href="{{ route('ReserDestroy',$reserva->id) }}" class="btn btn-secondary active"role="button">Excluir</a></th>
+                            <th><a href="{{ route('ReserDestroy',$reserva->RID) }}" class="btn btn-secondary active"role="button">Excluir</a></th>
                         </tr>
                     @endforeach
                 </tbody>

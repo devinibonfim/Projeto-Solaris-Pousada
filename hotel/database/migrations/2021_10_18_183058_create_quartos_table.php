@@ -18,6 +18,7 @@ class CreateQuartosTable extends Migration
             $table->unsignedBigInteger('tipoQuarto_id');
             $table->string('andar');
             $table->string('numero');
+            $table->integer('reserva')->default('0');
             $table->timestamps();
 
             $table->foreign('tipoQuarto_id')

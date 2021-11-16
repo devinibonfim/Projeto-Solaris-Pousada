@@ -40,7 +40,22 @@ class DestroyController extends Controller
 
     public function destroyReserva ($id)
     {
+        $Quary=DB::table('reservas')
+                    ->select('quartos.*','reservas.*')
+                    ->join('quartos','reservas.quarto_id', '=', 'quartos.id')
+                    ->join('tipo_quartos','quartos.tipoQuarto_id', '=', 'tipo_quartos.id')
+                    ->join('consumos','reservas.consumo_id', '=', 'consumos.id')
+                    ->where('reservas.id','=',$id)
+                    ->get();
+
+        $quartoid  = $Quary[0]->quarto_id;
+        /**/
+        $quarto = Quarto::findOrfail($quartoid);
+        $quarto->reserva = 0;
+        $quarto->save();
+        /**/
         Reserva::destroy($id);
+
         return redirect(route('ReserView'));
     }
 

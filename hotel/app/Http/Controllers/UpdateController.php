@@ -141,11 +141,14 @@ class UpdateController extends Controller
         $quartoid  = $Quary[0] -> quarto_id;
         $consumoid  = $Quary[0] -> consumo_id;
         $hospedeid = $Quary[0] -> hospede_id;
-
-        $quarto = Quarto::findOrFail($quartoid);
-        $quarto->tipoQuarto_id = $request->input('tipoQuarto');
-        $quarto->numero = $request->input('numero');
-        $quarto->andar  = $request->input('andar');
+        
+        $Qquarto = DB::table('quartos')
+                    ->select('quartos.id AS QID','quartos.*','Tipo_quartos.*')
+                    ->join('tipo_quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->where('quartos.id','=',$request->input('quarto'))
+                    ->get();
+        $quarto = Quarto::findOrFail($Qquarto[0]->QID);
+        $quarto->reserva = 1;
         $quarto->save();
 
         $consumo = Consumo::findOrFail($consumoid);

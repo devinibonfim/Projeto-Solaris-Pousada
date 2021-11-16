@@ -129,10 +129,13 @@ class StoreController extends Controller
 
         
         /**/
-        $quarto = new Quarto;
-        $quarto->tipoQuarto_id = $request->input('tipoQuarto');
-        $quarto->numero = $request->input('numero');
-        $quarto->andar  = $request->input('andar');
+        $Qquarto = DB::table('quartos')
+                    ->select('quartos.id AS QID','quartos.*','Tipo_quartos.*')
+                    ->join('tipo_quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->where('quartos.id','=',$request->input('quarto'))
+                    ->get();
+        $quarto = Quarto::findOrFail($Qquarto[0]->QID);
+        $quarto->reserva = 1;
         $quarto->save();
 
         

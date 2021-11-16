@@ -47,8 +47,12 @@ class EditController extends Controller
                 ->join('users','pessoas.user_id', '=', 'users.id')
                 ->where('reservas.id','=',$id)
                 ->get();
-        $tipoQuarto=TipoQuarto::all();
-        return view('admin.reservaCrud.1.edit',['reserva'=>$reserva[0]],['tipoQuarto'=>$tipoQuarto]);
+                
+        $quarto = DB::table('quartos')
+                ->select('Tipo_quartos.*','quartos.*','quartos.id AS QID')
+                ->join('tipo_quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                ->get();
+        return view('admin.reservaCrud.1.edit',['reserva'=>$reserva[0]],['quarto'=>$quarto]);
     }
 
     public function perfilEdit()
