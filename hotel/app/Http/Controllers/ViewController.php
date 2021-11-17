@@ -137,19 +137,35 @@ class ViewController extends Controller
 
     //Quartos
 
-    public function viewDeluxe()
-    {
-        return view('room.deluxe');
-    }
-
     public function viewStandard()
     {
-        return view('room.standard');
+        $quarto = DB::table('quartos')
+                    ->select('Tipo_quartos.*','quartos.*','quartos.id AS QID')
+                    ->join('tipo_quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->where('tipoQuarto_id','=', 1)
+                    ->where('quartos.reserva','=', '0')
+                    ->get();
+        return view('room.standard',['quarto'=>$quarto]);
+    }
+
+    public function viewDeluxe()
+    {
+        $quarto = DB::table('quartos')
+                    ->select('Tipo_quartos.*','quartos.*','quartos.id AS QID')
+                    ->join('tipo_quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->where('tipoQuarto_id','=', 2)
+                    ->get();
+        return view('room.deluxe',['quarto'=>$quarto]);
     }
 
     public function viewPremium()
     {
-        return view('room.premium');
+        $quarto = DB::table('quartos')
+                    ->select('Tipo_quartos.*','quartos.*','quartos.id AS QID')
+                    ->join('tipo_quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+                    ->where('tipoQuarto_id','=', 3)
+                    ->get();
+        return view('room.premium', ['quarto'=>$quarto]);
     }
 
     public function viewConsumo($id)

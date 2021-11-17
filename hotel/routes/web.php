@@ -122,7 +122,7 @@ Route::middleware('funcionario')->group(function () {
 
 Route::middleware('hospede')->group(function () {
     Route::get('/Reserva',    [App\Http\Controllers\ViewController::class, 'viewReserva2'])->name('reserva2');
-    //Route::post('/ReservaHospStore/{id}', [App\Http\Controllers\UpdateController::class,  'reservaHospStore'])->name('ReservaHospStore');
+    Route::post('/ReservaHospStore', [App\Http\Controllers\StoreController::class,  'reservaHospStore'])->name('ReservaHospStore');
 
     Route::get('/perfil',     [App\Http\Controllers\ViewController::class, 'viewPerfil'])->name('perfil');
     Route::get('/ajuda',      [App\Http\Controllers\ViewController::class, 'viewAjuda'])->name('ajuda');

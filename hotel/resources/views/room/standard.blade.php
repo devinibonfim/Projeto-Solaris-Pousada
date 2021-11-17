@@ -39,24 +39,20 @@
         <div class="row">
             <div class="col-md-6">
                 <h2 class="mb-5">Faça sua reserva!</h2>
-                <form method="POST" action="{{ url('ReservaHospStore','1') }}">
+                <form method="POST" action="{{ url('ReservaHospStore') }}">
                     {{csrf_field()}}
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="name" class="col-md-12 col-form-label text-md-right">Número</label>
-                            <div class="col-md-10">
-                                <input id="numero" name="numero" type="text" class="form-control" autofocus>
-                            </div>
+                   
+                    <div class="form-group row">
+                        <label for="name" class="col-md-12 col-form-label text-md-right">Quartos</label>
+                        <div class="col-md-10">
+                            <select id="quarto" name="quarto" class="form-control">
+                                @foreach ($quarto as $quarto) 
+                                    <option value="{{$quarto->id}}"><p href="{{ route('ReserAdd2',$quarto->id) }}">{{$quarto->nome}} - Andar: {{$quarto->andar}} - Numero: {{$quarto->numero}}</p></option>  
+                                @endforeach
+                            </select>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="name" class="col-md-12 col-form-label text-md-right">Andar</label>
-                            <div class="col-md-10">
-                                <input id="andar" name="andar" type="text" class="form-control" autofocus>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="row">
                         <div class="col-md-12 form-group">
                             <label for="name" class="col-md-12 col-form-label text-md-right">Anotações</label>

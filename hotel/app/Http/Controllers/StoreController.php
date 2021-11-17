@@ -185,15 +185,16 @@ class StoreController extends Controller
         return redirect(route('consView',$id));
     }
 
-    public function reservaHospStore(Request $request, $id){
+    public function reservaHospStore(Request $request){
 
-        /** /
-        $quarto = new Quarto;
-        $quarto->tipoQuarto_id = $id;
-        $quarto->numero = $request->input('numero');
-        $quarto->andar  = $request->input('andar');
-        $quarto->anotacoes = $request->input('anotacoes');
-        dd($quarto);
+        $Qquarto = DB::table('quartos')
+        ->select('quartos.id AS QID','quartos.*','Tipo_quartos.*')
+        ->join('tipo_quartos','quartos.tipoQuarto_id','=','tipo_quartos.id')
+        ->where('quartos.id','=',$request->input('quarto'))
+        ->get();
+        $quarto = Quarto::findOrFail($Qquarto[0]->QID);
+        $quarto->reserva = 1;
+        /**/
         $quarto->save();
 
         $consumo = new Consumo;
@@ -213,16 +214,17 @@ class StoreController extends Controller
         $qValor = $Quary[0]->valor;
 
         $consumoid  = $consumo->id;
-        $hospedeid = $id;
+        $hospedeid = Auth::user()->id;;
         $reserva = new Reserva;
         $reserva->quarto_id = $quartoid;
         $reserva->consumo_id = $consumoid;
         $reserva->hospede_id = $hospedeid;
         $reserva->valor = $qValor ;
+        $reserva->anotacoes = $request->input('anotacoes') ;
         $reserva->data_entrada = $request->input('data_entrada');
         $reserva->data_saida = $request->input('data_saida');
         $reserva->save(); 
         /**/
-        return redirect(route('home'));
+        return redirect(route('reserva2'));
     }
 }
