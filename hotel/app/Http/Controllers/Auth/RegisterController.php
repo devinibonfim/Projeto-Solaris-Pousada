@@ -97,7 +97,7 @@ class RegisterController extends Controller
         ]);
         //dd($pessoa);
 
-        $pessoa = DB::table('hospedes')->insertGetId([
+        $hospede = DB::table('hospedes')->insertGetId([
             'pessoa_id' => $pessoa,
         ]);
 

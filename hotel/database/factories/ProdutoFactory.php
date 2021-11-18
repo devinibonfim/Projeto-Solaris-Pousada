@@ -25,7 +25,7 @@ class ProdutoFactory extends Factory
             'nome' => $this->faker->name(),
             'descricao' => $this->faker->text($maxNbChars = 250),
             'validade' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'valor' => $this->faker->numberBetween($min=0,$max=100).','.$this->faker->numberBetween($min=0,$max=100),
+            'valor' => $this->faker->numberBetween($min=0,$max=100).'.'.$this->faker->numberBetween($min=0,$max=100),
         ];
     }
 }
