@@ -2,16 +2,6 @@
 
 > Este trabalho tem como objetivo a implementação de um sistema para gestão de uma pousada. O sistema será desenvolvido na linguagem de programação PHP, com utilização do framework Laravel. Identificado os principais pontos a serem otimizados, o estudo desenvolveu-se sob a necessidade de implementação do sistema que, através da web possibilitará a interação junto aos serviços administrativos pelos funcionários, e a utilização de serviços comerciais pelos clientes. Dentre as funcionalidades do sistema destacam-se o envio e recebimento de arquivos e processos internos, bem como o cadastro, reservas e alterações das informações. 
 
-<!-- ### Ajustes e melhorias
-
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
-
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5 -->
-
 ## 💻 Pré-requisitos
 
 Antes de executar o projeto, verifique se você atendeu aos seguintes requisitos:
@@ -28,7 +18,7 @@ composer install
 composer update
 ```
 
-Iniciando o projeto:
+Iniciando o projeto (verifique se está no diretório do projeto):
 ```
 php artisan migrate --seed
 php artisan serve
