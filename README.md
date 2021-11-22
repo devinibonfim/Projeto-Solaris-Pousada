@@ -11,11 +11,28 @@ Antes de executar o projeto, verifique se você atendeu aos seguintes requisitos
 
 ## 🚀 Iniciando o projeto
 
+Configurando o php.ini:
+
+```
+Descomentar as extensions abaixo dentro do arquivo php.ini:
+
+;extension=fileinfo   ->  extension=fileinfo
+;extension=pdo_mysql  ->  extension=pdo_mysql
+```
+
 Configurando o projeto:
 
 ```
 composer install
 composer update
+```
+
+Configurando o .env
+
+```
+DB_DATABASE= (Nome do banco)
+DB_PASSWORD= (Password)
+
 ```
 
 Iniciando o projeto (verifique se está no diretório do projeto):
