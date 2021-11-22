@@ -47,6 +47,33 @@ LOGIN: admin@hotel.com
 SENHA: admin123
 ```
 
+## 🚀 Principais Funcionalidades
+
+* SignIn Web
+![SignIn Web](hotel/public/assets/readme/sign-web.png)
+
+* SignUp Web
+![SignUp Web](hotel/public/assets/readme/signup-web.png)
+
+* Page Web
+![Page Web](hotel/public/assets/readme/page_1.png)
+![Page Web](hotel/public/assets/readme/page_2.png)
+![Page Web](hotel/public/assets/readme/page_3.png)
+![Page Web](hotel/public/assets/readme/page_4.png)
+![Page Web](hotel/public/assets/readme/page_5.png)
+
+* Aluguel Hospede Web
+![Page Web](hotel/public/assets/readme/aluguel-hospede.png)
+
+* Info Aluguel Hospede Web
+![Page Web](hotel/public/assets/readme/info-aluguel-hospede.png)
+
+* SignIn Mobile
+![SignIn Web](hotel/public/assets/readme/sign-mobile.png)
+
+* SignUp Mobile
+![SignUp Web](hotel/public/assets/readme/signup-mobile.png)
+
 ## 🤝 Colaboradores
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
