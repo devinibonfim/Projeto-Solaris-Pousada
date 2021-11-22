@@ -1,6 +1,6 @@
 # Solaris Pousada
 
-> Este trabalho tem como objetivo a implementação de um sistema para gestão de uma pousada. O sistema será desenvolvido na linguagem de programação PHP, com utilização do framework Laravel. Identificado os principais pontos a serem otimizados, o estudo desenvolveu-se sob a necessidade de implementação do sistema que, através da web possibilitará a interação junto aos serviços administrativos pelos funcionários, e a utilização de serviços comerciais pelos clientes. Dentre as funcionalidades do sistema destacam-se o envio e recebimento de arquivos e processos internos, bem como o cadastro, reservas e alterações das informações. 
+> Este trabalho tem como objetivo a implementação de um sistema para gestão de uma pousada. O sistema será desenvolvido na linguagem de programação PHP, com utilização do framework Laravel. Identificado os principais pontos a serem otimizados, o estudo desenvolveu-se sob a necessidade de implementação do sistema que, através da web possibilitará a interação junto aos serviços administrativos pelos funcionários, e a utilização de serviços comerciais pelos clientes. Dentre as funcionalidades do sistema destacam-se o envio e recebimento de arquivos e processos internos, bem como o cadastro, reservas e alterações das informações.  
 
 ## 💻 Pré-requisitos
 
